@@ -1,0 +1,661 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-egzmvxx6"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Video Recall API | InvokeAI Documentation</title><link rel="canonical" href="https://v7.invoke.ai/development/guides/video-recall-api/"/><link rel="sitemap" href="/sitemap-index.xml"/><script async src="https://plausible.tracking.events/js/pa-BHcumuOemKz4XIQeWkTn4.js"></script><script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script><link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v7.3.8"/><meta name="generator" content="Starlight v0.42.6"/><meta property="og:title" content="Video Recall API"/><meta property="og:type" content="article"/><meta property="og:url" content="https://v7.invoke.ai/development/guides/video-recall-api/"/><meta property="og:locale" content="en"/><meta property="og:description" content="REST endpoints that let an external process recall or remix video generation parameters and place gallery images and gallery or uploaded videos into a user's Video panel."/><meta property="og:site_name" content="InvokeAI Documentation"/><meta name="description" content="REST endpoints that let an external process recall or remix video generation parameters and place gallery images and gallery or uploaded videos into a user's Video panel."/><meta property="og:image" content="https://v7.invoke.ai/coverimage.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://v7.invoke.ai/coverimage.png"/><script>
+  document.documentElement.dataset.theme = 'dark';
+</script><link rel="stylesheet" href="/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/_astro/middleware.B7Y_Cbl_.css"><style>@layer starlight.components{svg:where(.astro-wion3bmv){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em;overflow:visible}}
+@layer starlight.components{.sl-link-button:where(.astro-lbdzh53u){font-size:var(--sl-text-sm);outline-offset:.25rem;border:1px solid #0000;border-radius:999rem;align-items:center;gap:.5em;padding:.4375rem 1.125rem;line-height:1.1875;text-decoration:none;display:inline-flex}.sl-link-button:where(.astro-lbdzh53u).primary{background:var(--sl-color-text-accent);border-color:var(--sl-color-text-accent);color:var(--sl-color-black)}.sl-link-button:where(.astro-lbdzh53u).primary:hover{color:var(--sl-color-black)}.sl-link-button:where(.astro-lbdzh53u).secondary{border-color:inherit;color:var(--sl-color-white)}.sl-link-button:where(.astro-lbdzh53u).minimal{color:var(--sl-color-white);padding-inline:0}.sl-link-button:where(.astro-lbdzh53u) svg{flex-shrink:0}@media (width>=50rem){.sl-link-button:where(.astro-lbdzh53u){font-size:var(--sl-text-base);padding:.9375rem 1.25rem}}.sl-markdown-content .sl-link-button:where(.astro-lbdzh53u){margin-inline-end:1rem}.sl-markdown-content .sl-link-button:where(.astro-lbdzh53u):not(:where(p *)){margin-block:1rem}}
+</style><script type="module" src="/_astro/page.qmvz7R8c.js"></script></head><body class="astro-egzmvxx6"><a class="sl-skip-link astro-rvpogu26" href="#_top">Skip to content</a><div class="page sl-flex astro-6c4fglrz"><header class="header astro-6c4fglrz"><div class="header astro-wdezznm2"><div class="title-wrapper sl-flex astro-wdezznm2"><a href="/" class="site-title sl-flex astro-iyxa2yxr"><img class="astro-iyxa2yxr" alt="InvokeAI Logo" src="/_astro/invoke-icon-wide.BR5B9gqd.svg" width="75" height="32"><span class="sr-only astro-iyxa2yxr" translate="no">InvokeAI Documentation</span></a></div><div class="sl-flex print:hidden astro-wdezznm2"><site-search class="astro-wdezznm2 astro-na6z7irt" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;,&quot;clear_search&quot;:&quot;Clear&quot;,&quot;load_more&quot;:&quot;Load more results&quot;,&quot;search_label&quot;:&quot;Search this site&quot;,&quot;filters_label&quot;:&quot;Filters&quot;,&quot;zero_results&quot;:&quot;No results for [SEARCH_TERM]&quot;,&quot;many_results&quot;:&quot;[COUNT] results for [SEARCH_TERM]&quot;,&quot;one_result&quot;:&quot;[COUNT] result for [SEARCH_TERM]&quot;,&quot;alt_search&quot;:&quot;No results for [SEARCH_TERM]. Showing results for [DIFFERENT_TERM] instead&quot;,&quot;search_suggestion&quot;:&quot;No results for [SEARCH_TERM]. Try one of the following searches:&quot;,&quot;searching&quot;:&quot;Searching for [SEARCH_TERM]...&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-na6z7irt"><svg aria-hidden="true" class="astro-na6z7irt astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-na6z7irt" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-na6z7irt" style="display: none;"><kbd class="astro-na6z7irt">Ctrl</kbd><kbd class="astro-na6z7irt">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-na6z7irt"><div class="dialog-frame sl-flex astro-na6z7irt"><button data-close-modal class="sl-flex md:sl-hidden astro-na6z7irt">Cancel</button><div class="search-container astro-na6z7irt"><div id="starlight__search" class="astro-na6z7irt"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.BOTS06Pe.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-wdezznm2"><div class="sl-flex social-icons astro-wdezznm2"><a href="https://github.com/invoke-ai/InvokeAI" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">GitHub</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a href="https://discord.gg/ZmtBAhwWhy" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">Discord</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"/></svg></a><a href="https://www.youtube.com/@invokeai" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">YouTube</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M23.5 6.2A3 3 0 0 0 21.4 4c-1.9-.5-9.4-.5-9.4-.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8 0 12 0 12s0 4 .5 5.8A3 3 0 0 0 2.6 20c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2c.5-2 .5-5.9.5-5.9s0-4-.5-5.8zm-14 9.4V8.4l6.3 3.6-6.3 3.6z"/></svg></a></div><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div></header><nav class="sidebar print:hidden astro-6c4fglrz" aria-label="Main"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-hd76dzne"><svg aria-hidden="true" class="open-menu astro-hd76dzne astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-hd76dzne astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-hd76dzne">Menu</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-6c4fglrz"><div class="sidebar-content sl-flex astro-6c4fglrz"><sl-sidebar-state-persist data-hash="1v4l50c" class="astro-6e4jnn55"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-fe7k3flc"><li class="astro-fe7k3flc"><details open class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Start Here</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/start-here/system-requirements/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Hardware Requirements</span></a></li><li class="astro-fe7k3flc"><a href="/start-here/installation/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Simple Installation</span></a></li><li class="astro-fe7k3flc"><a href="/start-here/manual/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Manual Installation</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Configuration</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/configuration/invokeai-yaml/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">YAML Config</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/docker/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Docker</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/external-database/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">MySQL and MariaDB</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Optimization</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/configuration/optimization/low-vram-mode/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Low-VRAM mode</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/optimization/fp8-storage/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FP8 Storage &amp; Compute</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/optimization/sdnq-quantization/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">SDNQ Quantization</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/optimization/patchmatch/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Patchmatch</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Multi-User Mode</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="3"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/configuration/multi-user-mode/user-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Multi-User Guide</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/multi-user-mode/admin-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Multi-User Administrator Guide</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/multi-user-mode/api-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Multi-User API Guide</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details open class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Users Guide</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="4"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Workbench</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="5"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/workbench/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Guided tour</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workbench/hotkeys/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Hotkey shortcuts</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Projects</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="6"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/projects/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Working with Projects</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Models</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="7"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/models/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Managing media generation models</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/model-families/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Model Formats and Families</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/model-format-support/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Model Format Support</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Local Models</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="8"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/anima/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Anima</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/cogview4/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">CogView4</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/ernie-image/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">ERNIE-Image</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/flux-1/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FLUX.1</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/flux-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FLUX.2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/ideogram4/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Ideogram 4</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/krea-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Krea-2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/ltx-2/" class="astro-fe7k3flc" data-cross-listed><span class="astro-fe7k3flc">LTX-2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/minimax-h3/" class="astro-fe7k3flc" data-cross-listed><span class="astro-fe7k3flc">MiniMax H3</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/qwen-image/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Qwen Image</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/sdxl/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">SDXL</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/stable-diffusion-1-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Stable Diffusion 1.5 / 2.x</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/sd-3/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Stable Diffusion 3.5</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/wan-22/" class="astro-fe7k3flc" data-cross-listed><span class="astro-fe7k3flc">Wan 2.2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/z-image/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Z-Image</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">External Models</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="9"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Using external models</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/alibabacloud/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Alibaba Cloud DashScope</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/gemini/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Google Gemini</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/openai/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">OpenAI</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/seedream/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">BytePlus Seedream</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Image Generation</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="10"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Generating and modifying still images</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/generate-panel/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Generate Panel Reference</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/prompting-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Prompting Guide</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-prompt-syntax/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Advanced Prompt Syntax</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/prompt-tools/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Prompt Tools</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/parameters/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Parameter Selection Guide</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/image-generation/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Concepts and Terms</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/intermediates/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Intermediates</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/upscale/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Upscaling</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Advanced Topics</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="11"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-topics/diffusion/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Diffusion</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-topics/pid-decode/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">PiD Super-Resolution Decode</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-topics/hidiffusion/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">HiDiffusion</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Video Generation</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="12"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Generating and modifying short videos</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/wan-22/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Wan 2.2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/minimax-h3/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">MiniMax H3</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/ltx-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">LTX-2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/video-workflows/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Video Workflows</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Gallery</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="13"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/gallery/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Organizing your media</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/gallery/gallery-reference/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Gallery Reference</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/gallery/image-storage-maintenance/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Image Storage Maintenance</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Canvas</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="14"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/canvas/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Crafting images with the Canvas</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/canvas/canvas-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Canvas guide</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/canvas/layers-panel/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Layers panel guide</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Workflows</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="15"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/workflows/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Automating with Workflows</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/editor-reference/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Workflow Editor Reference</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/loop-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Loop Nodes</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/custom-node-manager/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Custom Node Manager</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/comfyui-migration/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">ComfyUI Migration</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/community-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Community Nodes</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/face-tools/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Face Tools Nodes</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Image Map</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="16"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/image-map/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Image Map Indexing and Search</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-map/customizing/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Customizing the Image Map</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details open class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Development</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="17"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">InvokeAI Development</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Architecture</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="18"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/architecture/overview/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Overview</span></a></li><li class="astro-fe7k3flc"><a href="/development/architecture/invocations/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Invocations</span></a></li><li class="astro-fe7k3flc"><a href="/development/architecture/media-metadata/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Media Metadata</span></a></li><li class="astro-fe7k3flc"><a href="/development/architecture/model-manager/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Model Manager</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Documentation</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="19"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/documentation/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Documentation</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Front End</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="20"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/front-end/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Frontend Development</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/canvas-projects/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Canvas Projects</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/project-files/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Project Files (.invk)</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/state-management/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">State Management</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/text-tool/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Canvas Text Tool</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/workflows/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Workflows</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details open class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Guides</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="21"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/guides/api-development/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">API Development</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/creating-node-pack/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Creating Node Packs</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/creating-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Creating Nodes</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/database-layer/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Database Layer</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/recall-api/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Recall Parameters API</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/sqlite-migrations/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Database Migrations</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/tests/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Writing Tests</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/video-recall-api/" aria-current="page" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Video Recall API</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/workflow-api/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Workflow Execution API</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Process</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="22"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/process/pr-merge-policy/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">PR Merge Policy</span></a></li><li class="astro-fe7k3flc"><a href="/development/process/release-process/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Release Process</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Setup</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="23"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/setup/dev-environment/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Development Environment</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Contributing</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="24"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/contributing/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Contributing to InvokeAI</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/blocking-work-in-api-routes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Blocking Work in API Routes</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/call-saved-workflow/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Call Saved Workflow Architecture</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/code-of-conduct/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Code of Conduct</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/contributors/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Contributors</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/external-providers/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">External Provider Integration</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/loop-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Loop Nodes Architecture</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/new-contributor-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">New Contributor Guide</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/new-model-integration/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">New Model Type Integration Checklist</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/translations/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Translations</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Troubleshooting &amp; Help</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="25"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/troubleshooting/faq/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FAQ</span></a></li><li class="astro-fe7k3flc"><a href="/troubleshooting/known-bugs/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Known Bugs</span></a></li><li class="astro-fe7k3flc"><a href="/troubleshooting/videos/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">InvokeAI YouTube Videos</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Releases</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="26"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/releases/version/version-6-14-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Version 6.14.2</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/version-6-14-1/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Version 6.14.1</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/invokeai-6-14-0/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">InvokeAI 6.14.0</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/v6-13-8/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">v6.13.8</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/v6-13-7/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">v6.13.7</span></a></li></ul></details></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-srta2qkb"><div class="social-icons astro-srta2qkb"><a href="https://github.com/invoke-ai/InvokeAI" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">GitHub</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a href="https://discord.gg/ZmtBAhwWhy" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">Discord</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"/></svg></a><a href="https://www.youtube.com/@invokeai" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">YouTube</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M23.5 6.2A3 3 0 0 0 21.4 4c-1.9-.5-9.4-.5-9.4-.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8 0 12 0 12s0 4 .5 5.8A3 3 0 0 0 2.6 20c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2c.5-2 .5-5.9.5-5.9s0-4-.5-5.8zm-14 9.4V8.4l6.3 3.6-6.3 3.6z"/></svg></a></div></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-6c4fglrz"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-3zf4g5vl"><aside class="right-sidebar-container print:hidden astro-3zf4g5vl"><div class="right-sidebar astro-3zf4g5vl"><div class="lg:sl-hidden astro-psmrpsxm"><mobile-starlight-toc data-min-h="2" data-max-h="4" class="astro-thay6anh"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-thay6anh"><details id="starlight__mobile-toc" class="astro-thay6anh"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-thay6anh"><span class="toggle sl-flex astro-thay6anh">On this page<svg aria-hidden="true" class="caret astro-thay6anh astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-thay6anh"></span></summary><div class="dropdown astro-thay6anh"><ul class="isMobile astro-y5qnks4t" style="--depth: 0;"><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#_top" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Overview</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#overview" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Overview</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#how-it-works" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">How it works</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#endpoints" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Endpoints</span></a><ul class="isMobile astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#recall--remix" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Recall / Remix</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#send-video-use-as-ref-video-and-use-as-conditioning-clip" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Send Video, Use as Ref Video and Use as Conditioning Clip</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#send-image-and-append-image" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Send Image and Append Image</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#frontend-behavior" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Frontend behavior</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#request-schema" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Request schema</span></a><ul class="isMobile astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#scalars" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Scalars</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#models" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Models</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#media" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Media</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#examples" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Examples</span></a><ul class="isMobile astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#curl" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">cURL</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#python" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Python</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#responses" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Responses</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#errors" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Errors</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#websocket-event" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">WebSocket event</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#implementation" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Implementation</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-psmrpsxm"><div class="sl-container astro-psmrpsxm"><starlight-toc data-min-h="2" data-max-h="4"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-y5qnks4t" style="--depth: 0;"><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#_top" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Overview</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#overview" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Overview</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#how-it-works" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">How it works</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#endpoints" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Endpoints</span></a><ul class="astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#recall--remix" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Recall / Remix</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#send-video-use-as-ref-video-and-use-as-conditioning-clip" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Send Video, Use as Ref Video and Use as Conditioning Clip</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#send-image-and-append-image" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Send Image and Append Image</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#frontend-behavior" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Frontend behavior</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#request-schema" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Request schema</span></a><ul class="astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#scalars" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Scalars</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#models" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Models</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#media" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Media</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#examples" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Examples</span></a><ul class="astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#curl" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">cURL</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#python" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Python</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#responses" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Responses</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#errors" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Errors</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#websocket-event" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">WebSocket event</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#implementation" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Implementation</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-3zf4g5vl"><main data-pagefind-body class="astro-egzmvxx6" lang="en" dir="ltr"><div class="content-panel astro-uug4jd3t"><div class="sl-container astro-uug4jd3t"><h1 id="_top" class="astro-alldfk7m">Video Recall API</h1></div></div><div class="content-panel astro-uug4jd3t"><div class="sl-container astro-uug4jd3t"><div class="sl-markdown-content"><div class="sl-heading-wrapper level-h2"><h2 id="overview">Overview</h2><a class="sl-anchor-link" href="#overview"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Overview”</span></a></div>
+<p>The Video Recall API is the video counterpart of the
+<a href="/development/guides/recall-api/">Recall Parameters API</a>. It lets an external process — a media
+browser, a script, another application — drive a user’s open <strong>Video</strong> panel:</p>
+<ul>
+<li><strong>Recall / Remix</strong> — apply video generation parameters (prompts, model and
+components, frames, steps, guidance, LoRAs, first/last frames, initial video,
+Ref2VA references). Remix applies everything except the seed.</li>
+<li><strong>Send Video</strong> — place a video in the panel’s <strong>Initial Video</strong> slot, the same
+outcome as the gallery’s <em>Extend in Video</em> action.</li>
+<li><strong>Use as Ref Video</strong> — append a video to the reference list of models that take
+reference videos (today, MiniMax H3 Ref2VA).</li>
+<li><strong>Use as Conditioning Clip</strong> — set a video as the conditioning clip of models that
+generate one half of a clip from the other (today, LTX-2): its soundtrack, to
+generate a picture for it, or its picture, to generate a soundtrack for it.</li>
+<li><strong>Send Image / Append Image</strong> — place a gallery image wherever the panel’s model
+takes images: as a reference image (MiniMax H3 Ref2VA) or as the first or last
+frame (Wan I2V, LTX-2, MiniMax H3 FL2VA). Send replaces the panel’s images;
+Append adds to them.</li>
+</ul>
+<p>Send Video, Use as Ref Video and Use as Conditioning Clip take either the name of a video already in the
+gallery or a video file, which is uploaded into the gallery first. Send Image and
+Append Image take only the name of an image already in the gallery.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="how-it-works">How it works</h2><a class="sl-anchor-link" href="#how-it-works"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “How it works”</span></a></div>
+<ol>
+<li><strong>Request</strong> — the client POSTs to one of the endpoints below.</li>
+<li><strong>Validation and resolution</strong> — model names are resolved to installed models,
+gallery media is checked for existence and read access, and uploads are
+ingested exactly as <code dir="auto">POST /api/v1/videos/upload</code> ingests them.</li>
+<li><strong>Event</strong> — the backend emits one <code dir="auto">video_recall_requested</code> socket event to the
+calling user’s own room. Other users, including administrators, do not receive
+it.</li>
+<li><strong>Frontend</strong> — the user’s open webv2 sessions apply the event to the Video
+panel of the project that was active when it arrived. See
+<a href="#frontend-behavior">Frontend behavior</a>. The legacy frontend ignores it.</li>
+</ol>
+<div class="sl-heading-wrapper level-h2"><h2 id="endpoints">Endpoints</h2><a class="sl-anchor-link" href="#endpoints"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Endpoints”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Endpoint</th><th>Body</th><th>Action</th></tr></thead><tbody><tr><td><code dir="auto">POST /api/v1/recall/video/{queue_id}</code></td><td>JSON parameters</td><td>Recall / Remix</td></tr><tr><td><code dir="auto">POST /api/v1/recall/video/{queue_id}/initial-video?video_name=…</code></td><td>none</td><td>Send a gallery video</td></tr><tr><td><code dir="auto">POST /api/v1/recall/video/{queue_id}/initial-video/upload</code></td><td>multipart <code dir="auto">file</code></td><td>Upload, then send</td></tr><tr><td><code dir="auto">POST /api/v1/recall/video/{queue_id}/reference-video?video_name=…</code></td><td>none</td><td>Use a gallery video as a reference</td></tr><tr><td><code dir="auto">POST /api/v1/recall/video/{queue_id}/reference-video/upload</code></td><td>multipart <code dir="auto">file</code></td><td>Upload, then use as a reference</td></tr><tr><td><code dir="auto">POST /api/v1/recall/video/{queue_id}/conditioning-video?video_name=…&#x26;role=…</code></td><td>none</td><td>Use a gallery video as the conditioning clip</td></tr><tr><td><code dir="auto">POST /api/v1/recall/video/{queue_id}/conditioning-video/upload?role=…</code></td><td>multipart <code dir="auto">file</code></td><td>Upload, then use as the conditioning clip</td></tr><tr><td><code dir="auto">POST /api/v1/recall/video/{queue_id}/image?image_name=…&#x26;append=…</code></td><td>none</td><td>Send or append a gallery image</td></tr></tbody></table>
+<p><code dir="auto">queue_id</code> is the frontend’s queue, normally <code dir="auto">default</code>.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="recall--remix">Recall / Remix</h3><a class="sl-anchor-link" href="#recall--remix"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Recall / Remix”</span></a></div>
+<p><code dir="auto">POST /api/v1/recall/video/{queue_id}</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Query parameter</th><th>Default</th><th>Meaning</th></tr></thead><tbody><tr><td><code dir="auto">mode</code></td><td><code dir="auto">recall</code></td><td><code dir="auto">recall</code> sends every field. <code dir="auto">remix</code> never sends <code dir="auto">seed</code>, and when the remix applies, a panel whose seed mode is <em>fixed</em> switches it to <em>random</em> so the next generation is a new take; <em>increment</em> and <em>decrement</em> are left as they are.</td></tr><tr><td><code dir="auto">strict</code></td><td><code dir="auto">false</code></td><td><code dir="auto">false</code> changes only the fields you send. <code dir="auto">true</code> treats the body as a whole generation record: LoRAs, media and a MiniMax H3 hybrid base you do not send are cleared, as the gallery’s <em>Recall All</em> does with a video’s own metadata.</td></tr></tbody></table>
+<p>Fields naming a model or medium that cannot be used are dropped and listed in the
+response’s <code dir="auto">skipped</code>; the rest are sent. So are trim bounds or a conditioning role
+whose medium was dropped. A LoRA or reference list whose every entry was dropped
+is left out entirely rather than sent empty, so it cannot clear the panel’s list.
+Unknown fields, and values outside the bounds below, are rejected with <code dir="auto">422</code>.</p>
+<p>Media fields in one request are read in the Video panel’s precedence, highest first:</p>
+<ol>
+<li><code dir="auto">ltx2_conditioning_video</code> — a whole-generation conditioning clip excludes every
+other medium, except that in the <code dir="auto">audio</code> role <code dir="auto">first_frame_image</code> and
+<code dir="auto">last_frame_image</code> ride alongside it to anchor the generated picture.</li>
+<li><code dir="auto">minimax_h3_references</code> (non-empty) — references replace the frame slots; a
+<code dir="auto">source_video</code> rides alongside them.</li>
+<li><code dir="auto">source_video</code> — an initial video replaces <code dir="auto">first_frame_image</code>, which extend
+mode takes from the clip itself.</li>
+<li><code dir="auto">first_frame_image</code>, <code dir="auto">last_frame_image</code>.</li>
+</ol>
+<p>A medium that a higher-precedence one in the same request excludes is not sent, and
+the response’s <code dir="auto">overridden</code> maps it to the field that won — for example
+<code dir="auto">{"first_frame_image": "source_video"}</code>. Only media that could be found take
+precedence: a <code dir="auto">source_video</code> that is missing from the gallery overrides nothing.
+Send only the fields you mean to set; the Swagger page offers minimal examples.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="send-video-use-as-ref-video-and-use-as-conditioning-clip">Send Video, Use as Ref Video and Use as Conditioning Clip</h3><a class="sl-anchor-link" href="#send-video-use-as-ref-video-and-use-as-conditioning-clip"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Send Video, Use as Ref Video and Use as Conditioning Clip”</span></a></div>
+<p>The conditioning-clip routes require a <code dir="auto">role</code> query parameter naming which stream of
+the video is the condition: <code dir="auto">audio</code> keeps its soundtrack and generates a picture for
+it (LTX-2 audio-to-video); <code dir="auto">video</code> keeps its picture and generates a soundtrack for it
+(video-to-audio). A missing or unknown <code dir="auto">role</code> is rejected with <code dir="auto">422</code> before any upload
+is read.</p>
+<p>The name-only routes take <code dir="auto">video_name</code> as a query parameter; the video must be in
+the gallery and readable by the caller.</p>
+<p>The <code dir="auto">/upload</code> routes take a <code dir="auto">multipart/form-data</code> body with the same shape as
+<code dir="auto">POST /api/v1/videos/upload</code>: a <code dir="auto">file</code> part and an optional <code dir="auto">metadata</code> part (a
+stringified JSON object). The file is ingested into the gallery — converted when
+it is not already a browser-safe MP4, with any metadata embedded in an
+InvokeAI-produced MP4 preserved — and announced to open galleries before it is
+placed. They accept an optional <code dir="auto">board_id</code> query parameter (the default is
+Uncategorized); uploading to a board requires permission to add media to it. They
+share the upload route’s size limit and concurrency slots, so a busy server can
+answer <code dir="auto">429</code> with a <code dir="auto">Retry-After</code> header.</p>
+<p>Whether the video is usable depends on the model selected in the panel, which is
+never switched on the caller’s behalf: an initial video needs a model that can
+extend a clip, a reference video needs a model that takes reference videos,
+with room for another, and a conditioning clip needs a model that generates in the
+requested role.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="send-image-and-append-image">Send Image and Append Image</h3><a class="sl-anchor-link" href="#send-image-and-append-image"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Send Image and Append Image”</span></a></div>
+<p><code dir="auto">POST /api/v1/recall/video/{queue_id}/image</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Query parameter</th><th>Default</th><th>Meaning</th></tr></thead><tbody><tr><td><code dir="auto">image_name</code></td><td>required</td><td>A gallery image the caller can read, 1–255 characters</td></tr><tr><td><code dir="auto">append</code></td><td><code dir="auto">false</code></td><td><code dir="auto">false</code> (Send) replaces the panel’s images; <code dir="auto">true</code> (Append) adds the image after them</td></tr></tbody></table>
+<p>The backend cannot know which model the user’s panel holds, so the response only
+confirms that the event was emitted to the user; where the image lands, or why it was
+declined, is reported to the user in the panel. See
+<a href="#frontend-behavior">Frontend behavior</a>. There is no upload variant: upload the image
+with <code dir="auto">POST /api/v1/images/upload</code> first, then send its name.</p>
+<p>Clients can feature-detect this route by looking for the <code dir="auto">recall_video_image</code>
+operation in <code dir="auto">/openapi.json</code>.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="frontend-behavior">Frontend behavior</h2><a class="sl-anchor-link" href="#frontend-behavior"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Frontend behavior”</span></a></div>
+<p>webv2 applies each event, in arrival order, to the Video panel of the project that
+was active when the event arrived. Video recall events are ordered among themselves;
+image recall events (<code dir="auto">POST /api/v1/recall</code>) are ordered separately. A notification
+reports each change applied or declined. An event whose project was closed before it
+could be applied is dropped. When something was applied and that project is still on
+screen, the Video widget is brought to the front: its tab is selected (expanding its
+region and opening its panel), a floating window is raised (and unrolled if shaded)
+rather than docked, and
+the widget is opened if the layout has none. Nothing moves while the user is typing
+in a text field; the notification still reports the change.</p>
+<ul>
+<li>
+<p><strong>Recall / Remix</strong> runs the same mapping as the gallery’s <em>Recall All</em> and
+<em>Remix Video</em>: the model is resolved against the installed catalog (switching
+family resets frames, fps and resolution to the new model’s grid before the
+sent values land), frames snap to the model’s grid, <code dir="auto">width</code>/<code dir="auto">height</code> are applied
+only when they match one of the model’s resolution presets, and media names are
+looked up in the gallery for their dimensions, with missing ones dropped. Without
+<code dir="auto">strict</code>, the panel keeps the media you do not send. A medium you send fills its
+slot and displaces only the slots it conflicts with (an initial video and a first
+frame are exclusive; references displace the frame slots), and a
+<code dir="auto">minimax_h3_references</code> list replaces the panel’s references. Media the panel’s
+model cannot use is ignored rather than displacing anything. On a Ref2VA panel that
+extends from its references, the initial video keeps its continuity reference
+through either change, as the <em>Initial Video</em> field keeps it, or is removed when a
+sent reference list leaves no video slot for it.</p>
+</li>
+<li>
+<p><strong>Send Video</strong> does what dropping the clip on the panel’s <em>Initial Video</em> field
+does. On a MiniMax H3 Ref2VA panel that extends from its references, the clip’s
+continuity reference is linked into the references, and the request is declined
+when all three video reference slots are taken. On a model that cannot extend a
+clip, the video is still set and the notification says it will go unused.</p>
+</li>
+<li>
+<p><strong>Use as Ref Video</strong> appends the video with the defaults the <em>References</em> field
+gives a new video: soundtrack-only conditioning for an uploaded audio file,
+otherwise video and audio from a short sample of the clip. It is declined when
+the panel’s model takes no reference videos or all its video slots are taken.</p>
+</li>
+<li>
+<p><strong>Use as Conditioning Clip</strong> sets the panel’s <em>Conditioning Clip</em> in the requested
+role; the whole clip is used. A conditioning clip excludes the initial video and
+the references, and in the <code dir="auto">video</code> role the first and last frames as well, so
+where the panel’s own field waits for you to clear them, this action clears them
+itself, and the notification says so when there were any. In the <code dir="auto">audio</code> role the
+first and last frames are kept: they anchor the picture generated for the
+soundtrack. It replaces a conditioning clip the
+panel already holds. It is declined, leaving the panel alone, when the panel’s
+model cannot generate in that role, and in the <code dir="auto">video</code> role for an uploaded audio
+file, whose picture is only a placeholder. Other settings are not changed to fit
+the clip: a two-stage resolution, or a clip whose length falls outside the
+model’s frame range, still has to be fixed before the panel can generate.</p>
+</li>
+<li>
+<p><strong>Send Image / Append Image</strong> place the image according to the panel’s model,
+which is never switched to make it fit:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Panel model</th><th>Send (<code dir="auto">append=false</code>)</th><th>Append (<code dir="auto">append=true</code>)</th></tr></thead><tbody><tr><td>Takes reference images (MiniMax H3 Ref2VA)</td><td>Replaces the reference images; reference videos stay</td><td>Added after the references; declined when all nine image slots are taken</td></tr><tr><td>Takes frames (Wan I2V, LTX-2, MiniMax H3 FL2VA)</td><td>Becomes the first frame; the last frame is cleared</td><td>Fills the first frame when it is empty, otherwise the last frame; declined once both are set, or once the first is set on a model without a last frame</td></tr><tr><td>Takes no images (e.g. Wan T2V)</td><td>Declined</td><td>Declined</td></tr></tbody></table>
+<p>Placement follows the panel’s own fields. A reference image displaces the frame
+slots and a conditioning clip, and the initial video too unless the panel
+extends from its references, in which case the clip’s continuity reference stays
+last. A first frame displaces the initial video, and an initial video counts as
+the first frame when appending. A frame displaces a conditioning clip in the
+<code dir="auto">video</code> role; a clip in the <code dir="auto">audio</code> role stays, anchored by the frame. When
+placing the image clears a conditioning clip or an initial video, the
+notification says so.</p>
+</li>
+</ul>
+<p>The gallery’s context menu offers the same <em>Extend in Video</em>, <em>Use as Reference
+Video</em> and <em>Use as Conditioning Clip</em> actions for any video in the gallery.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="request-schema">Request schema</h2><a class="sl-anchor-link" href="#request-schema"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Request schema”</span></a></div>
+<p>Field names are the keys of the video metadata record described in
+<a href="/development/architecture/media-metadata/">Media Metadata</a>. The request is not a
+record, though: models are given by name, LoRAs as <code dir="auto">model_name</code>, and record-only
+keys such as <code dir="auto">generation_mode</code>, <code dir="auto">metadata_version</code> or <code dir="auto">app_version</code> are rejected.
+Every field is optional.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="scalars">Scalars</h3><a class="sl-anchor-link" href="#scalars"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Scalars”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Type</th><th>Notes</th></tr></thead><tbody><tr><td><code dir="auto">positive_prompt</code></td><td>string</td><td></td></tr><tr><td><code dir="auto">negative_prompt</code></td><td>string or <code dir="auto">null</code></td><td>An explicit <code dir="auto">null</code> turns the negative prompt off</td></tr><tr><td><code dir="auto">seed</code></td><td>integer, 0 – 4294967295</td><td>Never sent when <code dir="auto">mode=remix</code></td></tr><tr><td><code dir="auto">num_frames</code></td><td>integer ≥ 1</td><td></td></tr><tr><td><code dir="auto">fps</code></td><td>integer, 1 – 120</td><td></td></tr><tr><td><code dir="auto">width</code>, <code dir="auto">height</code></td><td>integer ≥ 1</td><td></td></tr><tr><td><code dir="auto">steps</code></td><td>integer ≥ 1</td><td></td></tr><tr><td><code dir="auto">cfg_scale</code></td><td>number ≥ 1</td><td></td></tr><tr><td><code dir="auto">wan_guidance_scale_low_noise</code></td><td>number ≥ 1</td><td>Wan A14B low-noise expert</td></tr><tr><td><code dir="auto">ltx2_audio_cfg_scale</code>, <code dir="auto">ltx2_modality_scale</code></td><td>number ≥ 1</td><td>LTX-2 guidance</td></tr><tr><td><code dir="auto">ltx2_stg_scale</code></td><td>number ≥ 0</td><td>LTX-2 spatiotemporal guidance</td></tr><tr><td><code dir="auto">ltx2_context_frames</code></td><td>integer ≥ 1</td><td>LTX-2 extension context</td></tr><tr><td><code dir="auto">minimax_h3_hybrid_start_block</code></td><td>integer ≥ 0</td><td>MiniMax H3 Ref2VA hybrid</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="models">Models</h3><a class="sl-anchor-link" href="#models"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Models”</span></a></div>
+<p>Each model field takes an installed model’s <strong>key</strong> or <strong>name</strong> (1–255
+characters). Only a model of the slot’s type and family fills a slot: a name
+shared with models of other families resolves to the one that fits, and a model
+from the wrong family is skipped.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Model type</th><th>Family</th></tr></thead><tbody><tr><td><code dir="auto">model</code></td><td>main</td><td>Wan, MiniMax H3 or LTX-2</td></tr><tr><td><code dir="auto">vae</code></td><td>VAE</td><td>Wan</td></tr><tr><td><code dir="auto">wan_t5_encoder_model</code></td><td>Wan UMT5 encoder</td><td>any</td></tr><tr><td><code dir="auto">wan_transformer_low_noise</code>, <code dir="auto">wan_component_source</code></td><td>main</td><td>Wan</td></tr><tr><td><code dir="auto">minimax_h3_transformer_model</code>, <code dir="auto">minimax_h3_component_source</code>, <code dir="auto">minimax_h3_hybrid_base_model</code></td><td>main</td><td>MiniMax H3</td></tr><tr><td><code dir="auto">minimax_h3_text_encoder_model</code></td><td>Qwen3-VL encoder</td><td>MiniMax H3</td></tr><tr><td><code dir="auto">ltx2_component_source</code></td><td>main</td><td>LTX-2</td></tr><tr><td><code dir="auto">ltx2_text_encoder_model</code></td><td>Gemma-4 encoder</td><td>LTX-2</td></tr><tr><td><code dir="auto">loras</code></td><td>up to 32 of <code dir="auto">{ "model_name": str, "weight": number = 1.0 }</code></td><td>Wan, MiniMax H3 or LTX-2</td></tr></tbody></table>
+<p>An empty <code dir="auto">loras</code> list asks for no LoRAs.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="media">Media</h3><a class="sl-anchor-link" href="#media"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Media”</span></a></div>
+<p>Media is named by its gallery name.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Shape</th></tr></thead><tbody><tr><td><code dir="auto">first_frame_image</code>, <code dir="auto">last_frame_image</code></td><td><code dir="auto">{ "image_name": str }</code></td></tr><tr><td><code dir="auto">source_video</code></td><td><code dir="auto">{ "video_name": str }</code> — the initial video</td></tr><tr><td><code dir="auto">source_video_start_frame</code>, <code dir="auto">source_video_end_frame</code></td><td>integers, both or neither, start ≤ end; inclusive trim of <code dir="auto">source_video</code></td></tr><tr><td><code dir="auto">ltx2_conditioning_video</code></td><td><code dir="auto">{ "video_name": str }</code>; requires <code dir="auto">ltx2_conditioning_role</code></td></tr><tr><td><code dir="auto">ltx2_conditioning_role</code></td><td><code dir="auto">"audio"</code> or <code dir="auto">"video"</code>; requires <code dir="auto">ltx2_conditioning_video</code></td></tr><tr><td><code dir="auto">minimax_h3_references</code></td><td>in conditioning order, up to 3 of <code dir="auto">{ "kind": "video", "video_name": str, "conditioning"?: "video_audio" | "video" | "audio", "start_frame"?: int, "end_frame"?: int }</code> (trim bounds both or neither) and up to 9 of <code dir="auto">{ "kind": "image", "image_name": str, "detail"?: "max" | "match" }</code>. An empty list asks for no references.</td></tr></tbody></table>
+<p>Referencing media the caller may not read is refused with <code dir="auto">403</code>.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="examples">Examples</h2><a class="sl-anchor-link" href="#examples"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Examples”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="curl">cURL</h3><a class="sl-anchor-link" href="#curl"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “cURL”</span></a></div>
+<div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.w36nc.css"><script type="module" src="/_astro/ec.0vx5m.js"></script><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Recall a Wan setup</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">curl</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">-X</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">POST</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">http://localhost:9090/api/v1/recall/video/default</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#F78C6C;--1:#AA0982">\</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#82AAFF;--1:#3B61B0">-H</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Content-Type: application/json</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#F78C6C;--1:#AA0982">\</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#82AAFF;--1:#3B61B0">-d</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">{</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#ECC48D;--1:#984E4D">        </span></span><span style="--0:#ECC48D;--1:#984E4D">"positive_prompt": "a heron takes flight over a misty lake",</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#ECC48D;--1:#984E4D">        </span></span><span style="--0:#ECC48D;--1:#984E4D">"model": "Wan 2.2 I2V A14B",</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#ECC48D;--1:#984E4D">        </span></span><span style="--0:#ECC48D;--1:#984E4D">"num_frames": 81,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#ECC48D;--1:#984E4D">        </span></span><span style="--0:#ECC48D;--1:#984E4D">"steps": 30,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#ECC48D;--1:#984E4D">        </span></span><span style="--0:#ECC48D;--1:#984E4D">"seed": 1234,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#ECC48D;--1:#984E4D">        </span></span><span style="--0:#ECC48D;--1:#984E4D">"loras": [{"model_name": "Wan Lightning High Noise", "weight": 1.0}],</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#ECC48D;--1:#984E4D">        </span></span><span style="--0:#ECC48D;--1:#984E4D">"first_frame_image": {"image_name": "0b6f…png"}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#ECC48D;--1:#984E4D">      </span></span><span style="--0:#ECC48D;--1:#984E4D">}</span><span style="--0:#D9F5DD;--1:#111111">'</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Remix: the seed is never sent, and a fixed seed mode becomes random</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">curl</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">-X</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">POST</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">http://localhost:9090/api/v1/recall/video/default?mode=remix</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#F78C6C;--1:#AA0982">\</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#82AAFF;--1:#3B61B0">-H</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Content-Type: application/json</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#F78C6C;--1:#AA0982">\</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#82AAFF;--1:#3B61B0">-d</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">{"positive_prompt": "a heron lands on a misty lake", "model": "Wan 2.2 I2V A14B"}</span><span style="--0:#D9F5DD;--1:#111111">'</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Send a gallery video to Initial Video</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">curl</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">-X</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">POST</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">http://localhost:9090/api/v1/recall/video/default/initial-video?video_name=4c1e….mp4</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Upload a clip onto a board and use it as a Ref2VA reference</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">curl</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">-X</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">POST</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">http://localhost:9090/api/v1/recall/video/default/reference-video/upload?board_id=&#x3C;board-id></span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#F78C6C;--1:#AA0982">\</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#82AAFF;--1:#3B61B0">-F</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">file=@dance.mp4</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Generate an LTX-2 picture for a song's soundtrack</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">curl</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">-X</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">POST</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">http://localhost:9090/api/v1/recall/video/default/conditioning-video/upload?role=audio</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#F78C6C;--1:#AA0982">\</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#82AAFF;--1:#3B61B0">-F</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">file=@song.mp3</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Use a gallery image as the first frame, then append another as the last frame</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">curl</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">-X</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">POST</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">http://localhost:9090/api/v1/recall/video/default/image?image_name=0b6f….png</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">curl</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">-X</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">POST</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">http://localhost:9090/api/v1/recall/video/default/image?image_name=9d2a….png&#x26;append=true</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X POST http://localhost:9090/api/v1/recall/video/default \  -H &#x22;Content-Type: application/json&#x22; \  -d &#x27;{        &#x22;positive_prompt&#x22;: &#x22;a heron takes flight over a misty lake&#x22;,        &#x22;model&#x22;: &#x22;Wan 2.2 I2V A14B&#x22;,        &#x22;num_frames&#x22;: 81,        &#x22;steps&#x22;: 30,        &#x22;seed&#x22;: 1234,        &#x22;loras&#x22;: [{&#x22;model_name&#x22;: &#x22;Wan Lightning High Noise&#x22;, &#x22;weight&#x22;: 1.0}],        &#x22;first_frame_image&#x22;: {&#x22;image_name&#x22;: &#x22;0b6f…png&#x22;}      }&#x27;curl -X POST &#x22;http://localhost:9090/api/v1/recall/video/default?mode=remix&#x22; \  -H &#x22;Content-Type: application/json&#x22; \  -d &#x27;{&#x22;positive_prompt&#x22;: &#x22;a heron lands on a misty lake&#x22;, &#x22;model&#x22;: &#x22;Wan 2.2 I2V A14B&#x22;}&#x27;curl -X POST &#x22;http://localhost:9090/api/v1/recall/video/default/initial-video?video_name=4c1e….mp4&#x22;curl -X POST &#x22;http://localhost:9090/api/v1/recall/video/default/reference-video/upload?board_id=<board-id>&#x22; \  -F &#x22;file=@dance.mp4&#x22;curl -X POST &#x22;http://localhost:9090/api/v1/recall/video/default/conditioning-video/upload?role=audio&#x22; \  -F &#x22;file=@song.mp3&#x22;curl -X POST &#x22;http://localhost:9090/api/v1/recall/video/default/image?image_name=0b6f….png&#x22;curl -X POST &#x22;http://localhost:9090/api/v1/recall/video/default/image?image_name=9d2a….png&#x26;append=true&#x22;"><div></div></button></div></figure></div>
+<p>In multi-user mode, add <code dir="auto">-H "Authorization: Bearer &#x3C;token>"</code>.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="python">Python</h3><a class="sl-anchor-link" href="#python"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Python”</span></a></div>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">import</span><span style="--0:#D6DEEB;--1:#403F53"> requests</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">BASE</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8844AE">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">http://localhost:9090/api/v1/recall/video/default</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">response </span><span style="--0:#C792EA;--1:#8844AE">=</span><span style="--0:#D6DEEB;--1:#403F53"> requests.</span><span style="--0:#B2CCD6;--1:#096E72">post</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3B61B0">BASE</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D7DBE0;--1:#403F53">json</span><span style="--0:#C792EA;--1:#8844AE">=</span><span style="--0:#82AAFF;--1:#3B61B0">{</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">positive_prompt</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#82AAFF;--1:#3B61B0">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">neon city at night</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#82AAFF;--1:#3B61B0">, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">model</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#82AAFF;--1:#3B61B0">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">LTX-2.3 Distilled</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#82AAFF;--1:#3B61B0">}</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">print</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3B61B0">response.</span><span style="--0:#B2CCD6;--1:#096E72">json</span><span style="--0:#D6DEEB;--1:#403F53">()</span><span style="--0:#D9F5DD;--1:#111111">[</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">skipped</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D9F5DD;--1:#111111">]</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">with</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">open</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">dance.mp4</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">rb</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">) </span><span style="--0:#C792EA;--1:#8844AE">as</span><span style="--0:#D6DEEB;--1:#403F53"> clip:</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">response </span><span style="--0:#C792EA;--1:#8844AE">=</span><span style="--0:#D6DEEB;--1:#403F53"> requests.</span><span style="--0:#B2CCD6;--1:#096E72">post</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#C792EA;--1:#8844AE">f</span><span style="--0:#ECC48D;--1:#984E4D">"</span><span style="--0:#82AAFF;--1:#3B61B0">{BASE}</span><span style="--0:#ECC48D;--1:#984E4D">/reference-video/upload"</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D7DBE0;--1:#403F53">files</span><span style="--0:#C792EA;--1:#8844AE">=</span><span style="--0:#82AAFF;--1:#3B61B0">{</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">file</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#82AAFF;--1:#3B61B0">: (</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">dance.mp4</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#82AAFF;--1:#3B61B0">, clip, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">video/mp4</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#82AAFF;--1:#3B61B0">)}</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">print</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3B61B0">response.</span><span style="--0:#B2CCD6;--1:#096E72">json</span><span style="--0:#D6DEEB;--1:#403F53">()</span><span style="--0:#D9F5DD;--1:#111111">[</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">video</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D9F5DD;--1:#111111">][</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">video_name</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D9F5DD;--1:#111111">]</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="import requestsBASE = &#x22;http://localhost:9090/api/v1/recall/video/default&#x22;response = requests.post(BASE, json={&#x22;positive_prompt&#x22;: &#x22;neon city at night&#x22;, &#x22;model&#x22;: &#x22;LTX-2.3 Distilled&#x22;})print(response.json()[&#x22;skipped&#x22;])with open(&#x22;dance.mp4&#x22;, &#x22;rb&#x22;) as clip:    response = requests.post(f&#x22;{BASE}/reference-video/upload&#x22;, files={&#x22;file&#x22;: (&#x22;dance.mp4&#x22;, clip, &#x22;video/mp4&#x22;)})print(response.json()[&#x22;video&#x22;][&#x22;video_name&#x22;])"><div></div></button></div></figure></div>
+<div class="sl-heading-wrapper level-h2"><h2 id="responses">Responses</h2><a class="sl-anchor-link" href="#responses"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Responses”</span></a></div>
+<p>Recall / Remix:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#7FDBCA;--1:#096E72">"status"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">success</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#7FDBCA;--1:#096E72">"queue_id"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">default</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#7FDBCA;--1:#096E72">"parameters"</span><span style="--0:#D6DEEB;--1:#403F53">: { </span><span style="--0:#7FDBCA;--1:#096E72">"positive_prompt"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">…</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"model"</span><span style="--0:#D6DEEB;--1:#403F53">: { </span><span style="--0:#7FDBCA;--1:#096E72">"key"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">…</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"hash"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">…</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">…</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"base"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">wan</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"type"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">main</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> } },</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#7FDBCA;--1:#096E72">"skipped"</span><span style="--0:#D6DEEB;--1:#403F53">: [</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">loras[1]</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">],</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#7FDBCA;--1:#096E72">"overridden"</span><span style="--0:#D6DEEB;--1:#403F53">: {}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &#x22;status&#x22;: &#x22;success&#x22;,  &#x22;queue_id&#x22;: &#x22;default&#x22;,  &#x22;parameters&#x22;: { &#x22;positive_prompt&#x22;: &#x22;…&#x22;, &#x22;model&#x22;: { &#x22;key&#x22;: &#x22;…&#x22;, &#x22;hash&#x22;: &#x22;…&#x22;, &#x22;name&#x22;: &#x22;…&#x22;, &#x22;base&#x22;: &#x22;wan&#x22;, &#x22;type&#x22;: &#x22;main&#x22; } },  &#x22;skipped&#x22;: [&#x22;loras[1]&#x22;],  &#x22;overridden&#x22;: {}}"><div></div></button></div></figure></div>
+<p><code dir="auto">status</code> is <code dir="auto">no_parameters_provided</code> for an empty body and <code dir="auto">nothing_resolved</code>
+when every field was dropped; no event is emitted in either case. <code dir="auto">parameters</code> is
+exactly what the frontend receives. <code dir="auto">skipped</code> lists fields whose model or medium
+could not be used; <code dir="auto">overridden</code> maps media fields that lost to a higher-precedence
+medium in the same request to the field that won.</p>
+<p>Send Video / Use as Ref Video / Use as Conditioning Clip:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"status"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">success</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"queue_id"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">default</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"action"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">reference_video</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"video"</span><span style="--0:#D6DEEB;--1:#403F53">: { </span><span style="--0:#7FDBCA;--1:#096E72">"video_name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">…</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"…"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">…</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> }, </span><span style="--0:#7FDBCA;--1:#096E72">"uploaded"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#FF6A83;--1:#A24848">true</span><span style="--0:#D6DEEB;--1:#403F53"> }</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{ &#x22;status&#x22;: &#x22;success&#x22;, &#x22;queue_id&#x22;: &#x22;default&#x22;, &#x22;action&#x22;: &#x22;reference_video&#x22;, &#x22;video&#x22;: { &#x22;video_name&#x22;: &#x22;…&#x22;, &#x22;…&#x22;: &#x22;…&#x22; }, &#x22;uploaded&#x22;: true }"><div></div></button></div></figure></div>
+<p><code dir="auto">video</code> is the gallery video’s full record.</p>
+<p>Send Image / Append Image:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"status"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">success</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"queue_id"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">default</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"image"</span><span style="--0:#D6DEEB;--1:#403F53">: { </span><span style="--0:#7FDBCA;--1:#096E72">"image_name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">…</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"width"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">832</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"height"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">480</span><span style="--0:#D6DEEB;--1:#403F53"> }, </span><span style="--0:#7FDBCA;--1:#096E72">"append"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#FF6A83;--1:#A24848">false</span><span style="--0:#D6DEEB;--1:#403F53"> }</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{ &#x22;status&#x22;: &#x22;success&#x22;, &#x22;queue_id&#x22;: &#x22;default&#x22;, &#x22;image&#x22;: { &#x22;image_name&#x22;: &#x22;…&#x22;, &#x22;width&#x22;: 832, &#x22;height&#x22;: 480 }, &#x22;append&#x22;: false }"><div></div></button></div></figure></div>
+<p><code dir="auto">success</code> means the event was emitted to the user’s open sessions. It is not an
+acknowledgement: nothing is placed when no webv2 session is open, and a decline is
+reported only in the panel.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="errors">Errors</h2><a class="sl-anchor-link" href="#errors"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Errors”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Status</th><th>Cause</th></tr></thead><tbody><tr><td><code dir="auto">401</code></td><td>Multi-user mode without a valid token</td></tr><tr><td><code dir="auto">400</code></td><td>The upload ended before its body was complete</td></tr><tr><td><code dir="auto">403</code></td><td>The caller may not read a referenced image or video, or may not add media to <code dir="auto">board_id</code></td></tr><tr><td><code dir="auto">404</code></td><td><code dir="auto">video_name</code> (Send Video / Use as Ref Video / Use as Conditioning Clip) or <code dir="auto">image_name</code> (Send Image / Append Image) is not in the gallery, or <code dir="auto">board_id</code> does not exist</td></tr><tr><td><code dir="auto">409</code></td><td>Image storage maintenance is running (Recall / Remix, Send Image / Append Image)</td></tr><tr><td><code dir="auto">413</code></td><td>The upload exceeds the video upload size limit</td></tr><tr><td><code dir="auto">415</code></td><td>The upload is not a supported video or audio file, or could not be converted</td></tr><tr><td><code dir="auto">422</code></td><td>Malformed JSON or multipart body, an unknown field, a value out of bounds, a missing or unknown <code dir="auto">role</code> (Use as Conditioning Clip), or <code dir="auto">metadata</code> that is not a JSON object</td></tr><tr><td><code dir="auto">429</code></td><td>Too many concurrent video uploads</td></tr><tr><td><code dir="auto">500</code></td><td>The uploaded video could not be stored</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h2"><h2 id="websocket-event">WebSocket event</h2><a class="sl-anchor-link" href="#websocket-event"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “WebSocket event”</span></a></div>
+<p><code dir="auto">video_recall_requested</code>, delivered once to the calling user’s room:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead><tbody><tr><td><code dir="auto">queue_id</code></td><td>string</td><td>From the request path</td></tr><tr><td><code dir="auto">user_id</code></td><td>string</td><td>The caller</td></tr><tr><td><code dir="auto">action</code></td><td><code dir="auto">"parameters"</code> | <code dir="auto">"initial_video"</code> | <code dir="auto">"reference_video"</code> | <code dir="auto">"conditioning_video"</code> | <code dir="auto">"image"</code></td><td>What to do</td></tr><tr><td><code dir="auto">mode</code></td><td><code dir="auto">"recall"</code> | <code dir="auto">"remix"</code> | null</td><td><code dir="auto">parameters</code> only</td></tr><tr><td><code dir="auto">strict</code></td><td>boolean</td><td><code dir="auto">parameters</code> only</td></tr><tr><td><code dir="auto">parameters</code></td><td>object | null</td><td><code dir="auto">parameters</code> only: the resolved fields, with models as <code dir="auto">{key, hash, name, base, type}</code></td></tr><tr><td><code dir="auto">video</code></td><td>object | null</td><td>Video placements only: <code dir="auto">{video_name, width, height, duration, fps, media_origin}</code></td></tr><tr><td><code dir="auto">conditioning_role</code></td><td><code dir="auto">"audio"</code> | <code dir="auto">"video"</code> | null</td><td><code dir="auto">conditioning_video</code> only: which stream of <code dir="auto">video</code> is the condition</td></tr><tr><td><code dir="auto">image</code></td><td>object | null</td><td><code dir="auto">image</code> only: <code dir="auto">{image_name, width, height}</code></td></tr><tr><td><code dir="auto">append</code></td><td>boolean</td><td><code dir="auto">image</code> only: add to the panel’s images instead of replacing them; always <code dir="auto">false</code> for other actions</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h2"><h2 id="implementation">Implementation</h2><a class="sl-anchor-link" href="#implementation"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Implementation”</span></a></div>
+<ul>
+<li>Router: <code dir="auto">invokeai/app/api/routers/video_recall.py</code></li>
+<li>Upload ingest shared with <code dir="auto">/videos/upload</code>: <code dir="auto">ingest_uploaded_video</code> in <code dir="auto">invokeai/app/api/routers/videos.py</code></li>
+<li>Upload limits: <code dir="auto">VideoUploadLimitASGIMiddleware</code> in <code dir="auto">invokeai/app/api_app.py</code></li>
+<li>Event: <code dir="auto">VideoRecallRequestedEvent</code> in <code dir="auto">invokeai/app/services/events/events_common.py</code>; routing in <code dir="auto">invokeai/app/api/sockets.py</code></li>
+<li>Tests: <code dir="auto">tests/app/routers/test_video_recall.py</code></li>
+</ul></div><footer class="sl-flex astro-kxhlr25s"><div class="meta sl-flex astro-kxhlr25s"><a href="https://github.com/invoke-ai/InvokeAI/edit/main/docs/src/content/docs/development/Guides/video-recall-api.mdx" class="sl-flex print:hidden astro-7c4khlgo"><svg aria-hidden="true" class="astro-7c4khlgo astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.2em;"><path d="M22 7.24a1 1 0 0 0-.29-.71l-4.24-4.24a1 1 0 0 0-1.1-.22 1 1 0 0 0-.32.22l-2.83 2.83L2.29 16.05a1 1 0 0 0-.29.71V21a1 1 0 0 0 1 1h4.24a1 1 0 0 0 .76-.29l10.87-10.93L21.71 8c.1-.1.17-.2.22-.33a1 1 0 0 0 0-.24v-.14l.07-.05ZM6.83 20H4v-2.83l9.93-9.93 2.83 2.83L6.83 20ZM18.17 8.66l-2.83-2.83 1.42-1.41 2.82 2.82-1.41 1.42Z"/></svg>Edit page</a></div><div class="pagination-links print:hidden astro-i5o6fzs2" dir="ltr"><a href="/development/guides/tests/" rel="prev" class="astro-i5o6fzs2"><svg aria-hidden="true" class="astro-i5o6fzs2 astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-i5o6fzs2">Previous<br class="astro-i5o6fzs2"><span class="link-title astro-i5o6fzs2">Writing Tests</span></span></a><a href="/development/guides/workflow-api/" rel="next" class="astro-i5o6fzs2"><svg aria-hidden="true" class="astro-i5o6fzs2 astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg><span class="astro-i5o6fzs2">Next<br class="astro-i5o6fzs2"><span class="link-title astro-i5o6fzs2">Workflow Execution API</span></span></a></div></footer><div class="built-by astro-jcegb7pj">This site was designed and developed by <a target="_blank" rel="noreferrer noopener" href="https://aetherfox.studio" class="astro-jcegb7pj">Aether Fox Studio</a>.</div></div></div></main></div></div></div></div></body></html>

@@ -1,0 +1,1039 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-egzmvxx6"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Releases | InvokeAI Documentation</title><link rel="canonical" href="https://v7.invoke.ai/releases/5/"/><link rel="sitemap" href="/sitemap-index.xml"/><script async src="https://plausible.tracking.events/js/pa-BHcumuOemKz4XIQeWkTn4.js"></script><script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script><link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v7.3.8"/><meta name="generator" content="Starlight v0.42.6"/><meta property="og:title" content="Releases"/><meta property="og:type" content="article"/><meta property="og:url" content="https://v7.invoke.ai/releases/5/"/><meta property="og:locale" content="en"/><meta property="og:site_name" content="InvokeAI Documentation"/><meta property="og:image" content="https://v7.invoke.ai/coverimage.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://v7.invoke.ai/coverimage.png"/><script>
+  document.documentElement.dataset.theme = 'dark';
+</script><link rel="stylesheet" href="/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/_astro/middleware.B7Y_Cbl_.css"><style>a:where(.astro-iwmmvj7n){text-decoration:none}h2:where(.astro-iwmmvj7n) .sl-badge{font-size:var(--sl-text-sm);overflow-wrap:anywhere}time:where(.astro-iwmmvj7n){color:var(--sl-color-text);font-size:var(--sl-text-sm)}form:where(.astro-qwp2xddu){position:relative}.sl-changelogs-version-list-icon:where(.astro-qwp2xddu){position:absolute;inset-block:50%;inset-inline-start:.625rem;transform:translateY(-50%)}input:where(.astro-qwp2xddu){background-color:var(--sl-color-black);background-color:var(--sl-color-gray-7,var(--sl-color-gray-6));border:1px solid var(--sl-color-gray-5);color:var(--sl-color-white);font-size:var(--sl-text-sm);border-radius:.375rem;width:100%;height:2.5rem;padding-inline:2rem .5rem;line-height:1rem}input:where(.astro-qwp2xddu)::placeholder{color:var(--sl-color-gray-2)}.links:where(.astro-huz6mszq){flex-wrap:wrap;gap:.75rem;margin-block-start:1rem}.links:where(.astro-huz6mszq) a{font-size:var(--sl-text-sm);margin-block:0;margin-inline-end:0;padding:.4375rem 1.125rem}.links:where(.astro-huz6mszq) a:not(:is(:hover,:focus)){color:var(--sl-color-text)}a:where(.astro-huz6mszq).compare svg{transform:rotate(135deg)}
+@layer starlight.components{.card:where(.astro-ulqgfn7p){--sl-card-border:var(--sl-color-purple);--sl-card-bg:var(--sl-color-purple-low);border:1px solid var(--sl-color-gray-5);background-color:var(--sl-color-black);flex-direction:column;gap:clamp(.5rem,.125rem + 1vw,1rem);padding:clamp(1rem,.125rem + 3vw,2.5rem)}.card:where(.astro-ulqgfn7p):nth-child(4n+1){--sl-card-border:var(--sl-color-orange);--sl-card-bg:var(--sl-color-orange-low)}.card:where(.astro-ulqgfn7p):nth-child(4n+3){--sl-card-border:var(--sl-color-green);--sl-card-bg:var(--sl-color-green-low)}.card:where(.astro-ulqgfn7p):nth-child(4n+4){--sl-card-border:var(--sl-color-red);--sl-card-bg:var(--sl-color-red-low)}.card:where(.astro-ulqgfn7p):nth-child(4n+5){--sl-card-border:var(--sl-color-blue);--sl-card-bg:var(--sl-color-blue-low)}.title:where(.astro-ulqgfn7p){font-weight:600;font-size:var(--sl-text-h4);color:var(--sl-color-white);line-height:var(--sl-line-height-headings);align-items:center;gap:1rem}.card:where(.astro-ulqgfn7p) .icon:where(.astro-ulqgfn7p){border:1px solid var(--sl-card-border);background-color:var(--sl-card-bg);border-radius:.25rem;flex-shrink:0;padding:.2em}.card:where(.astro-ulqgfn7p) .body:where(.astro-ulqgfn7p){font-size:clamp(var(--sl-text-sm), calc(.5rem + 1vw), var(--sl-text-body));margin:0}}
+@layer starlight.components{.card-grid:where(.astro-vyghc5d5){grid-template-columns:100%;gap:1rem;display:grid}.card-grid:where(.astro-vyghc5d5)>*{margin-top:0!important}@media (width>=50rem){.card-grid:where(.astro-vyghc5d5){grid-template-columns:1fr 1fr;gap:1.5rem}.stagger:where(.astro-vyghc5d5){--stagger-height:5rem;padding-bottom:var(--stagger-height)}.stagger:where(.astro-vyghc5d5)>:nth-child(2n){transform:translateY(var(--stagger-height))}}}
+@layer starlight.components{svg:where(.astro-wion3bmv){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em;overflow:visible}}
+@layer starlight.components{starlight-tabs:where(.astro-mis2yvt6){display:block}.tablist-wrapper:where(.astro-mis2yvt6){overflow-x:auto}:where(.astro-mis2yvt6)[role=tablist]{border-bottom:2px solid var(--sl-color-gray-5);padding:0;list-style:none;display:flex}.tab:where(.astro-mis2yvt6){display:flex}.tab:where(.astro-mis2yvt6)>:where(.astro-mis2yvt6)[role=tab]{--sl-tab-color-border:var(--sl-color-gray-5);line-height:var(--sl-line-height-headings);box-shadow:0 2px 0 var(--sl-tab-color-border);color:var(--sl-color-gray-3);outline-offset:var(--sl-outline-offset-inside);overflow-wrap:initial;align-items:center;gap:.5rem;padding:.275rem 1.25rem;text-decoration:none;display:flex}.tab:where(.astro-mis2yvt6) :where(.astro-mis2yvt6)[role=tab][aria-selected=true]{--sl-tab-color-border:var(--sl-color-text-accent);color:var(--sl-color-white);font-weight:600}.tablist-wrapper:where(.astro-mis2yvt6)~[role=tabpanel]{margin-top:1rem}}
+@layer starlight.components{.sl-link-card:where(.astro-vo4ugy7i){border:1px solid var(--sl-color-gray-5);box-shadow:var(--sl-shadow-sm);border-radius:.5rem;grid-template-columns:1fr auto;gap:.5rem;padding:1rem;display:grid;position:relative}a:where(.astro-vo4ugy7i){line-height:var(--sl-line-height-headings);text-decoration:none}a:where(.astro-vo4ugy7i):before{content:"";position:absolute;inset:0}.stack:where(.astro-vo4ugy7i){flex-direction:column;gap:.5rem}.title:where(.astro-vo4ugy7i){color:var(--sl-color-white);font-weight:600;font-size:var(--sl-text-lg)}.description:where(.astro-vo4ugy7i){color:var(--sl-color-gray-3);line-height:1.5}.icon:where(.astro-vo4ugy7i){color:var(--sl-color-gray-3)}.sl-link-card:where(.astro-vo4ugy7i):hover{background:var(--sl-color-gray-7,var(--sl-color-gray-6));border-color:var(--sl-color-gray-2)}.sl-link-card:where(.astro-vo4ugy7i):hover .icon:where(.astro-vo4ugy7i){color:var(--sl-color-white)}}
+@layer starlight.components{.sl-steps{--bullet-size:calc(var(--sl-line-height) * 1rem);--bullet-margin:.375rem;counter-reset:steps-counter var(--sl-steps-start,0);padding-inline-start:0;list-style:none}.sl-steps>li{counter-increment:steps-counter;padding-inline-start:calc(var(--bullet-size) + 1rem);min-height:calc(var(--bullet-size) + var(--bullet-margin));padding-bottom:1px;position:relative}.sl-steps>li+li{margin-top:0}.sl-steps>li:before{content:counter(steps-counter);top:0;width:var(--bullet-size);height:var(--bullet-size);line-height:var(--bullet-size);font-size:var(--sl-text-xs);text-align:center;color:var(--sl-color-white);background-color:var(--sl-color-gray-6);box-shadow:inset 0 0 0 1px var(--sl-color-gray-5);border-radius:99rem;font-weight:600;position:absolute;inset-inline-start:0}.sl-steps>li:after{--guide-width:1px;content:"";top:calc(var(--bullet-size) + var(--bullet-margin));bottom:var(--bullet-margin);width:var(--guide-width);background-color:var(--sl-color-hairline-light);position:absolute;inset-inline-start:calc((var(--bullet-size) - var(--guide-width)) / 2)}}@layer starlight.content{.sl-steps>li>:first-child{--lh:calc(1em * var(--sl-line-height));--shift-y:calc(.5 * (var(--bullet-size) - var(--lh)));transform:translateY(var(--shift-y));margin-bottom:var(--shift-y)}.sl-steps>li>:first-child:where(h1,h2,h3,h4,h5,h6){--lh:calc(1em * var(--sl-line-height-headings))}@supports (--prop:1lh){.sl-steps>li>:first-child{--lh:1lh}}}
+@layer starlight.components{starlight-file-tree:where(.astro-v77bwlhk){--x-space:1.5rem;--y-space:.125rem;--y-pad:0;border:1px solid var(--sl-color-gray-5);background-color:var(--sl-color-gray-6);font-size:var(--sl-text-xs);font-family:var(--__sl-font-mono);padding:1rem;display:block;overflow-x:auto}starlight-file-tree:where(.astro-v77bwlhk) .directory>details{padding:0;background:0 0;border:0;padding-inline-start:var(--x-space)}starlight-file-tree:where(.astro-v77bwlhk) .directory>details>summary{padding:var(--y-pad) .625rem;color:var(--sl-color-white);border:0;max-width:100%;margin-inline-start:calc(-1 * var(--x-space));font-weight:400}starlight-file-tree:where(.astro-v77bwlhk) .directory>details>summary::marker,starlight-file-tree:where(.astro-v77bwlhk) .directory>details>summary::-webkit-details-marker{color:var(--sl-color-gray-3)}starlight-file-tree:where(.astro-v77bwlhk) .directory>details>summary:hover,starlight-file-tree:where(.astro-v77bwlhk) .directory>details>summary:hover .tree-icon{cursor:pointer;color:var(--sl-color-text-accent);fill:currentColor}starlight-file-tree:where(.astro-v77bwlhk) .directory>details>summary:hover~ul{border-color:var(--sl-color-gray-4)}starlight-file-tree:where(.astro-v77bwlhk) .directory>details>summary:hover .highlight .tree-icon{color:var(--sl-color-text-invert);fill:currentColor}starlight-file-tree:where(.astro-v77bwlhk) ul{border-inline-start:1px solid var(--sl-color-gray-5);margin-inline-start:.5rem;padding:0;padding-inline-start:.125rem;list-style:none}starlight-file-tree:where(.astro-v77bwlhk)>ul{border:0;margin:0;padding:0}starlight-file-tree:where(.astro-v77bwlhk) li{margin:var(--y-space) 0;padding:var(--y-pad) 0}starlight-file-tree:where(.astro-v77bwlhk) .file{color:var(--sl-color-white);margin-inline-start:calc(var(--x-space) - .125rem)}starlight-file-tree:where(.astro-v77bwlhk) .tree-entry{flex-wrap:wrap;align-items:flex-start;max-width:calc(100% - 1rem);display:inline-flex}@media (width>=30em){starlight-file-tree:where(.astro-v77bwlhk) .tree-entry{flex-wrap:nowrap}}starlight-file-tree:where(.astro-v77bwlhk) .tree-entry>:first-child{flex-shrink:0}starlight-file-tree:where(.astro-v77bwlhk) .empty{color:var(--sl-color-gray-3);padding-inline-start:.375rem}starlight-file-tree:where(.astro-v77bwlhk) .comment{color:var(--sl-color-gray-3);min-width:12rem;max-width:24rem;padding-inline-start:1.625rem}starlight-file-tree:where(.astro-v77bwlhk) .highlight{color:var(--sl-color-text-invert);background-color:var(--sl-color-text-accent);border-radius:.25rem;padding-inline-end:.5rem;display:inline-block}starlight-file-tree:where(.astro-v77bwlhk) svg{fill:var(--sl-color-gray-3);vertical-align:middle;width:.875rem;height:.875rem;margin-inline:.25rem .375rem;display:inline;overflow:visible}starlight-file-tree:where(.astro-v77bwlhk) .highlight svg.tree-icon{fill:currentColor}}
+@layer starlight.components{.sl-link-button:where(.astro-lbdzh53u){font-size:var(--sl-text-sm);outline-offset:.25rem;border:1px solid #0000;border-radius:999rem;align-items:center;gap:.5em;padding:.4375rem 1.125rem;line-height:1.1875;text-decoration:none;display:inline-flex}.sl-link-button:where(.astro-lbdzh53u).primary{background:var(--sl-color-text-accent);border-color:var(--sl-color-text-accent);color:var(--sl-color-black)}.sl-link-button:where(.astro-lbdzh53u).primary:hover{color:var(--sl-color-black)}.sl-link-button:where(.astro-lbdzh53u).secondary{border-color:inherit;color:var(--sl-color-white)}.sl-link-button:where(.astro-lbdzh53u).minimal{color:var(--sl-color-white);padding-inline:0}.sl-link-button:where(.astro-lbdzh53u) svg{flex-shrink:0}@media (width>=50rem){.sl-link-button:where(.astro-lbdzh53u){font-size:var(--sl-text-base);padding:.9375rem 1.25rem}}.sl-markdown-content .sl-link-button:where(.astro-lbdzh53u){margin-inline-end:1rem}.sl-markdown-content .sl-link-button:where(.astro-lbdzh53u):not(:where(p *)){margin-block:1rem}}
+</style><script type="module" src="/_astro/page.qmvz7R8c.js"></script></head><body class="astro-egzmvxx6"><a class="sl-skip-link astro-rvpogu26" href="#_top">Skip to content</a><div class="page sl-flex astro-6c4fglrz"><header class="header astro-6c4fglrz"><div class="header astro-wdezznm2"><div class="title-wrapper sl-flex astro-wdezznm2"><a href="/" class="site-title sl-flex astro-iyxa2yxr"><img class="astro-iyxa2yxr" alt="InvokeAI Logo" src="/_astro/invoke-icon-wide.BR5B9gqd.svg" width="75" height="32"><span class="sr-only astro-iyxa2yxr" translate="no">InvokeAI Documentation</span></a></div><div class="sl-flex print:hidden astro-wdezznm2"><site-search class="astro-wdezznm2 astro-na6z7irt" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;,&quot;clear_search&quot;:&quot;Clear&quot;,&quot;load_more&quot;:&quot;Load more results&quot;,&quot;search_label&quot;:&quot;Search this site&quot;,&quot;filters_label&quot;:&quot;Filters&quot;,&quot;zero_results&quot;:&quot;No results for [SEARCH_TERM]&quot;,&quot;many_results&quot;:&quot;[COUNT] results for [SEARCH_TERM]&quot;,&quot;one_result&quot;:&quot;[COUNT] result for [SEARCH_TERM]&quot;,&quot;alt_search&quot;:&quot;No results for [SEARCH_TERM]. Showing results for [DIFFERENT_TERM] instead&quot;,&quot;search_suggestion&quot;:&quot;No results for [SEARCH_TERM]. Try one of the following searches:&quot;,&quot;searching&quot;:&quot;Searching for [SEARCH_TERM]...&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-na6z7irt"><svg aria-hidden="true" class="astro-na6z7irt astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-na6z7irt" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-na6z7irt" style="display: none;"><kbd class="astro-na6z7irt">Ctrl</kbd><kbd class="astro-na6z7irt">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-na6z7irt"><div class="dialog-frame sl-flex astro-na6z7irt"><button data-close-modal class="sl-flex md:sl-hidden astro-na6z7irt">Cancel</button><div class="search-container astro-na6z7irt"><div id="starlight__search" class="astro-na6z7irt"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.BOTS06Pe.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-wdezznm2"><div class="sl-flex social-icons astro-wdezznm2"><a href="https://github.com/invoke-ai/InvokeAI" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">GitHub</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a href="https://discord.gg/ZmtBAhwWhy" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">Discord</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"/></svg></a><a href="https://www.youtube.com/@invokeai" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">YouTube</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M23.5 6.2A3 3 0 0 0 21.4 4c-1.9-.5-9.4-.5-9.4-.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8 0 12 0 12s0 4 .5 5.8A3 3 0 0 0 2.6 20c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2c.5-2 .5-5.9.5-5.9s0-4-.5-5.8zm-14 9.4V8.4l6.3 3.6-6.3 3.6z"/></svg></a></div><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div></header><nav class="sidebar print:hidden astro-6c4fglrz" aria-label="Main"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-hd76dzne"><svg aria-hidden="true" class="open-menu astro-hd76dzne astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-hd76dzne astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-hd76dzne">Menu</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-6c4fglrz"><div class="sidebar-content sl-flex astro-6c4fglrz"><sl-sidebar-state-persist data-hash="1v4l50c" class="astro-6e4jnn55"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-fe7k3flc"><li class="astro-fe7k3flc"><details open class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Start Here</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/start-here/system-requirements/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Hardware Requirements</span></a></li><li class="astro-fe7k3flc"><a href="/start-here/installation/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Simple Installation</span></a></li><li class="astro-fe7k3flc"><a href="/start-here/manual/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Manual Installation</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Configuration</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/configuration/invokeai-yaml/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">YAML Config</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/docker/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Docker</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/external-database/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">MySQL and MariaDB</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Optimization</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/configuration/optimization/low-vram-mode/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Low-VRAM mode</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/optimization/fp8-storage/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FP8 Storage &amp; Compute</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/optimization/sdnq-quantization/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">SDNQ Quantization</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/optimization/patchmatch/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Patchmatch</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Multi-User Mode</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="3"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/configuration/multi-user-mode/user-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Multi-User Guide</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/multi-user-mode/admin-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Multi-User Administrator Guide</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/multi-user-mode/api-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Multi-User API Guide</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details open class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Users Guide</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="4"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Workbench</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="5"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/workbench/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Guided tour</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workbench/hotkeys/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Hotkey shortcuts</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Projects</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="6"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/projects/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Working with Projects</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Models</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="7"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/models/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Managing media generation models</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/model-families/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Model Formats and Families</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/model-format-support/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Model Format Support</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Local Models</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="8"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/anima/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Anima</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/cogview4/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">CogView4</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/ernie-image/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">ERNIE-Image</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/flux-1/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FLUX.1</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/flux-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FLUX.2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/ideogram4/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Ideogram 4</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/krea-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Krea-2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/ltx-2/" class="astro-fe7k3flc" data-cross-listed><span class="astro-fe7k3flc">LTX-2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/minimax-h3/" class="astro-fe7k3flc" data-cross-listed><span class="astro-fe7k3flc">MiniMax H3</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/qwen-image/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Qwen Image</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/sdxl/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">SDXL</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/stable-diffusion-1-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Stable Diffusion 1.5 / 2.x</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/sd-3/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Stable Diffusion 3.5</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/wan-22/" class="astro-fe7k3flc" data-cross-listed><span class="astro-fe7k3flc">Wan 2.2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/z-image/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Z-Image</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">External Models</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="9"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Using external models</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/alibabacloud/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Alibaba Cloud DashScope</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/gemini/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Google Gemini</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/openai/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">OpenAI</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/seedream/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">BytePlus Seedream</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Image Generation</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="10"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Generating and modifying still images</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/generate-panel/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Generate Panel Reference</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/prompting-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Prompting Guide</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-prompt-syntax/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Advanced Prompt Syntax</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/prompt-tools/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Prompt Tools</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/parameters/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Parameter Selection Guide</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/image-generation/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Concepts and Terms</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/intermediates/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Intermediates</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/upscale/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Upscaling</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Advanced Topics</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="11"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-topics/diffusion/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Diffusion</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-topics/pid-decode/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">PiD Super-Resolution Decode</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-topics/hidiffusion/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">HiDiffusion</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Video Generation</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="12"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Generating and modifying short videos</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/wan-22/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Wan 2.2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/minimax-h3/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">MiniMax H3</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/ltx-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">LTX-2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/video-workflows/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Video Workflows</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Gallery</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="13"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/gallery/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Organizing your media</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/gallery/gallery-reference/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Gallery Reference</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/gallery/image-storage-maintenance/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Image Storage Maintenance</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Canvas</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="14"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/canvas/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Crafting images with the Canvas</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/canvas/canvas-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Canvas guide</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/canvas/layers-panel/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Layers panel guide</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Workflows</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="15"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/workflows/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Automating with Workflows</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/editor-reference/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Workflow Editor Reference</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/loop-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Loop Nodes</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/custom-node-manager/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Custom Node Manager</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/comfyui-migration/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">ComfyUI Migration</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/community-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Community Nodes</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/face-tools/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Face Tools Nodes</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Image Map</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="16"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/image-map/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Image Map Indexing and Search</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-map/customizing/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Customizing the Image Map</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Development</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="17"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">InvokeAI Development</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Architecture</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="18"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/architecture/overview/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Overview</span></a></li><li class="astro-fe7k3flc"><a href="/development/architecture/invocations/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Invocations</span></a></li><li class="astro-fe7k3flc"><a href="/development/architecture/media-metadata/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Media Metadata</span></a></li><li class="astro-fe7k3flc"><a href="/development/architecture/model-manager/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Model Manager</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Documentation</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="19"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/documentation/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Documentation</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Front End</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="20"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/front-end/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Frontend Development</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/canvas-projects/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Canvas Projects</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/project-files/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Project Files (.invk)</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/state-management/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">State Management</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/text-tool/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Canvas Text Tool</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/workflows/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Workflows</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Guides</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="21"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/guides/api-development/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">API Development</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/creating-node-pack/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Creating Node Packs</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/creating-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Creating Nodes</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/database-layer/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Database Layer</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/recall-api/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Recall Parameters API</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/sqlite-migrations/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Database Migrations</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/tests/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Writing Tests</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/video-recall-api/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Video Recall API</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/workflow-api/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Workflow Execution API</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Process</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="22"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/process/pr-merge-policy/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">PR Merge Policy</span></a></li><li class="astro-fe7k3flc"><a href="/development/process/release-process/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Release Process</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Setup</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="23"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/setup/dev-environment/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Development Environment</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Contributing</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="24"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/contributing/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Contributing to InvokeAI</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/blocking-work-in-api-routes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Blocking Work in API Routes</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/call-saved-workflow/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Call Saved Workflow Architecture</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/code-of-conduct/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Code of Conduct</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/contributors/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Contributors</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/external-providers/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">External Provider Integration</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/loop-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Loop Nodes Architecture</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/new-contributor-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">New Contributor Guide</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/new-model-integration/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">New Model Type Integration Checklist</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/translations/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Translations</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Troubleshooting &amp; Help</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="25"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/troubleshooting/faq/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FAQ</span></a></li><li class="astro-fe7k3flc"><a href="/troubleshooting/known-bugs/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Known Bugs</span></a></li><li class="astro-fe7k3flc"><a href="/troubleshooting/videos/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">InvokeAI YouTube Videos</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Releases</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="26"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/releases/version/version-6-14-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Version 6.14.2</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/version-6-14-1/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Version 6.14.1</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/invokeai-6-14-0/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">InvokeAI 6.14.0</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/v6-13-8/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">v6.13.8</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/v6-13-7/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">v6.13.7</span></a></li></ul></details></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-srta2qkb"><div class="social-icons astro-srta2qkb"><a href="https://github.com/invoke-ai/InvokeAI" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">GitHub</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a href="https://discord.gg/ZmtBAhwWhy" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">Discord</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"/></svg></a><a href="https://www.youtube.com/@invokeai" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">YouTube</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M23.5 6.2A3 3 0 0 0 21.4 4c-1.9-.5-9.4-.5-9.4-.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8 0 12 0 12s0 4 .5 5.8A3 3 0 0 0 2.6 20c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2c.5-2 .5-5.9.5-5.9s0-4-.5-5.8zm-14 9.4V8.4l6.3 3.6-6.3 3.6z"/></svg></a></div></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-6c4fglrz"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-3zf4g5vl"><aside class="right-sidebar-container print:hidden astro-3zf4g5vl"><div class="right-sidebar astro-3zf4g5vl"><div class="lg:sl-hidden astro-psmrpsxm"><mobile-starlight-toc data-min-h="2" data-max-h="4" class="astro-thay6anh"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-thay6anh"><details id="starlight__mobile-toc" class="astro-thay6anh"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-thay6anh"><span class="toggle sl-flex astro-thay6anh">On this page<svg aria-hidden="true" class="caret astro-thay6anh astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-thay6anh"></span></summary><div class="dropdown astro-thay6anh"><ul class="isMobile astro-y5qnks4t" style="--depth: 0;"><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#_top" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Overview</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-6-2" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.6.2</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-6-1" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.6.1</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-6-0" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.6.0</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-5-0" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.5.0</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-4-3" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.4.3</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-4-2" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.4.2</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-4-1" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.4.1</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-3-1" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.3.1</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-3-0" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.3.0</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-2-0" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.2.0</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-psmrpsxm"><div class="sl-container astro-psmrpsxm"><starlight-toc data-min-h="2" data-max-h="4"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-y5qnks4t" style="--depth: 0;"><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#_top" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Overview</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-6-2" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.6.2</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-6-1" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.6.1</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-6-0" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.6.0</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-5-0" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.5.0</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-4-3" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.4.3</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-4-2" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.4.2</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-4-1" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.4.1</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-3-1" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.3.1</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-3-0" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.3.0</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#v5-2-0" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">v5.2.0</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-3zf4g5vl"><main class="astro-egzmvxx6" lang="en" dir="ltr"><div class="content-panel astro-uug4jd3t"><div class="sl-container astro-uug4jd3t"><h1 id="_top" class="astro-alldfk7m">Releases</h1></div></div><div class="content-panel astro-uug4jd3t"><div class="sl-container astro-uug4jd3t"><div class="sl-markdown-content"><div class="not-content astro-huz6mszq"><starlight-changelogs-versions-list class="astro-qwp2xddu"><form onsubmit="return false" class="astro-qwp2xddu"><label class="sr-only astro-qwp2xddu" for="find-version">Find a version</label><svg aria-hidden="true" class="sl-changelogs-version-list-icon astro-qwp2xddu astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><input autocomplete="off" id="find-version" list="starlight-changelogs-versions" placeholder="Find a version" type="text" required class="astro-qwp2xddu"><datalist id="starlight-changelogs-versions" class="astro-qwp2xddu"><option data-link="/releases/version/version-6-14-2/" value="Version 6.14.2" class="astro-qwp2xddu"></option><option data-link="/releases/version/version-6-14-1/" value="Version 6.14.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-6-14-0/" value="InvokeAI 6.14.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-13-8/" value="v6.13.8" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-13-7/" value="v6.13.7" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-v6-13-6/" value="InvokeAI v6.13.6" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-v6-13-5/" value="InvokeAI v6.13.5" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-6-13-0/" value="InvokeAI 6.13.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-12-0/" value="v6.12.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-11-1/" value="v6.11.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-11-0/" value="v6.11.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-10-0/" value="v6.10.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-9-0/" value="v6.9.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-8-1/" value="v6.8.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-8-0/" value="v6.8.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-7-0/" value="v6.7.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-6-0/" value="v6.6.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-5-1/" value="v6.5.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-5-0/" value="v6.5.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-4-0/" value="v6.4.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-3-0/" value="v6.3.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-2-0/" value="v6.2.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-1-0/" value="v6.1.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-0-2/" value="v6.0.2" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-0-1/" value="v6.0.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v6-0-0/" value="v6.0.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-15-0/" value="v5.15.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-14-0/" value="v5.14.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-13-0/" value="v5.13.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-12-0/" value="v5.12.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-11-0/" value="v5.11.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-10-1/" value="v5.10.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-10-0/" value="v5.10.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-9-1/" value="v5.9.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-9-0/" value="v5.9.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-8-1/" value="v5.8.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-8-0/" value="v5.8.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-7-2/" value="v5.7.2" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-7-1/" value="v5.7.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-7-0/" value="v5.7.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-6-2/" value="v5.6.2" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-6-1/" value="v5.6.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-6-0/" value="v5.6.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-5-0/" value="v5.5.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-4-3/" value="v5.4.3" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-4-2/" value="v5.4.2" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-4-1/" value="v5.4.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-3-1/" value="v5.3.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-3-0/" value="v5.3.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-2-0/" value="v5.2.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-1-1/" value="v5.1.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-1-0/" value="v5.1.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-0-2/" value="v5.0.2" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-0-1/" value="v5.0.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v5-0-0/" value="v5.0.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-9/" value="v4.2.9" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-8/" value="v4.2.8" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-7post1/" value="v4.2.7post1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-7/" value="v4.2.7" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-6post1/" value="v4.2.6post1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-6/" value="v4.2.6" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-4/" value="v4.2.4" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-3/" value="v4.2.3" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-2post1/" value="v4.2.2post1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-2/" value="v4.2.2" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-1/" value="v4.2.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-2-0/" value="v4.2.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-1-0/" value="v4.1.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-0-4/" value="v4.0.4" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-0-2/" value="v4.0.2" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-0-1/" value="v4.0.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/v4-0-0/" value="v4.0.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/invoke-3-7-0/" value="Invoke 3.7.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/invoke-3-6-3/" value="Invoke 3.6.3" class="astro-qwp2xddu"></option><option data-link="/releases/version/invoke-3-6-2/" value="Invoke 3.6.2" class="astro-qwp2xddu"></option><option data-link="/releases/version/invoke-3-6-1/" value="Invoke 3.6.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/invoke-3-6-0/" value="Invoke 3.6.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-v3-5-1/" value="InvokeAI v3.5.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-v3-5-0/" value="InvokeAI v3.5.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-v3-4-0post2/" value="InvokeAI v3.4.0post2" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-3-4-0post1/" value="InvokeAI 3.4.0post1" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-v3-4-0/" value="InvokeAI v3.4.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-3-3-0post3/" value="InvokeAI 3.3.0post3" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-3-3-0post2/" value="InvokeAI 3.3.0post2" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-3-3-0post1/" value="InvokeAI 3.3.0post1" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-v3-2-0/" value="InvokeAI v3.2.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-3-1-1-/" value="InvokeAI 3.1.1 " class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-3-1-0/" value="InvokeAI 3.1.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-v3-0-2post1/" value="InvokeAI v3.0.2post1" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-3-0-2/" value="InvokeAI Version 3.0.2" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-3-0-1-hotfix-3/" value="InvokeAI 3.0.1 (hotfix 3)" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-3-0-1/" value="InvokeAI Version 3.0.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-3-0-0/" value="InvokeAI 3.0.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-2-3-5-post2/" value="InvokeAI 2.3.5.post2" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-3-5-post1/" value="InvokeAI Version 2.3.5.post1" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-2-3-5/" value="InvokeAI 2.3.5" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-3-4-post1---a-stable-diffusion-toolkit/" value="InvokeAI Version 2.3.4.post1 - A Stable Diffusion Toolkit" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-3-3---a-stable-diffusion-toolkit/" value="InvokeAI Version 2.3.3 - A Stable Diffusion Toolkit" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-3-2/" value="InvokeAI Version 2.3.2" class="astro-qwp2xddu"></option><option data-link="/releases/version/v-2-3-1-post2/" value="v.2.3.1.post2" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-3-0/" value="InvokeAI Version 2.3.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-2-5---a-stable-diffusion-toolkit/" value="InvokeAI Version 2.2.5 - A Stable Diffusion Toolkit" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-2-4---a-stable-diffusion-toolkit/" value="InvokeAI Version 2.2.4 - A Stable Diffusion Toolkit" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-2-2-3/" value="InvokeAI 2.2.3" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-2-2---a-stable-diffusion-toolkit/" value="InvokeAI Version 2.2.2 - A Stable Diffusion Toolkit" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-2-0/" value="InvokeAI Version 2.2.0" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-1-3---a-stable-diffusion-toolkit/" value="InvokeAI Version 2.1.3 - A Stable Diffusion Toolkit" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-1---a-stable-diffusion-toolkit/" value="InvokeAI Version 2.1 - A Stable Diffusion Toolkit" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-0-2---a-stable-diffusion-toolkit/" value="InvokeAI Version 2.0.2 - A Stable Diffusion Toolkit" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-0-1---a-stable-diffusion-toolkit/" value="InvokeAI Version 2.0.1 - A Stable Diffusion Toolkit" class="astro-qwp2xddu"></option><option data-link="/releases/version/invokeai-version-2-0-0---a-stable-diffusion-toolkit/" value="InvokeAI Version 2.0.0 - A Stable Diffusion Toolkit" class="astro-qwp2xddu"></option><option data-link="/releases/version/sd-dream-version-1-14-1/" value="SD-Dream Version 1.14.1" class="astro-qwp2xddu"></option><option data-link="/releases/version/sd-dream-version-1-14/" value="SD-Dream Version 1.14" class="astro-qwp2xddu"></option><option data-link="/releases/version/sd-dream-version-1-13/" value="SD-Dream Version 1.13" class="astro-qwp2xddu"></option></datalist></form></starlight-changelogs-versions-list><script type="module">customElements.define(`starlight-changelogs-versions-list`,class extends HTMLElement{constructor(){super();let e=this.querySelector(`input`),t=this.querySelector(`datalist`);e&&t&&e.addEventListener(`input`,e=>{if(e.target instanceof HTMLInputElement&&(e instanceof InputEvent&&e.inputType===`insertReplacementText`||!(e instanceof InputEvent))){let n=e.target.value,r=Array.from(t.options).find(e=>e.value===n);if(!r)return;let i=r.dataset.link;i&&(window.location.pathname=i)}})}});</script></div><h2 id="v5-6-2" class="astro-iwmmvj7n"><a href="/releases/version/v5-6-2/" class="astro-iwmmvj7n">v5.6.2</a></h2><time datetime="2025-02-14T02:44:35.000Z" class="astro-iwmmvj7n">Feb 14, 2025</time><p>This minor release includes the following enhancements and fixes:</p>
+<ul>
+<li>Make the Upscaling tab’s Scheduler and CFG Scale settings independent from the Canvas tab. We’ve found that the best Scheduler and CFG Scale settings for Canvas rarely work well for Upscaling, and vice-versa. Separating the settings prevents your Canvas settings from causing bad upscale results.</li>
+<li>Fixed issue with Multiply Image Channel node loading images with different channel counts. Thanks @dunkeroni!</li>
+<li>Fixed typos in docs. Thanks @maximevtush!</li>
+<li>Fixed issue where the app scrolls out of view, especially when using the launcher. Again. Hopefully.</li>
+<li>Update internal build toolchain dependencies.</li>
+<li>Updated translations. Thanks @Harvester62, @Linos1391, @Ery4z!</li>
+</ul>
+<h2 id="installing-and-updating">Installing and Updating</h2>
+<p><strong>The new Invoke Launcher is the recommended way to install, update and run Invoke</strong>. It takes care of a lot of details for you - like installing the right version of python - and runs Invoke as a desktop application.</p>
+<p>Follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/quick_start/">Quick Start guide</a> to get started with the launcher.</p>
+<p>If you don’t want to use the launcher, or need a headless install, you can follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/manual/">manual install guide</a>.</p>
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+<li>Fix: Multiply Image Channel allows RGB inputs again by @dunkeroni in <a href="https://github.com/invoke-ai/InvokeAI/pull/7633">https://github.com/invoke-ai/InvokeAI/pull/7633</a></li>
+<li>fix: typos in documentation files by @maximevtush in <a href="https://github.com/invoke-ai/InvokeAI/pull/7629">https://github.com/invoke-ai/InvokeAI/pull/7629</a></li>
+<li>feat(ui): separate upscaling settings so that tab does not inherit from main generation settings by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7635">https://github.com/invoke-ai/InvokeAI/pull/7635</a></li>
+<li>fix(ui): prevent overflow on document root by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7636">https://github.com/invoke-ai/InvokeAI/pull/7636</a></li>
+<li>Add metadata field extractor node by @jazzhaiku in <a href="https://github.com/invoke-ai/InvokeAI/pull/7638">https://github.com/invoke-ai/InvokeAI/pull/7638</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7622">https://github.com/invoke-ai/InvokeAI/pull/7622</a></li>
+<li>Upgrade vite, vitest, and related plugins to latest versions by @ebr in <a href="https://github.com/invoke-ai/InvokeAI/pull/7640">https://github.com/invoke-ai/InvokeAI/pull/7640</a></li>
+<li>chore: bump version to v5.6.2 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7641">https://github.com/invoke-ai/InvokeAI/pull/7641</a></li>
+</ul>
+<h2 id="new-contributors">New Contributors</h2>
+<ul>
+<li>@maximevtush made their first contribution in <a href="https://github.com/invoke-ai/InvokeAI/pull/7629">https://github.com/invoke-ai/InvokeAI/pull/7629</a></li>
+<li>@jazzhaiku made their first contribution in <a href="https://github.com/invoke-ai/InvokeAI/pull/7638">https://github.com/invoke-ai/InvokeAI/pull/7638</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/invoke-ai/InvokeAI/compare/v5.6.1...v5.6.2">https://github.com/invoke-ai/InvokeAI/compare/v5.6.1…v5.6.2</a></p><h2 id="v5-6-1" class="astro-iwmmvj7n"><a href="/releases/version/v5-6-1/" class="astro-iwmmvj7n">v5.6.1</a></h2><time datetime="2025-02-11T01:24:54.000Z" class="astro-iwmmvj7n">Feb 11, 2025</time><p>This release includes a handful of minor improvements and fixes.</p>
+<ul>
+<li>Improvements to memory management defaults, resulting in fewer OOMs.</li>
+<li>Expanded FLUX LoRA compatibility.</li>
+<li>On-demand model cache clearing via button on the Queue tab.</li>
+<li>Canvas Adjust Image filter (i.e. levels, hue, etc). Thanks @dunkeroni!</li>
+<li>Button to cancel all queue items except current. Thanks @rikublock!</li>
+<li>Copy Canvas/Bbox as image via Canvas right-click menu.</li>
+<li>Paste image into Canvas/Bbox via normal paste hotkey. You will be prompted for where the image should be placed.</li>
+<li>Allow <code>Collect</code> nodes to be connected directly to <code>Iterate</code> nodes.</li>
+<li>Allow <code>Any</code> type node inputs to accept collections. For example, the <code>Metadata Item</code> node’s value field now accepts collections.</li>
+<li>Improved error messages when invalid graphs are queued.</li>
+<li>LoRA Loader node LoRA collection input is now optional, supporting @skunkworxdark’s metadata nodes. Thanks @skunkworxdark!</li>
+<li>Fixed issues where staging area got stuck if one image failed to load (e.g. if it was deleted).</li>
+<li>Updated translations. Thanks @Harvester62, @Linos1391, @rikublock, @Ery4z!</li>
+</ul>
+<h2 id="installing-and-updating">Installing and Updating</h2>
+<p><strong>The new Invoke Launcher is the recommended way to install, update and run Invoke</strong>. It takes care of a lot of details for you - like installing the right version of python - and runs Invoke as a desktop application.</p>
+<p>Follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/quick_start/">Quick Start guide</a> to get started with the launcher.</p>
+<p>If you don’t want to use the launcher, or need a headless install, you can follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/manual/">manual install guide</a>.</p>
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+<li>Fix bug with some LoRA variants when applied to bitsandbytes NF4 quantized models by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7577">https://github.com/invoke-ai/InvokeAI/pull/7577</a></li>
+<li>docs: typo in manual docs install command by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7586">https://github.com/invoke-ai/InvokeAI/pull/7586</a></li>
+<li>Improve MaskOutput dimension consistency by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7591">https://github.com/invoke-ai/InvokeAI/pull/7591</a></li>
+<li>Support FLUX OneTrainer LoRA formats (incl. DoRA) by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7590">https://github.com/invoke-ai/InvokeAI/pull/7590</a></li>
+<li>Fix T5EncoderField initialization in SD3 model loader by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7604">https://github.com/invoke-ai/InvokeAI/pull/7604</a></li>
+<li>Make the default max RAM cache size more conservative by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7603">https://github.com/invoke-ai/InvokeAI/pull/7603</a></li>
+<li>Add endpoint for emptying the model cache by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7602">https://github.com/invoke-ai/InvokeAI/pull/7602</a></li>
+<li>Feature: Adjust Image filter by @dunkeroni in <a href="https://github.com/invoke-ai/InvokeAI/pull/7594">https://github.com/invoke-ai/InvokeAI/pull/7594</a></li>
+<li>feat(ui): add cancel all except current queue item functionality by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7395">https://github.com/invoke-ai/InvokeAI/pull/7395</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7600">https://github.com/invoke-ai/InvokeAI/pull/7600</a></li>
+<li>LoRA Collection Loader make optional LoRA Collection input by @skunkworxdark in <a href="https://github.com/invoke-ai/InvokeAI/pull/7579">https://github.com/invoke-ai/InvokeAI/pull/7579</a></li>
+<li>feat(ui): support copy of canvas by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7617">https://github.com/invoke-ai/InvokeAI/pull/7617</a></li>
+<li>feat: better graph validation errors by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7614">https://github.com/invoke-ai/InvokeAI/pull/7614</a></li>
+<li>feat(ui): support pasting directly to canvas by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7619">https://github.com/invoke-ai/InvokeAI/pull/7619</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7621">https://github.com/invoke-ai/InvokeAI/pull/7621</a></li>
+<li>chore: bump version to v5.6.1rc1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7618">https://github.com/invoke-ai/InvokeAI/pull/7618</a></li>
+<li>fix(ui): restore missing translation by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7625">https://github.com/invoke-ai/InvokeAI/pull/7625</a></li>
+<li>feat(ui): safe clipboard handling by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7626">https://github.com/invoke-ai/InvokeAI/pull/7626</a></li>
+<li>docs: cleanup faq by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7627">https://github.com/invoke-ai/InvokeAI/pull/7627</a></li>
+<li>docs: install troubleshooting by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7628">https://github.com/invoke-ai/InvokeAI/pull/7628</a></li>
+<li>fix(ui): [object object] in OOM toast by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7630">https://github.com/invoke-ai/InvokeAI/pull/7630</a></li>
+<li>feat(ui): canvas image error handling by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7632">https://github.com/invoke-ai/InvokeAI/pull/7632</a></li>
+<li>chore: bump version to v5.6.1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7631">https://github.com/invoke-ai/InvokeAI/pull/7631</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/invoke-ai/InvokeAI/compare/v5.6.0...v5.6.1">https://github.com/invoke-ai/InvokeAI/compare/v5.6.0…v5.6.1</a></p><h2 id="v5-6-0" class="astro-iwmmvj7n"><a href="/releases/version/v5-6-0/" class="astro-iwmmvj7n">v5.6.0</a></h2><time datetime="2025-01-21T10:48:46.000Z" class="astro-iwmmvj7n">Jan 21, 2025</time><p>This release brings major improvements to Invoke’s memory management, new Blur and Noise Canvas filters, and expanded batch capabilities in Workflows.</p>
+<h2 id="memory-management-improvements-aka-low-vram-mode">Memory Management Improvements (aka Low-VRAM mode)</h2>
+<p>The goal of these changes is to allow users with low-VRAM GPUs to run even the beefiest models, like the 24GB unquantised FLUX dev model.</p>
+<p>Despite the focus on low-VRAM GPUs and the colloquial name “Low-VRAM mode”, most users benefit from these improvements to Invoke’s memory management.</p>
+<p>Low-VRAM mode works on systems with dedicated GPUs (Nvidia GPUs on Windows/Linux and AMD GPUs on Linux). It allows you to generate even if your GPU doesn’t have enough VRAM to hold full models.</p>
+<p>Low-VRAM mode involves 4 features, each of which can be configured or fine-tuned:</p>
+<ul>
+<li>Partial model loading</li>
+<li>Dynamic RAM and VRAM cache sizes</li>
+<li>Working memory</li>
+<li>Keeping a copy of models in RAM</li>
+</ul>
+<p>Most users should only need to enable partial loading by adding this line to their <code>invokeai.yaml</code>:</p>
+<div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.w36nc.css"><script type="module" src="/_astro/ec.0vx5m.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="yaml"><code><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">enable_partial_loading</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#FF6A83;--1:#A24848">true</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="enable_partial_loading: true"><div></div></button></div></figure></div>
+<p>🚨 <strong>Windows users should also <a href="https://invoke-ai.github.io/InvokeAI/features/low-vram/#disabling-nvidia-sysmem-fallback-windows-only">disable the Nvidia sysmem fallback</a>.</strong></p>
+<p>For more details and instructions for fine-tuning, see the <a href="https://invoke-ai.github.io/InvokeAI/features/low-vram/">Low-VRAM mode docs</a>.</p>
+<p>Thanks to @RyanJDick for designing and implementing these improvements!</p>
+<h2 id="workflow-batches">Workflow Batches</h2>
+<p>We’ve expanded the capabilities for Batches in Workflows:</p>
+<ul>
+<li>Float, integer and string batch data types</li>
+<li>Batch collection generators</li>
+<li>Grouped (aka zipped) batches</li>
+</ul>
+<h3 id="float-integer-and-string-batch-data-types">Float, integer and string batch data types</h3>
+<p>There’s a new batch node for each of the new data types. They work the same as the existing image batch node.</p>
+<img width="624" alt="image" src="https://github.com/user-attachments/assets/64f40d0e-5c37-4de6-a3be-5d8c2fa39c50">
+<p>You can add a list of values directly in the node, but you’ll probably find <strong>generators</strong> to be a nicer way to set up your batch.</p>
+<h3 id="batch-collection-generators">Batch collection generators</h3>
+<p>These are essentially nodes that run in the frontend and generate a list of values to use in a batch node. Included in the release are these generators:</p>
+<ul>
+<li>Arithmetic Sequence (float, integer): Generate a sequence of <code>count</code> numbers, starting from <code>start</code>, that increase or decrease by <code>step</code>.</li>
+<li>Linear Distribution (float, integer): Generate a distribution of <code>count</code> numbers, starting with <code>start</code> and ending with <code>end</code>.</li>
+<li>Uniform Random Distribution (float, integer): Generation a random distribution of <code>count</code> numbers from <code>min</code> to <code>max</code>. You can set a seed for reproducible sequences.</li>
+<li>Parse String (float, integer, string): Split the <code>input</code> on the specified string, parsing each value as a float, integer or string. You can load the input from a <code>.txt</code> file. Use <code>\n</code> as the split string to split on new lines.</li>
+</ul>
+<p><video src="https://github.com/user-attachments/assets/c90de878-6095-4782-bc07-7fb6be14af09"></video></p>
+<p>You’ll notice the different handle icon for batch generators. These nodes cannot connect to non-batch nodes, which run in the backend.</p>
+<h3 id="grouped-aka-zipped-batches">Grouped (aka zipped) batches</h3>
+<p>When you use multiple batches, we run the graph once for every possible combination of values in the batch collections. In mathematical terms, we “take the <a href="https://en.wikipedia.org/wiki/Cartesian_product">Cartesian product</a>” of all batch collections.</p>
+<p>Consider this simple workflow that joins two strings:
+<img width="649" alt="image" src="https://github.com/user-attachments/assets/d68fc99d-4de6-4330-bd0d-8bbf55de079a"></p>
+<p>We have two batch collections, each with two strings. This results in <code>2 * 2 = 4</code> runs, one for each possible combination of the strings. We get these outputs:</p>
+<ul>
+<li>“a cute cat”</li>
+<li>“a cute dog”</li>
+<li>“a ferocious cat”</li>
+<li>“a ferocious dog”</li>
+</ul>
+<p>But what if we wanted to group or “zip” up the two string collections into a single collection, executing the graph once for each pair of strings? This is now possible - we can set both nodes to the same batch group:</p>
+<img width="642" alt="image" src="https://github.com/user-attachments/assets/dee5ba6f-be03-4de8-8f9a-7b0fa881d16a">
+<p>This results in 2 runs, one for each “pair” of strings. We get these outputs:</p>
+<ul>
+<li>“a cute cat”</li>
+<li>“a ferocious dog”</li>
+</ul>
+<p>You can use grouped and ungrouped batches arbitrarily - go wild! The Invoke button tooltip lets you know how many executions you’ll end up with for the given batch nodes.</p>
+<p>Keep in mind that grouped batch collections must have the same size, else we cannot zip them up into one collection. The Invoke button grey out and let you know there is a mismatch.</p>
+<h4 id="details-and-technical-explanation">Details and technical explanation</h4>
+<p>On the backend, we first zip each group’s batch collections into a single collection. Ungrouped batch collections remain as-is.</p>
+<p>Then, we take the product of all batch collections. If there is only a single collection (i.e. a single ungrouped batch node, or multiple batch nodes all with the same group), the product operation outputs the single collection as-is.</p>
+<p>There are 5 slots for groups, plus a 6th ungrouped option:</p>
+<ul>
+<li>None: Batch nodes will always be used as separate collections for the Cartesian product operation.</li>
+<li>Groups 1 - 5: Batch nodes within a given group will first be zipped into a single collection, before the the Cartesian product operation.</li>
+</ul>
+<h2 id="all-changes">All Changes</h2>
+<h3 id="fixes">Fixes</h3>
+<ul>
+<li>Fix issue where excessively long board names could cause performance issues.</li>
+<li>Fix error when using DPM++ schedulers with certain models. Thanks @Vargol!</li>
+<li>Fix (maybe, hopefully) the app scrolling off screen when run via launcher.</li>
+<li>Fix link to <code>Scale</code> setting’s support docs.</li>
+<li>Fix image quality degradation when inpainting an image repeatedly.</li>
+<li>Fix issue with transparent Canvas filter previews blend with unfiltered parent layer.</li>
+</ul>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li>Support float, integer and string batch data types.</li>
+<li>Add batch data generators.</li>
+<li>Support grouped (aka zipped) batches.</li>
+<li>Reduce peak memory during FLUX model load.</li>
+<li>Add Noise and Blur filters to Canvas. Adding noise or blurring before generation can add a lot detail, especially when generating from a rough sketch. Thanks @dunkeroni!</li>
+<li>Reworked error handling when installing models from a URL.</li>
+<li>Updated first run screen and OOM error toast with links to Low-VRAM mode docs.</li>
+<li>Add a small handful of nodes designed to support inpainting in workflows. See #7583 for more details and an example workflow.</li>
+</ul>
+<h3 id="internal">Internal</h3>
+<ul>
+<li>Tidied some unused variables. Thanks @rikublock!</li>
+<li>Added typegen check to CI pipeline. Thanks @rikublock!</li>
+</ul>
+<h3 id="docs">Docs</h3>
+<ul>
+<li>Added stereogram nodes to Community Nodes docs. Thanks @simonfuhrmann!</li>
+<li>Updated installation-related docs (quick start, manual install, dev install).</li>
+<li>Add <a href="https://invoke-ai.github.io/InvokeAI/features/low-vram/">Low-VRAM mode docs</a>.</li>
+</ul>
+<h2 id="installing-and-updating">Installing and Updating</h2>
+<p><strong>The new Invoke Launcher is the recommended way to install, update and run Invoke</strong>. It takes care of a lot of details for you - like installing the right version of python - and runs Invoke as a desktop application.</p>
+<p>Follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/quick_start/">Quick Start guide</a> to get started with the launcher.</p>
+<p>If you already have the launcher, you can use it to update your existing install.</p>
+<blockquote>
+<p>We’ve just updated the launcher to v1.3.2. Review the <a href="https://github.com/invoke-ai/launcher/releases">launcher releases</a> for a changelog. To update the launcher itself, download the latest version from the quick start guide - the download links there are kept up to date.</p>
+</blockquote>
+<h3 id="legacy-scripts-not-recommended">Legacy Scripts (not recommended!)</h3>
+<p><strong>We recommend using the launcher, as described in the previous section!</strong></p>
+<blockquote>
+<p>To install or update with the <strong>outdated legacy scripts</strong> 😱, <a href="https://github.com/invoke-ai/InvokeAI/releases/download/v5.6.0/InvokeAI-installer-v5.6.0.zip">download the latest legacy scripts</a> and follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/legacy_scripts/">legacy scripts instructions</a>.</p>
+</blockquote>
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+<li>Update Readme with new Installer Instructions by @hipsterusername in <a href="https://github.com/invoke-ai/InvokeAI/pull/7455">https://github.com/invoke-ai/InvokeAI/pull/7455</a></li>
+<li>docs: fix installation docs home by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7470">https://github.com/invoke-ai/InvokeAI/pull/7470</a></li>
+<li>docs: fix installation docs home again by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7471">https://github.com/invoke-ai/InvokeAI/pull/7471</a></li>
+<li>feat(ci): add typegen check workflow by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7463">https://github.com/invoke-ai/InvokeAI/pull/7463</a></li>
+<li>docs: update download links for launcher by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7489">https://github.com/invoke-ai/InvokeAI/pull/7489</a></li>
+<li>Add Stereogram Nodes to communityNodes.md by @simonfuhrmann in <a href="https://github.com/invoke-ai/InvokeAI/pull/7493">https://github.com/invoke-ai/InvokeAI/pull/7493</a></li>
+<li>Partial Loading PR1: Tidy ModelCache by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7492">https://github.com/invoke-ai/InvokeAI/pull/7492</a></li>
+<li>Partial Loading PR2: Add utils to support partial loading of models from CPU to GPU by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7494">https://github.com/invoke-ai/InvokeAI/pull/7494</a></li>
+<li>Partial Loading PR3: Integrate 1) partial loading, 2) quantized models, 3) model patching by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7500">https://github.com/invoke-ai/InvokeAI/pull/7500</a></li>
+<li>Correct Scale Informational Popover  by @hipsterusername in <a href="https://github.com/invoke-ai/InvokeAI/pull/7499">https://github.com/invoke-ai/InvokeAI/pull/7499</a></li>
+<li>docs: install guides by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7508">https://github.com/invoke-ai/InvokeAI/pull/7508</a></li>
+<li>docs: no need to specify version for dev env setup by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7510">https://github.com/invoke-ai/InvokeAI/pull/7510</a></li>
+<li>feat(ui): reset canvas layers only resets the layers by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7511">https://github.com/invoke-ai/InvokeAI/pull/7511</a></li>
+<li>refactor(ui): mm model install error handling by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7512">https://github.com/invoke-ai/InvokeAI/pull/7512</a></li>
+<li>fix(api): limit board_name length to 300 characters by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7515">https://github.com/invoke-ai/InvokeAI/pull/7515</a></li>
+<li>fix(app): remove obsolete DEFAULT_PRECISION variable by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7473">https://github.com/invoke-ai/InvokeAI/pull/7473</a></li>
+<li>Partial Loading PR 3.5: Fix pre-mature model drops from the RAM cache by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7522">https://github.com/invoke-ai/InvokeAI/pull/7522</a></li>
+<li>Partial Loading PR4: Enable partial loading (behind config flag) by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7505">https://github.com/invoke-ai/InvokeAI/pull/7505</a></li>
+<li>Partial Loading PR5: Dynamic cache ram/vram limits by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7509">https://github.com/invoke-ai/InvokeAI/pull/7509</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7480">https://github.com/invoke-ai/InvokeAI/pull/7480</a></li>
+<li>chore: bump version to v5.6.0rc1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7521">https://github.com/invoke-ai/InvokeAI/pull/7521</a></li>
+<li>Bugfix: Offload of GGML-quantized model in <code>torch.inference_mode()</code> cm by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7525">https://github.com/invoke-ai/InvokeAI/pull/7525</a></li>
+<li>Deprecate <code>ram</code>/<code>vram</code> configs for smoother migration path to dynamic limits by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7526">https://github.com/invoke-ai/InvokeAI/pull/7526</a></li>
+<li>docs: fix pypi indices for manual install for AMD by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7528">https://github.com/invoke-ai/InvokeAI/pull/7528</a></li>
+<li>Bugfix: Do not rely on <code>model.device</code> if model could be partially loaded by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7529">https://github.com/invoke-ai/InvokeAI/pull/7529</a></li>
+<li>Fix for DEIS / DPM++ config clash by setting algorithm type -  fixes #6368 by @Vargol in <a href="https://github.com/invoke-ai/InvokeAI/pull/7440">https://github.com/invoke-ai/InvokeAI/pull/7440</a></li>
+<li>Whats new 5.6 by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7527">https://github.com/invoke-ai/InvokeAI/pull/7527</a></li>
+<li>fix(ui): prevent canvas &#x26; main panel content from scrolling by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7532">https://github.com/invoke-ai/InvokeAI/pull/7532</a></li>
+<li>docs,ui: low vram guide &#x26; first run blurb by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7533">https://github.com/invoke-ai/InvokeAI/pull/7533</a></li>
+<li>docs: fix incorrect macOS launcher fix command by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7536">https://github.com/invoke-ai/InvokeAI/pull/7536</a></li>
+<li>chore: bump version to v5.6.0rc2 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7538">https://github.com/invoke-ai/InvokeAI/pull/7538</a></li>
+<li>Update communityNodes.md - Fix broken image by @simonfuhrmann in <a href="https://github.com/invoke-ai/InvokeAI/pull/7537">https://github.com/invoke-ai/InvokeAI/pull/7537</a></li>
+<li>fix(ui): image quality degradation on canvas after repeated generations by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7539">https://github.com/invoke-ai/InvokeAI/pull/7539</a></li>
+<li>fix(ui): use window instead of document for image pasting by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7558">https://github.com/invoke-ai/InvokeAI/pull/7558</a></li>
+<li>Support v-prediction checkpoint models when set in the model manager by @dunkeroni in <a href="https://github.com/invoke-ai/InvokeAI/pull/7504">https://github.com/invoke-ai/InvokeAI/pull/7504</a></li>
+<li>fix(ui): sticky preset image tooltip by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7542">https://github.com/invoke-ai/InvokeAI/pull/7542</a></li>
+<li>fix(ui): round rects when applying transform by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7540">https://github.com/invoke-ai/InvokeAI/pull/7540</a></li>
+<li>Make T5 models interchangeable between FLUX/SD3 workflows by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7544">https://github.com/invoke-ai/InvokeAI/pull/7544</a></li>
+<li>Feat: Noise and Blur filters for Canvas by @dunkeroni in <a href="https://github.com/invoke-ai/InvokeAI/pull/7551">https://github.com/invoke-ai/InvokeAI/pull/7551</a></li>
+<li>fix(ui): remove AbortController logic from paste to upload by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7560">https://github.com/invoke-ai/InvokeAI/pull/7560</a></li>
+<li>Reduce peak memory during FLUX model load by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7564">https://github.com/invoke-ai/InvokeAI/pull/7564</a></li>
+<li>Add <code>keep_ram_copy_of_weights</code> config option by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7565">https://github.com/invoke-ai/InvokeAI/pull/7565</a></li>
+<li>Revise the default logic for the model cache RAM limit by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7566">https://github.com/invoke-ai/InvokeAI/pull/7566</a></li>
+<li>feat(ui): more batch data types by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7545">https://github.com/invoke-ai/InvokeAI/pull/7545</a></li>
+<li>feat: support batch node groups (aka zipped/pairwise batch nodes) by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7553">https://github.com/invoke-ai/InvokeAI/pull/7553</a></li>
+<li>refactor(ui): batch generator nodes by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7562">https://github.com/invoke-ai/InvokeAI/pull/7562</a></li>
+<li>chore: bump version to v5.6.0rc3 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7557">https://github.com/invoke-ai/InvokeAI/pull/7557</a></li>
+<li>fix(ui): string field textarea accidentally readonly by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7567">https://github.com/invoke-ai/InvokeAI/pull/7567</a></li>
+<li>chore: bump version to v5.6.0rc4 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7568">https://github.com/invoke-ai/InvokeAI/pull/7568</a></li>
+<li>feat(ui): seeded random generators by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7570">https://github.com/invoke-ai/InvokeAI/pull/7570</a></li>
+<li>feat: string batch generators by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7572">https://github.com/invoke-ai/InvokeAI/pull/7572</a></li>
+<li>Add troubleshooting docs for the Windows page file issue by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7569">https://github.com/invoke-ai/InvokeAI/pull/7569</a></li>
+<li>fix: string batch input fields by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7578">https://github.com/invoke-ai/InvokeAI/pull/7578</a></li>
+<li>fix(ui): disable dynamic prompts generators pending resolution of infinite recursion issue by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7580">https://github.com/invoke-ai/InvokeAI/pull/7580</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7534">https://github.com/invoke-ai/InvokeAI/pull/7534</a></li>
+<li>fix(ui): field handle positioning for non-batch fields by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7581">https://github.com/invoke-ai/InvokeAI/pull/7581</a></li>
+<li>feat(nodes): inpainting workflow support nodes by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7583">https://github.com/invoke-ai/InvokeAI/pull/7583</a></li>
+<li>chore: bump version to v5.6.0 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7582">https://github.com/invoke-ai/InvokeAI/pull/7582</a></li>
+</ul>
+<h2 id="new-contributors">New Contributors</h2>
+<ul>
+<li>@simonfuhrmann made their first contribution in <a href="https://github.com/invoke-ai/InvokeAI/pull/7493">https://github.com/invoke-ai/InvokeAI/pull/7493</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/invoke-ai/InvokeAI/compare/v5.5.0...v5.6.0">https://github.com/invoke-ai/InvokeAI/compare/v5.5.0…v5.6.0</a></p><h2 id="v5-5-0" class="astro-iwmmvj7n"><a href="/releases/version/v5-5-0/" class="astro-iwmmvj7n">v5.5.0</a></h2><time datetime="2024-12-20T05:47:46.000Z" class="astro-iwmmvj7n">Dec 20, 2024</time><p>This release brings support for FLUX Control LoRAs to Invoke, plus a few other fixes and enhancements.</p>
+<p>It’s also the first stable release alongside the new Invoke Launcher!</p>
+<h2 id="invoke-launcher-">Invoke Launcher ✨</h2>
+<img width="912" alt="image" src="https://github.com/user-attachments/assets/7dc1acc5-2d4d-4147-9b1e-80f1c6bb6b80">
+<p>The Invoke Launcher is a desktop application that can install, update and run Invoke on Windows, macOS and Linux.</p>
+<p>It can manage your existing Invoke installation - even if you previously installed with our legacy scripts.</p>
+<h3 id="download-the-launcher-to-get-started">Download the launcher to get started</h3>
+<ul>
+<li><a href="https://invoke.com/downloads">Download for Windows/MacOS/Linux</a></li>
+</ul>
+<p>Refer to the new <a href="https://invoke-ai.github.io/InvokeAI/installation/quick_start/">Quick Start guide</a> for more details. There’s a workaround for macOS, which may not let you run the launcher.</p>
+<h2 id="flux-control-loras">FLUX Control LoRAs</h2>
+<p>Despite having “LoRA” in the name, these models are used in Invoke via Control Layers - like ControlNets. The only difference is that they do not support begin and end step percentages.</p>
+<p>So far, BFL has released Canny and Depth models. You can install them from the Model Manager.</p>
+<h2 id="other-changes">Other Changes</h2>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li>
+<p>Support for FLUX Control LoRAs.</p>
+</li>
+<li>
+<p>Improved error handling and recovery for Canvas, preventing Canvas from getting stuck if there is a network issue during some operations.</p>
+</li>
+<li>
+<p>Reduced logging verbosity when default logging settings are used.</p>
+<p>Previously, all Uvicorn logging occurred at the same level as the app’s logging. This logging was very verbose and frequent, and made the app’s terminal output difficult to parse, with lots of extra noise.</p>
+<p>The Uvicorn log level is now set independently from the other log namespaces. To control it, set the <code>log_level_network</code> property in <code>invokeai.yaml</code>. The default is <code>warning</code>. To restore the previous log levels, set it to <code>info</code> (e.g. <code>log_level_network: info</code>).</p>
+</li>
+</ul>
+<h3 id="fixes">Fixes</h3>
+<ul>
+<li>Image context menu actions to create a Regional and Global Reference Image layers were reversed.</li>
+<li>Missing translation strings.</li>
+<li>Canvas filters could execute twice. Besides being inefficient, on slow network connections, this could cause an error toast to appear even when the filter was successful. They now only execute once.</li>
+<li>Model install error when the path contains quotes. Thanks @Quadiumm!</li>
+</ul>
+<h3 id="internal">Internal</h3>
+<ul>
+<li>Upgrade docker image to Ubuntu 24.04 and use <code>uv</code> for package management.</li>
+<li>Fix dynamic invocation values causing non-deterministic OpenAPI schema. This allows us to add a CI check to ensure the OpenAPI schema and TypeScript types are always in sync. Thanks @rikublock!</li>
+</ul>
+<h3 id="translations">Translations</h3>
+<ul>
+<li>Updated Italian. Thanks @Harvester62!</li>
+<li>Updated German. Thanks @rikublock!</li>
+<li>Updated Vietnamese. Thanks @Linos1391!</li>
+<li>Updated French. Thanks @Ery4z!</li>
+</ul>
+<h2 id="installing-and-updating">Installing and Updating</h2>
+<p>As mentioned above, <strong>the new Invoke Launcher is the recommended way to install, update and run Invoke</strong>. It takes care of a lot of details for you - like installing the right version of python - and runs Invoke as a desktop application.</p>
+<p>Follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/quick_start/">Quick Start guide</a> to get started with the launcher.</p>
+<h3 id="legacy-scripts-not-recommended">Legacy Scripts (not recommended!)</h3>
+<p><strong>We recommend using the launcher, as described in the previous section!</strong></p>
+<blockquote>
+<p>To install or update with the <strong>outdated legacy scripts</strong> 😱, <a href="https://github.com/invoke-ai/InvokeAI/releases/download/v5.5.0/InvokeAI-installer-v5.5.0.zip">download the latest legacy scripts</a> and follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/legacy_scripts/">legacy scripts instructions</a>.</p>
+</blockquote>
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+<li>[docker] upgrade to ubuntu 24.04 + use uv for package management by @ebr in <a href="https://github.com/invoke-ai/InvokeAI/pull/7401">https://github.com/invoke-ai/InvokeAI/pull/7401</a></li>
+<li>fix(ui): image context menu -> create layer from -> swap regional/global actions by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7441">https://github.com/invoke-ai/InvokeAI/pull/7441</a></li>
+<li>docs: add redirect for patchmatch docs by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7443">https://github.com/invoke-ai/InvokeAI/pull/7443</a></li>
+<li>fix(ui): missing translation string by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7442">https://github.com/invoke-ai/InvokeAI/pull/7442</a></li>
+<li>feat(ui): improved canvas/queue error handling by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7451">https://github.com/invoke-ai/InvokeAI/pull/7451</a></li>
+<li>Support FLUX structural control LoRA models by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7450">https://github.com/invoke-ai/InvokeAI/pull/7450</a></li>
+<li>LoRA refactor to enable FLUX control LoRAs w/ quantized tranformers by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7446">https://github.com/invoke-ai/InvokeAI/pull/7446</a></li>
+<li>Add FLUX Control LoRA weight param by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7452">https://github.com/invoke-ai/InvokeAI/pull/7452</a></li>
+<li>add FLUX control loras to starter models by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7453">https://github.com/invoke-ai/InvokeAI/pull/7453</a></li>
+<li>Add diffusers config object for control loras by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7454">https://github.com/invoke-ai/InvokeAI/pull/7454</a></li>
+<li>chore: bump version to v5.4.4rc1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7456">https://github.com/invoke-ai/InvokeAI/pull/7456</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7432">https://github.com/invoke-ai/InvokeAI/pull/7432</a></li>
+<li>fix(ui): fix double filter on slow networks by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7457">https://github.com/invoke-ai/InvokeAI/pull/7457</a></li>
+<li>raise error if control lora used with schnell by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7458">https://github.com/invoke-ai/InvokeAI/pull/7458</a></li>
+<li>update whats new copy for Control LoRAs by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7459">https://github.com/invoke-ai/InvokeAI/pull/7459</a></li>
+<li>Fix error message when adding a local path with quotes (issue #6517) by @Quadiumm in <a href="https://github.com/invoke-ai/InvokeAI/pull/7426">https://github.com/invoke-ai/InvokeAI/pull/7426</a></li>
+<li>feat(api): less verbose uvicorn logs by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7466">https://github.com/invoke-ai/InvokeAI/pull/7466</a></li>
+<li>fix(app): fixed InputField default values by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7464">https://github.com/invoke-ai/InvokeAI/pull/7464</a></li>
+<li>chore(ui): update typegen schema by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7462">https://github.com/invoke-ai/InvokeAI/pull/7462</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7465">https://github.com/invoke-ai/InvokeAI/pull/7465</a></li>
+<li>chore: bump version to v5.5.0rc1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7461">https://github.com/invoke-ai/InvokeAI/pull/7461</a></li>
+<li>chore: bump version to v5.5.0 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7469">https://github.com/invoke-ai/InvokeAI/pull/7469</a></li>
+</ul>
+<h2 id="new-contributors">New Contributors</h2>
+<ul>
+<li>@Quadiumm made their first contribution in <a href="https://github.com/invoke-ai/InvokeAI/pull/7426">https://github.com/invoke-ai/InvokeAI/pull/7426</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/invoke-ai/InvokeAI/compare/v5.4.3...v5.5.0">https://github.com/invoke-ai/InvokeAI/compare/v5.4.3…v5.5.0</a></p><h2 id="v5-4-3" class="astro-iwmmvj7n"><a href="/releases/version/v5-4-3/" class="astro-iwmmvj7n">v5.4.3</a></h2><time datetime="2024-12-03T23:22:07.000Z" class="astro-iwmmvj7n">Dec 3, 2024</time><p>This minor release adds initial support for FLUX Regional Guidance, arrow key nudge on Canvas, plus an assortment of fixes and enhancements.</p>
+<h3 id="changes">Changes</h3>
+<h4 id="enhancements">Enhancements</h4>
+<ul>
+<li>Add 1-pixel <code>nudge</code> to the move tool on Canvas. Use the arrow keys to make fine adjustments to a layer’s position. Thanks @hippalectryon-0!</li>
+<li>Change the default infill method from <code>patchmatch</code> to <code>lama</code>. You can use <code>patchmatch</code>.</li>
+<li>Add empty state for Global Reference Images and Regional Guidance Reference Images, similar to the empty state for Control Layers. A blurb directs users to upload an image or drag an image from gallery to set the image.</li>
+<li>FLUX performance improvements (~10% speed-up).</li>
+<li>Added <code>ImagePanelLayoutInvocation</code> to facilitate FLUX IC-LoRA workflows.</li>
+<li>FLUX Regional Guidance support (beta). Only positive prompts are supported; negative prompts, reference images and auto-negative are not supported for FLUX Regional Guidance.</li>
+<li>Canvas layers now have a warning indicator that indicates issues with the layer that could prevent invoking or cause a problem.</li>
+<li><code>New Layer from Image</code> functions added to Canvas Staging Area Toolbar. These create a new layer without dismissing the rest of the staged images.</li>
+<li>Improved empty state for Regional Guidance Reference Images.</li>
+<li>Added missing <code>New from...</code> image context menu actions: <code>Reference Image (Regional)</code> and <code>Reference Image (Global)</code></li>
+<li>Added Vietnamese to language picker in Settings.</li>
+</ul>
+<h4 id="fixes">Fixes</h4>
+<ul>
+<li>Soft Edge (Lineart, Lineart Anime) Control Layers default to the Soft Edge filter correctly.</li>
+<li>Remove the nonfunctional <code>width</code> and <code>height</code> outputs from the <code>Image Batch</code> node. If you want to use <code>width</code> and <code>height</code> in a batch, route the <code>image</code> from <code>Image Batch</code> to an <code>Image Primitive</code> node, which outputs <code>width</code> and <code>height</code>.</li>
+<li>Ensure invocation templates have fully parsed before running studio init actions.</li>
+<li>Bumped <code>transformers</code> to get a fix for Depth Anything artifacts.</li>
+<li>False negative edge case with <code>picklescan</code>.</li>
+<li>Invoke queue actions menu’s Cancel Current action erroneously cleared the entire queue. Thanks @rikublock!</li>
+<li>New Reference Images could inadvertently have the last-used Reference Image populated on creation.</li>
+<li>Error when importing GGUF models. Thanks @JPPhoto!</li>
+<li>Canceling any queue item from the Queue tab <em>also</em> erroneously canceled the currently-executing queue item.</li>
+</ul>
+<h4 id="internal">Internal</h4>
+<ul>
+<li>Add redux actions for support video modal.</li>
+<li>Tidied various things related to the queue. Thanks @rikublock!</li>
+</ul>
+<h4 id="docs">Docs</h4>
+<ul>
+<li>General tidy across many docs pages. Thanks @magnusviri!</li>
+<li>Fixed a few broken links. Thanks @emmanuel-ferdman!</li>
+</ul>
+<h4 id="translations">Translations</h4>
+<ul>
+<li>Updated Italian translations. Thanks @Harvester62!</li>
+<li>Updated Vietnamese translations. Thanks @Linos1391!</li>
+</ul>
+<h2 id="installation-and-updating">Installation and Updating</h2>
+<p>To install or update, <a href="https://github.com/invoke-ai/InvokeAI/releases/download/v5.4.3/InvokeAI-installer-v5.4.3.zip">download the latest installer</a> and follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/installer/">installation instructions</a></p>
+<p>To update, select the same installation location. Your user data (images, models, etc) will be retained.</p>
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+<li>fix(api): make sure Soft Edge Detection has preprocessor applied by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7360">https://github.com/invoke-ai/InvokeAI/pull/7360</a></li>
+<li>fix(ui): disable width and height output on image batch output by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7361">https://github.com/invoke-ai/InvokeAI/pull/7361</a></li>
+<li>feat(ui): set default infill method to lama by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7362">https://github.com/invoke-ai/InvokeAI/pull/7362</a></li>
+<li>fix(ui): make sure schema has loaded before trying to load any workflows by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7364">https://github.com/invoke-ai/InvokeAI/pull/7364</a></li>
+<li>feat(ui): add actions for video modal clicks by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7365">https://github.com/invoke-ai/InvokeAI/pull/7365</a></li>
+<li>feat(ui): add empty state for regional guidance ref image by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7363">https://github.com/invoke-ai/InvokeAI/pull/7363</a></li>
+<li>feat(ui): nudge on canvas by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7368">https://github.com/invoke-ai/InvokeAI/pull/7368</a></li>
+<li>chore: bump version to v5.4.3rc1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7369">https://github.com/invoke-ai/InvokeAI/pull/7369</a></li>
+<li>fix(ui): use token for download if its in store by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7373">https://github.com/invoke-ai/InvokeAI/pull/7373</a></li>
+<li>Create SECURITY.md by @hipsterusername in <a href="https://github.com/invoke-ai/InvokeAI/pull/7376">https://github.com/invoke-ai/InvokeAI/pull/7376</a></li>
+<li>misc(ui): various copy updates by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7382">https://github.com/invoke-ai/InvokeAI/pull/7382</a></li>
+<li>fix: Fail scan on InvalidMagicError in picklescan, update default for… by @brandonrising in <a href="https://github.com/invoke-ai/InvokeAI/pull/7381">https://github.com/invoke-ai/InvokeAI/pull/7381</a></li>
+<li>Add <code>ImagePanelLayoutInvocation</code> utility to facilitate In-Context LoRA workflows by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7374">https://github.com/invoke-ai/InvokeAI/pull/7374</a></li>
+<li>Bump transformers to ingest a DepthAnything post-processing fix by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7386">https://github.com/invoke-ai/InvokeAI/pull/7386</a></li>
+<li>docs: update code of conduct reference by @emmanuel-ferdman in <a href="https://github.com/invoke-ai/InvokeAI/pull/7380">https://github.com/invoke-ai/InvokeAI/pull/7380</a></li>
+<li>FLUX Regional Prompting by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7388">https://github.com/invoke-ai/InvokeAI/pull/7388</a></li>
+<li>FLUX Speed Improvements (~10% speedup) by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7399">https://github.com/invoke-ai/InvokeAI/pull/7399</a></li>
+<li>Update node vers by @JPPhoto in <a href="https://github.com/invoke-ai/InvokeAI/pull/7403">https://github.com/invoke-ai/InvokeAI/pull/7403</a></li>
+<li>feat(ui): add <code>New Layer from Image</code> menu to staging area toolbar by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7389">https://github.com/invoke-ai/InvokeAI/pull/7389</a></li>
+<li>refactor(ui): move clear queue hook to separate file by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7391">https://github.com/invoke-ai/InvokeAI/pull/7391</a></li>
+<li>fix(ui): call cancel instead of clear queue by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7392">https://github.com/invoke-ai/InvokeAI/pull/7392</a></li>
+<li>chore(ui): update typegen schema by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7394">https://github.com/invoke-ai/InvokeAI/pull/7394</a></li>
+<li>fix(app): adjust session queue api type by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7393">https://github.com/invoke-ai/InvokeAI/pull/7393</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7397">https://github.com/invoke-ai/InvokeAI/pull/7397</a></li>
+<li>feat(ui): less confusing empty state for rg ref images by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7407">https://github.com/invoke-ai/InvokeAI/pull/7407</a></li>
+<li>fix(ui): ref image defaults to prev ref image’s image selection by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7408">https://github.com/invoke-ai/InvokeAI/pull/7408</a></li>
+<li>feat(ui): add gallery image ctx menu items to create ref image from image by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7409">https://github.com/invoke-ai/InvokeAI/pull/7409</a></li>
+<li>fix(ui): allow invoke when inpaint/raster layers are empty by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7410">https://github.com/invoke-ai/InvokeAI/pull/7410</a></li>
+<li>fix(ui): remove “adding to” text on Invoke tooltip on Workflows/Upscaling tabs by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7411">https://github.com/invoke-ai/InvokeAI/pull/7411</a></li>
+<li>feat(ui): add vietnamese to language picker by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7412">https://github.com/invoke-ai/InvokeAI/pull/7412</a></li>
+<li>fix(worker): only apply processor cancel logic if cancel event is for current item by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7416">https://github.com/invoke-ai/InvokeAI/pull/7416</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7415">https://github.com/invoke-ai/InvokeAI/pull/7415</a></li>
+<li>Fix gguf importing by @JPPhoto in <a href="https://github.com/invoke-ai/InvokeAI/pull/7405">https://github.com/invoke-ai/InvokeAI/pull/7405</a></li>
+<li>[docs] Fix documentation broken links and remove whitespace at end of lines by @magnusviri in <a href="https://github.com/invoke-ai/InvokeAI/pull/7402">https://github.com/invoke-ai/InvokeAI/pull/7402</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7418">https://github.com/invoke-ai/InvokeAI/pull/7418</a></li>
+<li>chore: bump version to v5.4.3rc2 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7413">https://github.com/invoke-ai/InvokeAI/pull/7413</a></li>
+<li>fix(app): processor cancelation weirdness by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7421">https://github.com/invoke-ai/InvokeAI/pull/7421</a></li>
+<li>fix(ui): skip disabled global reference image by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7420">https://github.com/invoke-ai/InvokeAI/pull/7420</a></li>
+<li>Revert FLUX performance improvement that fails on MacOS by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7423">https://github.com/invoke-ai/InvokeAI/pull/7423</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7419">https://github.com/invoke-ai/InvokeAI/pull/7419</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7425">https://github.com/invoke-ai/InvokeAI/pull/7425</a></li>
+<li>chore: bump version to v5.4.3 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7424">https://github.com/invoke-ai/InvokeAI/pull/7424</a></li>
+<li>fix(ui): capitalization for vietnamese language by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7427">https://github.com/invoke-ai/InvokeAI/pull/7427</a></li>
+</ul>
+<h2 id="new-contributors">New Contributors</h2>
+<ul>
+<li>@emmanuel-ferdman made their first contribution in <a href="https://github.com/invoke-ai/InvokeAI/pull/7380">https://github.com/invoke-ai/InvokeAI/pull/7380</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/invoke-ai/InvokeAI/compare/v5.4.2...v5.4.3">https://github.com/invoke-ai/InvokeAI/compare/v5.4.2…v5.4.3</a></p><h2 id="v5-4-2" class="astro-iwmmvj7n"><a href="/releases/version/v5-4-2/" class="astro-iwmmvj7n">v5.4.2</a></h2><time datetime="2024-11-19T22:53:19.000Z" class="astro-iwmmvj7n">Nov 19, 2024</time><p>This release includes support for FLUX IP Adapter v2 and image “batching” for Workflows.</p>
+<h3 id="image-batching-for-workflows">Image Batching for Workflows</h3>
+<p>The Workflow Editor now supports running a given workflow for each image in a collection of images.</p>
+<p>Add an <code>Image Batch</code> node, drag some images into its image collection, and connect its output to any other node(s). Invoke will run the workflow once for each image in the collection.</p>
+<p>Here are a few examples to help build intuition for the feature. Click the arrow to expand each example.</p>
+<details>
+<summary>Example 1 - Single Batch -> Single Node</summary>
+<p>The simplest case is using a batch image output with a single node. Here’s a workflow that resizes 5 images to 200x200 thumbnails.</p>
+<h4 id="workflow">Workflow</h4>
+<img width="538" alt="image" src="https://github.com/user-attachments/assets/04c92e39-1743-4239-9e47-e8d7d6973f70">
+<h4 id="results">Results</h4>
+<img width="493" alt="image" src="https://github.com/user-attachments/assets/693feb96-ab9f-4f2e-b40a-b3f654e015e8">
+<p>This batch queues 5 graphs, each containing a single resize node with one of the 5 images in the batch list. Note the images are 200x200 pixels.</p>
+</details>
+<details>
+<summary>Example 2 - Single Batch -> Multiple Nodes</summary>
+<p>You can also use a batch image output with multiple nodes. This contrived workflow resizes the image to a 200x200 thumbnail, like the previous example, the pastes the thumbnail on the full size image.</p>
+<h4 id="workflow-1">Workflow</h4>
+<img width="805" alt="image" src="https://github.com/user-attachments/assets/3ee76c97-95a0-43fd-b1e1-939449c2427b">
+<h4 id="results-1">Results</h4>
+<img width="495" alt="image" src="https://github.com/user-attachments/assets/b4e5449e-b614-4378-b4a0-1b6eb8cf0606">
+<p>This batch also queues 5 graphs, each of which contains one resize and one paste node. In each graph, the nodes get the image of the 5 images in the batch collection. The batch node can connect to any number of other nodes. For each queued graph, all connected nodes will get the same image.</p>
+</details>
+<details>
+<summary>Example 3 - Multiple Batches (Product Batching)</summary>
+<p>When multiple batches are used, they are combined such that all permutations are queued (e.g. the product of batches is taken).</p>
+<h4 id="workflow-2">Workflow</h4>
+<img width="929" alt="image" src="https://github.com/user-attachments/assets/85665851-3c77-4680-a002-1eed785d78dc">
+<h4 id="results-2">Results</h4>
+<img width="492" alt="image" src="https://github.com/user-attachments/assets/2f28f18e-cf39-4afe-8d20-a5911e61a6ce">
+<p>In this case, the product of the two batches is 15 graphs. Each image of the 3-image batch is used as the base image, and a thumbnail of each tiger is pasted on top of it. We’ll call this “product” batching.</p>
+<h5 id="zipped-batching">Zipped Batching</h5>
+<p>The batching API supports “zipped” batches, where the batch collections are merged into a single batch.</p>
+<p>For example, imagine two batches of 5 images. As described in the “product” example above, you’d get 5 images * 5 images = 25 graphs. Zipped batching would instead take the first image from each of the two batches and use them together in the first graph, then take the second two images for the second graph, and so on.</p>
+<p>Zipped batching is not supported in the UI at this time.</p>
+</details>
+<h4 id="versus-iterate-nodes">Versus <code>Iterate</code> Nodes</h4>
+<p>We support similar functionality to batching with <code>Iterate</code> nodes, so why add batching? In short, <code>Iterate</code> nodes have some technical issues which are addressed by batching.</p>
+<details>
+<summary>Why `Iterate` Nodes are Scary</summary>
+<p>They result in unbounded graph complexity and size. If you don’t know what these words mean, but they sound kinda scary, congrats! You are on the right track. They are indeed scary words.</p>
+<ul>
+<li>When using <code>Iterate</code> nodes, the graph is expanded with new nodes and edges <em>during execution</em>. Pretty scary.</li>
+<li>We cannot know ahead of time how much the graph will expand, because iterate nodes’ collections are dynamic. Terrifying.</li>
+<li>Multiple iterate nodes combine via Cartesian product, resulting in combinatorial explosion. Your graph could be running at the heat death of the universe. Existential dread.</li>
+</ul>
+<p>Batch collections are defined up front and don’t expand the graph. We know exactly the complexity we are getting into before the graph executes. Sanity restored!</p>
+</details>
+<p>Batching also more intuitive - we run exactly this graph, once for each image.</p>
+<p>Unlike <code>Iterate</code> nodes, <code>Image Batch</code> nodes’ collections cannot be provided by other nodes in the graph. The collection must be defined up-front, so you cannot replace <code>Iterate</code> with <code>Image Batch</code> for all use-cases.</p>
+<p>Nevertheless, we suggest using batching where possible.</p>
+<h4 id="other-notes">Other Notes</h4>
+<ul>
+<li>We’ve added <code>Image Batch</code> nodes first because it images are the highest-impact field type, but the batching API supports arbitrary field types. In fact, the Canvas uses both <code>int</code> and <code>str</code> fields internally. We’ll save nodes for other field types for a future enhancement.</li>
+<li>If you want to batch over a board, you’ll need to drag all images from the board into the batch collection. We’ll explore a simpler way to use a board’s images for a batch in a future enhancement.</li>
+<li>It is not possible to combine all outputs from a batch within the same workflow.</li>
+</ul>
+<h3 id="other-changes">Other Changes</h3>
+<h4 id="enhancements">Enhancements</h4>
+<ul>
+<li>Support for FLUX IP Adapter v2. <strong>We’ve optimized internal handling for v2, and you may find FLUX IP Adapter v1 results are degraded. Update to v2 to fix this.</strong></li>
+<li>Updated image collection inputs for nodes. You may now drag images into collections directly.</li>
+<li>Brought some of @dwringer’s often-requested <a href="https://github.com/dwringer/composition-nodes">composition nodes</a> into Invoke’s core nodes. They have been renamed to not conflict with your existing install of the node pack. Thanks for your work on these very useful nodes @dwringer!</li>
+<li>Show tab-specific info in the Invoke button’s tooltip.</li>
+<li>Update the <code>New from Image</code> context menu actions. The actions that resize the image after creating a new Canvas are clearly named.</li>
+<li>Change the <code>Reset Canvas</code> button, which was too similar to the <code>Delete Image</code> button, into a menu with more options:
+<ul>
+<li>New Canvas Session: Resets all generation settings, resets all layers, and enables Send to Canvas.</li>
+<li>New Gallery Session: Resets all generation settings, resets all layers, and enables Send to Gallery.</li>
+<li>Reset Generation Settings: Resets all generation settings, leaving layers alone.</li>
+<li>Reset Canvas Layers: Resets all layers, leaving generation settings alone.</li>
+</ul>
+</li>
+<li>New Support Videos button in the bottom-left corner of the app, which lists and links to videos on our YouTube channel.</li>
+</ul>
+<h4 id="fixes">Fixes</h4>
+<ul>
+<li>Added padding to the metadata recall buttons in the metadata viewer, so they aren’t cut off by other UI elements.</li>
+<li>The progress bar stopped throbbing in the last release. We apologize for this oversight. Throbbing has been restored.</li>
+<li>Addressed some edge cases that could cause the UI to crash with an error about an entity not found.</li>
+<li>Updated grid size for SD3.5 models to 16px. Thanks for the heads up @dunkeroni.</li>
+</ul>
+<h4 id="internal">Internal</h4>
+<ul>
+<li>Removed a node with a GPL-3 dependency (<code>easing-functions</code>), which had been contributed in the <code>step_param_easing</code> node that used it. While this node has been deprecated, please let us know if you were using this node, and the use-cases, so that we can better design inputs where these are found helpful.</li>
+</ul>
+<h3 id="translations">Translations</h3>
+<blockquote>
+<p>We have had some issues communicating with “walk-in” translators on Weblate, resulting in translations being changed when they are already correct. To mitigate this, we are trying a more restricted Weblate translation setup. Access to contribute translations must be granted by @Harvester62. Please @ them in the <a href="https://discord.com/channels/1020123559063990373/1054129386447716433">#translators channel on discord</a> to get access.</p>
+</blockquote>
+<blockquote>
+<p>Our Weblate also has an account issue and is currently locked. This is unrelated to the access restriction changes.</p>
+</blockquote>
+<p>We apologize for any inconvenience this change may cause. Thanks to all our translators for their continued efforts!</p>
+<ul>
+<li>Updated Chinese (Simplified). Thanks @youo0o0!</li>
+<li>Updated Italian. Thanks @Harvester62!</li>
+<li>Updated Spanish. Thanks gallegonovato (weblate user)!</li>
+</ul>
+<h2 id="installation-and-updating">Installation and Updating</h2>
+<p>To install or update, <a href="https://github.com/invoke-ai/InvokeAI/releases/download/v5.4.2/InvokeAI-installer-v5.4.2.zip">download the latest installer</a> and follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/installer/">installation instructions</a></p>
+<p>To update, select the same installation location. Your user data (images, models, etc) will be retained.</p>
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+<li>feat(ui): deferred invocation progress details for model loading by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7320">https://github.com/invoke-ai/InvokeAI/pull/7320</a></li>
+<li>fix(ui): add padding to the metadata recall section so buttons are not blocked by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7326">https://github.com/invoke-ai/InvokeAI/pull/7326</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7323">https://github.com/invoke-ai/InvokeAI/pull/7323</a></li>
+<li>remove GPL-3 licensed package easing-functions by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7337">https://github.com/invoke-ai/InvokeAI/pull/7337</a></li>
+<li>fix(ui): progress bar not throbbing when it should by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7332">https://github.com/invoke-ai/InvokeAI/pull/7332</a></li>
+<li>fix(ui): prevent entity not found errors by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7340">https://github.com/invoke-ai/InvokeAI/pull/7340</a></li>
+<li>XLabs FLUX IP-Adapter v2 by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7338">https://github.com/invoke-ai/InvokeAI/pull/7338</a></li>
+<li>feat(ui): image batching in workflows by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7343">https://github.com/invoke-ai/InvokeAI/pull/7343</a></li>
+<li>fix(ui): add sd-3 grid size of 16px to grid util by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7346">https://github.com/invoke-ai/InvokeAI/pull/7346</a></li>
+<li>chore: bump version to v5.4.2rc1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7344">https://github.com/invoke-ai/InvokeAI/pull/7344</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7331">https://github.com/invoke-ai/InvokeAI/pull/7331</a></li>
+<li>feat: ingest composition nodes into core by @brandonrising in <a href="https://github.com/invoke-ai/InvokeAI/pull/7341">https://github.com/invoke-ai/InvokeAI/pull/7341</a></li>
+<li>fix(ui): simplify logic for non-local invocation progress alerts by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7353">https://github.com/invoke-ai/InvokeAI/pull/7353</a></li>
+<li>feat(ui): update invoke button tooltip for batching by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7350">https://github.com/invoke-ai/InvokeAI/pull/7350</a></li>
+<li>feat(ui): change reset canvas icon to “empty” by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7351">https://github.com/invoke-ai/InvokeAI/pull/7351</a></li>
+<li>feat(ui): clarified new from image menu items by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7352">https://github.com/invoke-ai/InvokeAI/pull/7352</a></li>
+<li>feat(ui): change reset canvas button to new session menu by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7356">https://github.com/invoke-ai/InvokeAI/pull/7356</a></li>
+<li>feat(ui): support videos modal by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7300">https://github.com/invoke-ai/InvokeAI/pull/7300</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7355">https://github.com/invoke-ai/InvokeAI/pull/7355</a></li>
+<li>chore: bump version to v5.4.2 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7354">https://github.com/invoke-ai/InvokeAI/pull/7354</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/invoke-ai/InvokeAI/compare/v5.4.1...v5.4.2">https://github.com/invoke-ai/InvokeAI/compare/v5.4.1…v5.4.2</a></p><h2 id="v5-4-1" class="astro-iwmmvj7n"><a href="/releases/version/v5-4-1/" class="astro-iwmmvj7n">v5.4.1</a></h2><time datetime="2024-11-15T02:35:22.000Z" class="astro-iwmmvj7n">Nov 15, 2024</time><p>This release includes support for SD 3.5, plus a number of fixes and improvements.</p>
+<blockquote>
+<p>We pulled v5.4.0 due to issues with model installation and loading. This release (v5.4.1) resolves those issues and includes all changes from v5.4.0.</p>
+</blockquote>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li>Support for SD 3.5 Medium and Large. You can download them in the starter models.</li>
+<li>Moved <code>Denoising Strength</code> slider to top of Layers panel with updated UI and info popover.</li>
+<li>Update viewer styling to have a menubar-ish header. Also used for image comparison.</li>
+<li>Layer preview tooltip with larger sized preview.</li>
+<li>Empty state for Control Layers, guiding user to upload an image, drag an image from gallery or start drawing.</li>
+<li>“Simple” mode for control layers filtering, triggered when you select a control model. This automatically selects and processes the default filter for that model, if a default exists. If the user clicks <code>Advanced</code>, they get the full filter settings UI. Control Layers now start with no model selected, implicitly directing users into this flow.</li>
+<li>Updated default control weight to 0.75 and end step % to 0.75. Updated label for the <code>Balanced</code> control mode, indicating it is the recommended setting.</li>
+<li>The FLUX Denoise node now has a flag to skip adding noise to input latents. This is useful for switching models mid-generation and other fancy denoising techniques. Thanks @JPPhoto!</li>
+<li>Migrated the UI’s drag-and-drop functionality to a new library, improving the overall performance of dnd. It also allows us to support external dnd. For example, dragging images from the OS directly into the canvas is now possible (not implemented in this release).</li>
+<li>Canvas layers may be sorted via drag-and-drop.</li>
+<li>When graph building fails, you will see an error toast. Previously, it only logged a message to the browser’s JS console.</li>
+<li>Updated model warnings on Upscaling tab to not be misleading.</li>
+<li>More FLUX LoRA format support.</li>
+<li>Show alert over canvas/viewer with invocation progress event messages.</li>
+<li>Tweak gallery image selection styles to better differentiate between hovered and selected.</li>
+<li><code>Output Only Masked Regions</code> renamed to <code>Output only Generated Regions</code> and now enabled by default.</li>
+</ul>
+<h3 id="fixes">Fixes</h3>
+<ul>
+<li>Canvas progress images do not clear when canceling generation after at least one image has been staged.</li>
+<li>Tooltips on boards list stay open when scrolling, potentially causing the whole app to scroll.</li>
+<li>Saving canvas to gallery does not create a new image in gallery.</li>
+<li>Applying a filter could erase or otherwise change a layer’s data unexpectedly, causing a range of user-facing generation issues.</li>
+<li>Unable to queue graphs with the Segment Anything node when its inputs were provided by connection.</li>
+<li>Unable to load a workflow from file when using the three-dots menu.</li>
+<li><code>pip</code> downloads <code>torch</code> twice. This didn’t cause any application issues - just a waste of time and bandwidth. We pinned <code>torch</code> to <code>&#x3C;2.5.0</code> to prevent <code>pip</code>’s dependency resolver from getting confused.</li>
+<li><code>mediapipe</code> install issue on Windows, related to its latest release. We pinned <code>mediapipe</code> to a known working version.</li>
+<li>CLIP Vision error when using FLUX IP Adapter.</li>
+<li>Fit bbox to layers math could result in a slightly-too-large bbox.</li>
+<li>Outdated link to FLUX IP Adapter. Thanks @RadTechDad!</li>
+<li>Force a compatible precision for FLUX VAEs to prevent black outputs.</li>
+</ul>
+<h3 id="translations">Translations</h3>
+<p>We have had some issues communicating with “walk-in” translators on Weblate, resulting in translations being changed when they are already correct. To mitigate this, we are trying a more restricted Weblate translation setup. Access to contribute translations must be granted by @Harvester62. Please @ them in the <a href="https://discord.com/channels/1020123559063990373/1054129386447716433">#translators channel on discord</a> to get access.</p>
+<p>We apologize for any inconvenience this change may cause. Thanks to all our translators for their continued efforts!</p>
+<ul>
+<li>Updated German. Thanks @rikublock!</li>
+<li>Updated Chinese (Simplified). Thanks @youo0o0!</li>
+<li>Updated Italian. Thanks @Harvester62 &#x26; @dakota2472!</li>
+<li>Updated Spanish. Thanks gallegonovato (weblate user)!</li>
+<li>Updated Vietnamese. Thanks Linos (weblate user)!</li>
+<li>Updated Japanese. Thanks @GGSSKK!</li>
+</ul>
+<h3 id="internal">Internal</h3>
+<ul>
+<li>Simplified parameter schema declarations. Thanks @rikublock!</li>
+<li>Simplified dnd image and gallery rendering, resulting in improved performance.</li>
+</ul>
+<h2 id="installation-and-updating">Installation and Updating</h2>
+<p>To install or update, <a href="https://github.com/invoke-ai/InvokeAI/releases/download/v5.4.1/InvokeAI-installer-v5.4.1.zip">download the latest installer</a> and follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/installer/">installation instructions</a></p>
+<p>To update, select the same installation location. Your user data (images, models, etc) will be retained.</p>
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+<li>Pin torch to &#x3C;2.5.0 to prevent unnecessary downloads by @ebr in <a href="https://github.com/invoke-ai/InvokeAI/pull/7247">https://github.com/invoke-ai/InvokeAI/pull/7247</a></li>
+<li>fix(ui): misc fixes by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7252">https://github.com/invoke-ai/InvokeAI/pull/7252</a></li>
+<li>fix(nodes): relaxed validation for segment anything by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7253">https://github.com/invoke-ai/InvokeAI/pull/7253</a></li>
+<li>fix(ui): load workflow from file by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7254">https://github.com/invoke-ai/InvokeAI/pull/7254</a></li>
+<li>fix(deps): pin mediapipe strictly to a known working version by @ebr in <a href="https://github.com/invoke-ai/InvokeAI/pull/7258">https://github.com/invoke-ai/InvokeAI/pull/7258</a></li>
+<li>Ryan/sd3 diffusers by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7222">https://github.com/invoke-ai/InvokeAI/pull/7222</a></li>
+<li>chore: bump version to v5.4.0 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7259">https://github.com/invoke-ai/InvokeAI/pull/7259</a></li>
+<li>fix: Never throw an exception when finding the clip variant type by @brandonrising in <a href="https://github.com/invoke-ai/InvokeAI/pull/7263">https://github.com/invoke-ai/InvokeAI/pull/7263</a></li>
+<li>fix(ui): add some feedback while layers are merging by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7265">https://github.com/invoke-ai/InvokeAI/pull/7265</a></li>
+<li>feat(api,ui): allow Whats New module to get content from back-end by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7268">https://github.com/invoke-ai/InvokeAI/pull/7268</a></li>
+<li>fix(ui): fix link for infill method popover by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7269">https://github.com/invoke-ai/InvokeAI/pull/7269</a></li>
+<li>update Whats New for 5.3.1 by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7272">https://github.com/invoke-ai/InvokeAI/pull/7272</a></li>
+<li>fix(ui): bad merge conflict by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7273">https://github.com/invoke-ai/InvokeAI/pull/7273</a></li>
+<li>fix: get_clip_variant_type should never return None by @brandonrising in <a href="https://github.com/invoke-ai/InvokeAI/pull/7275">https://github.com/invoke-ai/InvokeAI/pull/7275</a></li>
+<li>feat(ui): denoising strength UI by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7262">https://github.com/invoke-ai/InvokeAI/pull/7262</a></li>
+<li>chore(gh): update pr template w/ reminder for what’s new copy by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7274">https://github.com/invoke-ai/InvokeAI/pull/7274</a></li>
+<li>feat(ui): simplify parameter schema declaration by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7281">https://github.com/invoke-ai/InvokeAI/pull/7281</a></li>
+<li>feat(ui): new user ux improvements by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7279">https://github.com/invoke-ai/InvokeAI/pull/7279</a></li>
+<li>fix: Avoid downloading unsafe .bin files if a safetensors file is ava… by @brandonrising in <a href="https://github.com/invoke-ai/InvokeAI/pull/7282">https://github.com/invoke-ai/InvokeAI/pull/7282</a></li>
+<li>fix: Look in known subfolders for configs for clip variants by @brandonrising in <a href="https://github.com/invoke-ai/InvokeAI/pull/7283">https://github.com/invoke-ai/InvokeAI/pull/7283</a></li>
+<li>chore: release v5.4.1rc1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7285">https://github.com/invoke-ai/InvokeAI/pull/7285</a></li>
+<li>Update flux_denoise.py by @JPPhoto in <a href="https://github.com/invoke-ai/InvokeAI/pull/7270">https://github.com/invoke-ai/InvokeAI/pull/7270</a></li>
+<li>fix(app): silence pydantic protected namespace warning by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7291">https://github.com/invoke-ai/InvokeAI/pull/7291</a></li>
+<li>chore(ui): migrate dnd library by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7288">https://github.com/invoke-ai/InvokeAI/pull/7288</a></li>
+<li>chore: bump version to v5.4.1rc2 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7293">https://github.com/invoke-ai/InvokeAI/pull/7293</a></li>
+<li>fix(ui): FLUX IP adapter clip vision model error by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7292">https://github.com/invoke-ai/InvokeAI/pull/7292</a></li>
+<li>fix(ui): excessive toasts when generating on canvas by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7294">https://github.com/invoke-ai/InvokeAI/pull/7294</a></li>
+<li>fix(ui): fit bbox to layers math by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7297">https://github.com/invoke-ai/InvokeAI/pull/7297</a></li>
+<li>fix(ui): restore missing image paste handler by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7298">https://github.com/invoke-ai/InvokeAI/pull/7298</a></li>
+<li>feat(ui): update warnings on upscaling tab based on model arch by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7299">https://github.com/invoke-ai/InvokeAI/pull/7299</a></li>
+<li>feat(ui): clarify denoising strength badge text by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7304">https://github.com/invoke-ai/InvokeAI/pull/7304</a></li>
+<li>Updated link to flux ip adapter model by @RadTechDad in <a href="https://github.com/invoke-ai/InvokeAI/pull/7309">https://github.com/invoke-ai/InvokeAI/pull/7309</a></li>
+<li>Flux Vae broke for float16, force bfloat16 or float32 were compatible by @Vargol in <a href="https://github.com/invoke-ai/InvokeAI/pull/7213">https://github.com/invoke-ai/InvokeAI/pull/7213</a></li>
+<li>Fix FLUX diffusers LoRA models with no <code>.proj_mlp</code> layers by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7313">https://github.com/invoke-ai/InvokeAI/pull/7313</a></li>
+<li>SD3 Image-to-Image and Inpainting by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7295">https://github.com/invoke-ai/InvokeAI/pull/7295</a></li>
+<li>(ui): update en string for full IP adapter by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7312">https://github.com/invoke-ai/InvokeAI/pull/7312</a></li>
+<li>feat(ui, worker): add invocation progress events to model loading by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7286">https://github.com/invoke-ai/InvokeAI/pull/7286</a></li>
+<li>feat(ui): tweak image selection/hover styling by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7302">https://github.com/invoke-ai/InvokeAI/pull/7302</a></li>
+<li>feat(ui): update output only masked regions by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7303">https://github.com/invoke-ai/InvokeAI/pull/7303</a></li>
+<li>fix(ui): image uploading handling by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7315">https://github.com/invoke-ai/InvokeAI/pull/7315</a></li>
+<li>fix(ui): unable to use text inputs within draggable by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7316">https://github.com/invoke-ai/InvokeAI/pull/7316</a></li>
+<li>fix(ui): multiple selection dnd sometimes doesn’t get full selection by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7317">https://github.com/invoke-ai/InvokeAI/pull/7317</a></li>
+<li>fix(ui): remove progress message condition for canvas destinations by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7319">https://github.com/invoke-ai/InvokeAI/pull/7319</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7242">https://github.com/invoke-ai/InvokeAI/pull/7242</a></li>
+</ul>
+<h2 id="new-contributors">New Contributors</h2>
+<ul>
+<li>@RadTechDad made their first contribution in <a href="https://github.com/invoke-ai/InvokeAI/pull/7309">https://github.com/invoke-ai/InvokeAI/pull/7309</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/invoke-ai/InvokeAI/compare/v5.3.1...v5.4.1">https://github.com/invoke-ai/InvokeAI/compare/v5.3.1…v5.4.1</a></p><h2 id="v5-3-1" class="astro-iwmmvj7n"><a href="/releases/version/v5-3-1/" class="astro-iwmmvj7n">v5.3.1</a></h2><time datetime="2024-11-01T03:00:16.000Z" class="astro-iwmmvj7n">Nov 1, 2024</time><p>This release expands layer merging capabilities in the Canvas and makes a number of other fixes and enhancements.</p>
+<h3 id="layer-merging">Layer Merging</h3>
+<p>We’ve expanded layer merging capabilities to all layer types and made one change to the existing <code>Merge Visible</code> operation.</p>
+<h4 id="merge-down-new">Merge Down (new)</h4>
+<p>The selected layer and the one immediately below it are merged into a single layer. The two input layers are deleted as part of this process.</p>
+<h4 id="merge-visible-changed">Merge Visible (changed)</h4>
+<p>Previously, in Invoke, <code>Merge Visible</code> deleted all the layers that were merged together.</p>
+<p>This has been changed to match image editors like Affinity Photo and PS, where the merged layer is added as a new layer, leaving all other layers untouched.</p>
+<h4 id="merging-regional-guidance">Merging <code>Regional Guidance</code></h4>
+<p>When merging <code>Regional Guidance</code>, the resultant merged <code>Regional Guidance</code> <strong>has no prompt or reference image</strong>. It’s not possible to merge those settings. Keep this in mind when doing a <code>Merge Down</code>, which will delete the two input <code>Regional Guidance</code> layers.</p>
+<h4 id="merging-control-layers">Merging <code>Control Layers</code></h4>
+<p>When merging <code>Control Layers</code>, the resultant merged <code>Control Layer</code> <strong>has no model or control settings</strong>. Like <code>Regional Guidance</code>, it’s not possible to merge the settings, and <code>Merge Down</code> will delete the two input layers.</p>
+<p><code>Control Layers</code> require some special handling. For example, we display them with a “transparency effect” to help you visualize how they stack up. When merging them, we first apply a similar effect to the layer. Specifically, we use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation#lighter">“lighter” blend mode</a>, optimizing for control images with black backgrounds.</p>
+<h3 id="all-changes">All Changes</h3>
+<h4 id="enhancements">Enhancements</h4>
+<ul>
+<li>Layer merging improvements.</li>
+<li>Updated “What’s New” popover.</li>
+<li><code>Inpaint Mask</code> and <code>Regional Guidance</code> may be saved to assets.</li>
+<li>Support for HF tokens in the model manager UI. This prepares Invoke’s MM for SD3.5, which requires you to authenticate with HF to download the model. You can paste your token into the MM to allow the the model to download, instead of needing to configure it with the HF CLI.</li>
+<li>Add a safeguard for invocation classes, requiring they implement the <code>invoke</code> method and have a correct output annotation.</li>
+</ul>
+<h4 id="fixes">Fixes</h4>
+<ul>
+<li>Canvas alerts prevent clicks on the metadata viewer tabs.</li>
+<li><code>Save as</code>-ing a Filtered layer may result in the wrong image data being used during generation.</li>
+<li>More resilient Filter handling.</li>
+<li>SDXL T2I OpenPose model gets input images with the correct channel order, which makes this model work correctly. Thanks @dunkeroni!</li>
+<li>T2I Adapters now work with any output size supported by the main model. Previously, they required output sizes to be in multiples of 32 or 64. Thanks @dunkeroni!</li>
+<li>Recall of seamless metadata settings. Thanks @rikublock!</li>
+<li>Fixed broken link in installer. Thanks @hippalectryon-0!</li>
+<li>Fixed (another) broken link in installer. Thanks @ventureOptimism!</li>
+</ul>
+<h4 id="internal">Internal</h4>
+<ul>
+<li>Bump <code>diffusers</code>, <code>accelerate</code> and <code>huggingface-hub</code> dependencies to latest versions.</li>
+<li>Refactored <code>CanvasCompositorModule</code> to support new merge capabilities.</li>
+<li>Remove version pins for several packages including torch and numpy. This is in preparation for an updated installer and also makes it easier for advanced users to customize the versions of various packages.</li>
+<li>Canvas inpaint and outpaint graphs output one less intermediate image, saving one expensive PNG encode (and your disk space).</li>
+<li>Added caches for generation mode calculations in Canvas, providing a substantial reduction in intermediate images created and faster Invoke-to-Queue times.</li>
+</ul>
+<h4 id="docs">Docs</h4>
+<ul>
+<li>Updated <code>patchmatch</code> docs. Thanks @nirmal0001!</li>
+<li>Updated FAQ. Thanks @JPPhoto!</li>
+<li>Updated dev docs. Thanks @hippalectryon-0!</li>
+</ul>
+<h4 id="translations">Translations</h4>
+<ul>
+<li>Updated German. Thanks @rikublock &#x26; @Atalanttore!</li>
+<li>Updated Chinese (Simplified). Thanks @qyouqme &#x26; @youo0o0!</li>
+<li>Updated Italian. Thanks @Harvester62 &#x26; @dakota2472!</li>
+<li>Updated French. Thanks @Ery4z!</li>
+</ul>
+<h2 id="installation-and-updating">Installation and Updating</h2>
+<p>To install or update, <a href="https://github.com/invoke-ai/InvokeAI/releases/download/v5.3.1/InvokeAI-installer-v5.3.1.zip">download the latest installer</a> and follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/installer/">installation instructions</a></p>
+<p>To update, select the same installation location. Your user data (images, models, etc) will be retained.</p>
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+<li>fix(ui): canvas alerts blocking metadata panel by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7210">https://github.com/invoke-ai/InvokeAI/pull/7210</a></li>
+<li>Bump <code>diffusers</code> version (and <code>accelerate</code>, <code>hugginface-hub</code>) by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7174">https://github.com/invoke-ai/InvokeAI/pull/7174</a></li>
+<li>feat(ui): canvas graph improvements by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7218">https://github.com/invoke-ai/InvokeAI/pull/7218</a></li>
+<li>Fix SDXL t2i adapters expect BGR instead of RGB by @dunkeroni in <a href="https://github.com/invoke-ai/InvokeAI/pull/7205">https://github.com/invoke-ai/InvokeAI/pull/7205</a></li>
+<li>fix(ui): recall seamless settings by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7217">https://github.com/invoke-ai/InvokeAI/pull/7217</a></li>
+<li>feat(ui): update announcements for v5.3.0 by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7221">https://github.com/invoke-ai/InvokeAI/pull/7221</a></li>
+<li>fix(ui): canvas filter and SAM module fixes by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7224">https://github.com/invoke-ai/InvokeAI/pull/7224</a></li>
+<li>feat(ui): canvas entity merging by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7219">https://github.com/invoke-ai/InvokeAI/pull/7219</a></li>
+<li>chore: bump version to v5.3.1rc1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7225">https://github.com/invoke-ai/InvokeAI/pull/7225</a></li>
+<li>fix(ui): compositor not setting processing flag when cleaning up by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7227">https://github.com/invoke-ai/InvokeAI/pull/7227</a></li>
+<li>fix(nodes): nodes denylist handling by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7235">https://github.com/invoke-ai/InvokeAI/pull/7235</a></li>
+<li>feat(ui,api): support for HF tokens in UI, handle Unauthorized and Forbidden responses from HF by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7201">https://github.com/invoke-ai/InvokeAI/pull/7201</a></li>
+<li>Update patchmatch.md by @nirmal0001 in <a href="https://github.com/invoke-ai/InvokeAI/pull/7165">https://github.com/invoke-ai/InvokeAI/pull/7165</a></li>
+<li>Update FAQ.md by @JPPhoto in <a href="https://github.com/invoke-ai/InvokeAI/pull/6801">https://github.com/invoke-ai/InvokeAI/pull/6801</a></li>
+<li>Fix link in dev docs by @hippalectryon-0 in <a href="https://github.com/invoke-ai/InvokeAI/pull/7200">https://github.com/invoke-ai/InvokeAI/pull/7200</a></li>
+<li>feat(nodes): add validation for invoke method return types by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/6279">https://github.com/invoke-ai/InvokeAI/pull/6279</a></li>
+<li>refactor(ui): layer interaction locking by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7234">https://github.com/invoke-ai/InvokeAI/pull/7234</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7166">https://github.com/invoke-ai/InvokeAI/pull/7166</a></li>
+<li>feat(ui): filter/select-object do not exit on save-as by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7238">https://github.com/invoke-ai/InvokeAI/pull/7238</a></li>
+<li>fix broken link in installer by @hippalectryon-0 in <a href="https://github.com/invoke-ai/InvokeAI/pull/7211">https://github.com/invoke-ai/InvokeAI/pull/7211</a></li>
+<li>Adjust pins for torch, numpy, other dependencies by @ebr in <a href="https://github.com/invoke-ai/InvokeAI/pull/7232">https://github.com/invoke-ai/InvokeAI/pull/7232</a></li>
+<li>fix(ui): add missing translations by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7237">https://github.com/invoke-ai/InvokeAI/pull/7237</a></li>
+<li>removing periods from update link to prevent page not found error by @ventureOptimism in <a href="https://github.com/invoke-ai/InvokeAI/pull/6526">https://github.com/invoke-ai/InvokeAI/pull/6526</a></li>
+<li>fix(ui): canvas misc bugs by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7244">https://github.com/invoke-ai/InvokeAI/pull/7244</a></li>
+<li>Make T2I Adapters work with any resolution supported by the models by @dunkeroni in <a href="https://github.com/invoke-ai/InvokeAI/pull/7215">https://github.com/invoke-ai/InvokeAI/pull/7215</a></li>
+<li>chore: bump version to v5.3.1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7245">https://github.com/invoke-ai/InvokeAI/pull/7245</a></li>
+</ul>
+<h2 id="new-contributors">New Contributors</h2>
+<ul>
+<li>@nirmal0001 made their first contribution in <a href="https://github.com/invoke-ai/InvokeAI/pull/7165">https://github.com/invoke-ai/InvokeAI/pull/7165</a></li>
+<li>@ventureOptimism made their first contribution in <a href="https://github.com/invoke-ai/InvokeAI/pull/6526">https://github.com/invoke-ai/InvokeAI/pull/6526</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/invoke-ai/InvokeAI/compare/v5.3.0...v5.3.1">https://github.com/invoke-ai/InvokeAI/compare/v5.3.0…v5.3.1</a></p><h2 id="v5-3-0" class="astro-iwmmvj7n"><a href="/releases/version/v5-3-0/" class="astro-iwmmvj7n">v5.3.0</a></h2><time datetime="2024-10-26T06:01:53.000Z" class="astro-iwmmvj7n">Oct 26, 2024</time><p>This release includes a number of enhancements and fixes. Standouts include:</p>
+<ul>
+<li>Object selection in Canvas (via Segment Anything).</li>
+<li>Support for XLabs FLUX IP Adapters.</li>
+<li>Installer improvements, which should resolve all <code>xformers</code>-related issues.</li>
+<li>Improved FLUX support for MPS (Apple Silicon) devices.</li>
+<li>Reworked context menus, now with sub-menus.</li>
+</ul>
+<blockquote>
+<p>Be sure to review the <a href="https://github.com/invoke-ai/InvokeAI/releases/tag/v5.0.0">v5 release notes</a> if you haven’t already upgraded to v5.</p>
+</blockquote>
+<h3 id="canvas-select-object">Canvas Select Object</h3>
+<p>Click the Canvas to add <code>Include</code> and <code>Exclude</code> points to select an object in a layer, then use the selection as an Inpaint Mask.</p>
+<p><video src="https://github.com/user-attachments/assets/57b08479-7413-4d8c-971a-8581722663cb"></video></p>
+<p>In the next example, we want to select the fox <em>and</em> the ground, but the model has a hard time with this, as it is trained to select single objects. We are able to work around this by selecting the background and inverting the selection.</p>
+<p><a href="https://github.com/user-attachments/assets/29fd08a3-10f0-4cb6-bc7b-699ff0a0094d">https://github.com/user-attachments/assets/29fd08a3-10f0-4cb6-bc7b-699ff0a0094d</a></p>
+<p>As demonstrated, applying the selection masks the layer with the selection. You can also save the selection as a Raster Layer, Control Layer or Regional Guidance. This enables some useful workflows.</p>
+<p><video src="https://github.com/user-attachments/assets/65d725da-0324-4c50-872d-0cbfaa866c4b"></video></p>
+<p>Internally, this uses Segment Anything v1. We’ll upgrade to SAM v2, which substantially improves object selection, once support for it <a href="https://github.com/huggingface/transformers/pull/32317">lands in <code>transformers</code></a>.</p>
+<h3 id="flux-ip-adapters">FLUX IP Adapters</h3>
+<p>We now support XLabs FLUX IP Adapters. There’s only the one model right now, which we’ve added to the starter models.</p>
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="50%">Workflow &#x26; Input Image</th>
+      <th width="50%">Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td width="20%"><img src="https://github.com/user-attachments/assets/3b422f0a-7e39-4f42-9d39-b7ca58c54ec9"></td>
+      <td width="20%"><img src="https://github.com/user-attachments/assets/0987a7b9-3503-49bb-bc53-e255d878c68b"></td>
+    </tr>
+  </tbody>
+</table>
+<p>Internally, IP Adapter requires CFG to work. For now, this is only exposed via workflows. Negative conditioning is also now available in workflows. We’re exploring a sane way to expose this in the linear UI.</p>
+<p>Negative conditioning requires a CFG value <code>>1</code>. Leave CFG at <code>1</code> to disable it and ignore negative conditioning.</p>
+<p>Note: CFG doubles denoising time, and negative conditioning requires a good additional chunk of VRAM.</p>
+<h3 id="all-changes">All Changes</h3>
+<h4 id="enhancements">Enhancements</h4>
+<ul>
+<li>Object selection in Canvas (via Segment Anything).</li>
+<li>Support for XLabs FLUX IP Adapters.</li>
+<li>Support for CFG and Negative Conditioning for FLUX in workflows only.</li>
+<li>Added <code>RealVisXL5</code> to SDXL Starter Model Bundle.</li>
+<li>Model manager <code>in-place</code> checkbox remembers your choice. Thanks @rikublock!</li>
+<li>Better tooltips in the model manager, including a starter bundle contents.</li>
+<li>Support for sub-menus, which are now used in the Image context menu and various Canvas context menus.</li>
+<li>Support more conversions between Canvas layers. Both in-place and copy conversions are supported. For example, convert between Inpaint Masks and Regional Guidance, or copy a Raster Layer into a new Inpaint Mask.</li>
+<li>Model descriptions are now displayed in model selection drop-downs. You can disable this in settings.</li>
+<li>We now track whether or not enabled model default settings are currently set. When they are not, we list the defaults that differ in a tooltip on the little button next to the main model drop-down.</li>
+<li>Always show staging images when staging starts, even if user hid them last staging session.</li>
+<li>Canvas alerts (e.g. the <code>Sending to Gallery</code> alert overlaid on the canvas) are moved to the top-left corner of the center panel.</li>
+<li>Updated translations. Thanks @rikublock, @Vasyanator, @Harvester62, @Ery4z!</li>
+</ul>
+<h4 id="fixes">Fixes</h4>
+<ul>
+<li>Improved FLUX support for MPS devices. Thanks @Vargol!</li>
+<li>FLUX denoise node erroneously required <code>controlnet_vae</code> field.</li>
+<li>Uninstall <code>xformers</code> before installation, fixing issues w/ <code>xformers</code> version mismatch.</li>
+<li>Fixed installer text output. Thanks @max-maag!</li>
+<li>Fixed ROCm PyPI indices. Thanks @max-maag!</li>
+<li>Normalize solid infill alpha values from 0-1 to 0-255 when building canvas graphs. This issue didn’t cause any problems, because VAE ignores the alpha channel, but it should be fixed regardless.</li>
+<li>View/Hide Boards button cut off with certain translations.</li>
+<li>Fix a longstanding issue where nodes could mutate the objects (images, tensors, conditioning data) in disk-backed in-memory caches. For example, node 1 might retrieve image X and do some in-place operation on it to create image Y. Node 2 retrieves image X but gets image Y instead. This issue only affected the in-memory caches; mutations were not pushed to disk. The invocation API now returns clones of all objects, so nodes can safely mutate their inputs in-place.</li>
+</ul>
+<h4 id="internal">Internal</h4>
+<ul>
+<li>Reworked logging implementation.</li>
+<li>Directory traversal issue when deleting images.</li>
+</ul>
+<h4 id="documentation">Documentation</h4>
+<ul>
+<li>Updated dev install docs. Thanks @hippalectryon-0!</li>
+</ul>
+<h2 id="installation-and-updating">Installation and Updating</h2>
+<p>To install or update, <a href="https://github.com/invoke-ai/InvokeAI/releases/download/v5.3.0/InvokeAI-installer-v5.3.0.zip">download the latest installer</a>  and follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/installer/">installation instructions</a></p>
+<p>To update, select the same installation location. Your user data (images, models, etc) will be retained.</p>
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+<li>fix(app): directory traversal when deleting images by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7145">https://github.com/invoke-ai/InvokeAI/pull/7145</a></li>
+<li>Small improvements for the installer text output by @max-maag in <a href="https://github.com/invoke-ai/InvokeAI/pull/7150">https://github.com/invoke-ai/InvokeAI/pull/7150</a></li>
+<li>refactor(ui): logging config handling by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7143">https://github.com/invoke-ai/InvokeAI/pull/7143</a></li>
+<li>add starter model Architecture (RealVisXL5) by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7151">https://github.com/invoke-ai/InvokeAI/pull/7151</a></li>
+<li>fix(nodes): <code>FluxDenoiseInvocation.controlnet_vae</code> missing <code>default=None</code> by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7156">https://github.com/invoke-ai/InvokeAI/pull/7156</a></li>
+<li>Remove xformers before installation by @ebr in <a href="https://github.com/invoke-ai/InvokeAI/pull/7161">https://github.com/invoke-ai/InvokeAI/pull/7161</a></li>
+<li>FLUX CFG support by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7152">https://github.com/invoke-ai/InvokeAI/pull/7152</a></li>
+<li>FLUX XLabs IP-Adapter Support by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7157">https://github.com/invoke-ai/InvokeAI/pull/7157</a></li>
+<li>Fix AMD GPUs not being detected by @max-maag in <a href="https://github.com/invoke-ai/InvokeAI/pull/7147">https://github.com/invoke-ai/InvokeAI/pull/7147</a></li>
+<li>Load non quantized t5encoder using same dtype the model is saved in/ by @Vargol in <a href="https://github.com/invoke-ai/InvokeAI/pull/7140">https://github.com/invoke-ai/InvokeAI/pull/7140</a></li>
+<li>Get flux working with MPS on torch 2.4.1, with GGUF support by @Vargol in <a href="https://github.com/invoke-ai/InvokeAI/pull/7113">https://github.com/invoke-ai/InvokeAI/pull/7113</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7135">https://github.com/invoke-ai/InvokeAI/pull/7135</a></li>
+<li>feat(ui): canvas auto-mask by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7163">https://github.com/invoke-ai/InvokeAI/pull/7163</a></li>
+<li>chore: bump version to v5.3.0rc1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7164">https://github.com/invoke-ai/InvokeAI/pull/7164</a></li>
+<li>feat(ui): move model manager in-place install state to redux by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7167">https://github.com/invoke-ai/InvokeAI/pull/7167</a></li>
+<li>feat(ui): canvas auto mask followups 1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7168">https://github.com/invoke-ai/InvokeAI/pull/7168</a></li>
+<li>fix(ui): normalize infill alpha to 0-255 when building infill nodes by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7172">https://github.com/invoke-ai/InvokeAI/pull/7172</a></li>
+<li>tweak(ui): prevent show/hide boards button cutoff by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7184">https://github.com/invoke-ai/InvokeAI/pull/7184</a></li>
+<li>feat(ui,api): misc model QoL by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7173">https://github.com/invoke-ai/InvokeAI/pull/7173</a></li>
+<li>feat(ui): canvas auto mask followups 2 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7180">https://github.com/invoke-ai/InvokeAI/pull/7180</a></li>
+<li>feat(ui): canvas auto mask followups 3 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7189">https://github.com/invoke-ai/InvokeAI/pull/7189</a></li>
+<li>chore: bump version to v5.3.0rc2 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7190">https://github.com/invoke-ai/InvokeAI/pull/7190</a></li>
+<li>feat(ui): canvas auto-mask followups 4 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7193">https://github.com/invoke-ai/InvokeAI/pull/7193</a></li>
+<li>feat(ui): add setting for showing model descriptions in dropdown by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7187">https://github.com/invoke-ai/InvokeAI/pull/7187</a></li>
+<li>feat(ui): add out of sync details to default settings button by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7188">https://github.com/invoke-ai/InvokeAI/pull/7188</a></li>
+<li>feat: canvas auto mask followups 5 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7196">https://github.com/invoke-ai/InvokeAI/pull/7196</a></li>
+<li>fix(nodes): return copies of objects in invocation ctx by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7195">https://github.com/invoke-ai/InvokeAI/pull/7195</a></li>
+<li>Improve dev install docs by @hippalectryon-0 in <a href="https://github.com/invoke-ai/InvokeAI/pull/7199">https://github.com/invoke-ai/InvokeAI/pull/7199</a></li>
+<li>feat(ui): canvas auto mask followups 6 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7203">https://github.com/invoke-ai/InvokeAI/pull/7203</a></li>
+<li>chore: bump version to v5.3.0 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7204">https://github.com/invoke-ai/InvokeAI/pull/7204</a></li>
+</ul>
+<h2 id="new-contributors">New Contributors</h2>
+<ul>
+<li>@hippalectryon-0 made their first contribution in <a href="https://github.com/invoke-ai/InvokeAI/pull/7199">https://github.com/invoke-ai/InvokeAI/pull/7199</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/invoke-ai/InvokeAI/compare/v5.2.0...v5.3.0">https://github.com/invoke-ai/InvokeAI/compare/v5.2.0…v5.3.0</a></p><h2 id="v5-2-0" class="astro-iwmmvj7n"><a href="/releases/version/v5-2-0/" class="astro-iwmmvj7n">v5.2.0</a></h2><time datetime="2024-10-17T11:41:40.000Z" class="astro-iwmmvj7n">Oct 17, 2024</time><p>This release includes a number of enhancements and fixes. Standouts include:</p>
+<ul>
+<li>Support for FLUX ControlNets.</li>
+<li>Improved UX for common <code>img2img</code> flows in Canvas.</li>
+<li>Boards may be sorted by name or date.</li>
+<li>Starter model bundles in Model Manager.</li>
+<li>Support for bulk image uploads.</li>
+</ul>
+<p>** 🚨  Important Update Note: **</p>
+<blockquote>
+<p>During update, you’ll now be selecting between different configurations of the Invoke environment that are optimized and dependent on your hardware (specifically, torch-sdp vs. xformers) — If you have previously used xformers, and update to the version for 3xxx and 4xxx NVidia cards, you’ll often experience an error after the update.</p>
+<p>You can uninstall xformers before running the update by -</p>
+<ul>
+<li>Running the Invoke batch script from your existing installation</li>
+<li>Selecting the “developer console” option</li>
+<li>Typing <code>pip uninstall xformers</code></li>
+</ul>
+</blockquote>
+<p>We’ve also added a fix for Apple Silicon users for the mushy noise issue and updated the installer to skip <code>xformers</code> for GPUs where it causes a performance hit.</p>
+<blockquote>
+<p>Be sure to review the <a href="https://github.com/invoke-ai/InvokeAI/releases/tag/v5.0.0">v5 release notes</a> if you haven’t already upgraded to v5.</p>
+</blockquote>
+<h3 id="flux-controlnets">FLUX ControlNets</h3>
+<p>We now support both XLabs and InstantX ControlNets for FLUX. We’ve found the Union Pro model substantially outperforms the other models and added it to the starter models. Other models work, but outputs are not as good.</p>
+<p>You can use FLUX ControlNets in both Workflows and the Linear UI. We will be adding a union mode control to the Linear UI in a a future release. You can select the union mode in Workflows today.</p>
+<h3 id="canvas-img2img-flow">Canvas <code>img2img</code> Flow</h3>
+<p>We’ve made a number of changes to support the common <code>img2img</code> flow in the Canvas:</p>
+<ul>
+<li>Transform now supports 3 modes:
+<ul>
+<li><code>fill</code> (old behaviour): The layer is stretched to fit the generation bbox exactly. Its aspect ratio is not maintained.</li>
+<li><code>contain</code> (new default): The layer is stretched to fit the generation bbox, retaining its aspect ratio.</li>
+<li><code>cover</code>: The layer is scaled up so that its smallest dimension fits the bbox exactly, retaining its aspect ratio.</li>
+</ul>
+</li>
+<li>Add a layer context menu item to fit the layer to the bbox using the <code>contain</code> mode.</li>
+<li>Update the<code>New Canvas from Image</code> image context menu item to streamline the <code>img2img</code> flow. It now resizes the bbox to match the image’s aspect ratio, respecting the currently-selected models’ optimal size. The image will fit exactly in the box. You can click this and then immediately Invoke to do <code>img2img</code>.</li>
+</ul>
+<h3 id="installer-updates">Installer Updates</h3>
+<p>The performance of <code>torch-sdp</code> attention is substantially faster than <code>xformers</code> on 30xx and 40xx series GPUs. We’ve made two changes to ensure you generate with the best settings:</p>
+<ul>
+<li>Add an installer option for 30xx &#x26; 40xx series GPUs, which does not install <code>xformers</code>.</li>
+<li>When the attention type is set to <code>auto</code> (the default), and you do have <code>xformers</code> installed, we choose the best option of <code>torch-sdp</code> and <code>xformers</code>, based on your GPU.</li>
+</ul>
+<h3 id="apple-silicon-fix">Apple Silicon Fix</h3>
+<p>The mushy noise issue on Apple Silicon is related to sliced attention. We’ve temporarily forced all MPS devices to use <code>torch-sdp</code>. Memory usage is a bit higher, but you won’t get mushy noise (unless, of course, you prompt for it 😅).</p>
+<p>This appears to be a <code>torch</code> bug, and we’ll revert this change once it is resolved.</p>
+<h3 id="all-changes">All Changes</h3>
+<h4 id="enhancements">Enhancements</h4>
+<ul>
+<li>Support for FLUX ControlNets.</li>
+<li>Improved UX for common <code>img2img</code> flows in Canvas.</li>
+<li>Installer option to select best packages based on GPU model, and internal logic to select the best attention type based on GPU model.</li>
+<li>Updated workflow list menu UI, restoring <code>New Workflow</code> confirmation dialog.</li>
+<li>Support for bulk image uploads, button in gallery to upload images.</li>
+<li>Boards maybe sorted by name or date.</li>
+<li>Recall FLUX guidance parameter. Thanks @rikublock!</li>
+<li>Add starter model bundle for each supported architecture to model manager.</li>
+<li>The <code>Layers</code> and <code>Gallery</code> tabs now remember which one you last selected.</li>
+<li>Added an indicator to the <code>Layers</code> and <code>Gallery</code> tabs when dragging an image to indicate you that you can hover over the tabs to change them.</li>
+<li>Updated translations. French is now 100%! Thanks gallegonovato, @Harvester62, @Ery4z!</li>
+</ul>
+<h4 id="fixes">Fixes</h4>
+<ul>
+<li>Workaround for Apple Silicon SDXL noisy mush issue.</li>
+<li>Fixed misc UI jank in workflow list menu UI.</li>
+<li>Fixed longstanding issue where workflows were marked as unsaved immediately after loading.</li>
+<li>Fixed canvas layer preview not updating if layer is disabled.</li>
+<li>Fixed an edge case where entity isn’t visible until interacting with canvas.</li>
+</ul>
+<h4 id="perf">Perf</h4>
+<ul>
+<li>Reworked gallery rendering and context menu for a ~100% perf boost when rendering the gallery.</li>
+<li>Rendering optimizations for canvas.</li>
+</ul>
+<h2 id="installation-and-updating">Installation and Updating</h2>
+<p>To install or update to v5.2.0, <a href="https://github.com/invoke-ai/InvokeAI/releases/download/v5.2.0/InvokeAI-installer-v5.2.0.zip">download the latest installer</a>  and follow the <a href="https://invoke-ai.github.io/InvokeAI/installation/installer/">installation instructions</a></p>
+<p>To update, select the same installation location. Your user data (images, models, etc) will be retained.</p>
+<h2 id="whats-changed">What’s Changed</h2>
+<ul>
+<li>feat(ui): img2img UX by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7081">https://github.com/invoke-ai/InvokeAI/pull/7081</a></li>
+<li>feat(ui): add option to copy share link for workflows by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7082">https://github.com/invoke-ai/InvokeAI/pull/7082</a></li>
+<li>Allow explicitly selecting xFormers at install time by @ebr in <a href="https://github.com/invoke-ai/InvokeAI/pull/7065">https://github.com/invoke-ai/InvokeAI/pull/7065</a></li>
+<li>refactor(ui): modals state, workflow list modal misc by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7087">https://github.com/invoke-ai/InvokeAI/pull/7087</a></li>
+<li>perf(ui): rendering optimizations by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7061">https://github.com/invoke-ai/InvokeAI/pull/7061</a></li>
+<li>feat(ui): img2img UX 2 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7090">https://github.com/invoke-ai/InvokeAI/pull/7090</a></li>
+<li>Add support for FLUX ControlNet models (XLabs and InstantX) by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7070">https://github.com/invoke-ai/InvokeAI/pull/7070</a></li>
+<li>feat(ui): consolidate img2img canvas flow by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7093">https://github.com/invoke-ai/InvokeAI/pull/7093</a></li>
+<li>fix(ui): use non-icon version of delete menu item on canvas context menu by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7094">https://github.com/invoke-ai/InvokeAI/pull/7094</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7086">https://github.com/invoke-ai/InvokeAI/pull/7086</a></li>
+<li>chore: bump version to v5.2.0rc1 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7096">https://github.com/invoke-ai/InvokeAI/pull/7096</a></li>
+<li>Add a workaround for broken sliced attention on MPS with torch 2.4.1 by @RyanJDick in <a href="https://github.com/invoke-ai/InvokeAI/pull/7066">https://github.com/invoke-ai/InvokeAI/pull/7066</a></li>
+<li>fix(ui): edge case where controladapters added counts could be off by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7095">https://github.com/invoke-ai/InvokeAI/pull/7095</a></li>
+<li>fix(ui): edge case where entity isn’t visible until interacting with canvas by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7099">https://github.com/invoke-ai/InvokeAI/pull/7099</a></li>
+<li>build(ui): set package mode target to ES2015 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7100">https://github.com/invoke-ai/InvokeAI/pull/7100</a></li>
+<li>perf(ui): gallery / image perf by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7101">https://github.com/invoke-ai/InvokeAI/pull/7101</a></li>
+<li>feat(ui,api): board sorting by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7106">https://github.com/invoke-ai/InvokeAI/pull/7106</a></li>
+<li>fix(ui): prefix share link with window location by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7104">https://github.com/invoke-ai/InvokeAI/pull/7104</a></li>
+<li>fix(api): undo changes that made workflow category optional in list query by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7105">https://github.com/invoke-ai/InvokeAI/pull/7105</a></li>
+<li>fix(api): update enum usage to work for python 3.11 by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7110">https://github.com/invoke-ai/InvokeAI/pull/7110</a></li>
+<li>fix: Pin onnx versions to builds that don’t require rare dlls by @brandonrising in <a href="https://github.com/invoke-ai/InvokeAI/pull/7107">https://github.com/invoke-ai/InvokeAI/pull/7107</a></li>
+<li>fix(ui): properly recall guidance value for flux images by @rikublock in <a href="https://github.com/invoke-ai/InvokeAI/pull/7108">https://github.com/invoke-ai/InvokeAI/pull/7108</a></li>
+<li>Update workflow_records_sqlite.py by @skunkworxdark in <a href="https://github.com/invoke-ai/InvokeAI/pull/7109">https://github.com/invoke-ai/InvokeAI/pull/7109</a></li>
+<li>feat(ui,api): add starter bundles to model manager by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7097">https://github.com/invoke-ai/InvokeAI/pull/7097</a></li>
+<li>ui: translations update from weblate by @weblate in <a href="https://github.com/invoke-ai/InvokeAI/pull/7103">https://github.com/invoke-ai/InvokeAI/pull/7103</a></li>
+<li>fix(ui): fit to bbox just flashes transform handles  by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7122">https://github.com/invoke-ai/InvokeAI/pull/7122</a></li>
+<li>chore: bump version to v5.2.0rc2 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7121">https://github.com/invoke-ai/InvokeAI/pull/7121</a></li>
+<li>Maryhipp/bulk upload by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7123">https://github.com/invoke-ai/InvokeAI/pull/7123</a></li>
+<li>feat(ui): updates to Layers and Gallery tabs by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7119">https://github.com/invoke-ai/InvokeAI/pull/7119</a></li>
+<li>fix(ui): add error handling to upload button by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7125">https://github.com/invoke-ai/InvokeAI/pull/7125</a></li>
+<li>fix(ui): upload tooltip should only show plural if multiple upload is enabled by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7126">https://github.com/invoke-ai/InvokeAI/pull/7126</a></li>
+<li>fix(ui): remove extra slash in workflow share link by @maryhipp in <a href="https://github.com/invoke-ai/InvokeAI/pull/7128">https://github.com/invoke-ai/InvokeAI/pull/7128</a></li>
+<li>feat(ui): make debug logger middleware configurable by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7124">https://github.com/invoke-ai/InvokeAI/pull/7124</a></li>
+<li>chore: bump version to v5.2.0 by @psychedelicious in <a href="https://github.com/invoke-ai/InvokeAI/pull/7136">https://github.com/invoke-ai/InvokeAI/pull/7136</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/invoke-ai/InvokeAI/compare/v5.1.1...v5.2.0">https://github.com/invoke-ai/InvokeAI/compare/v5.1.1…v5.2.0</a></p></div><footer class="sl-flex astro-kxhlr25s"><div class="meta sl-flex astro-kxhlr25s"></div><div class="pagination-links print:hidden astro-i5o6fzs2" dir="ltr"><a href="/releases/4/" rel="prev" class="astro-i5o6fzs2"><svg aria-hidden="true" class="astro-i5o6fzs2 astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-i5o6fzs2">Previous<br class="astro-i5o6fzs2"><span class="link-title astro-i5o6fzs2">Newer versions</span></span></a><a href="/releases/6/" rel="next" class="astro-i5o6fzs2"><svg aria-hidden="true" class="astro-i5o6fzs2 astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg><span class="astro-i5o6fzs2">Next<br class="astro-i5o6fzs2"><span class="link-title astro-i5o6fzs2">Older versions</span></span></a></div></footer><div class="built-by astro-jcegb7pj">This site was designed and developed by <a target="_blank" rel="noreferrer noopener" href="https://aetherfox.studio" class="astro-jcegb7pj">Aether Fox Studio</a>.</div></div></div></main></div></div></div></div></body></html>

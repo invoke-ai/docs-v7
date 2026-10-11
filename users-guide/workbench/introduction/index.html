@@ -1,0 +1,685 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-egzmvxx6"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Guided tour | InvokeAI Documentation</title><link rel="canonical" href="https://v7.invoke.ai/users-guide/workbench/introduction/"/><link rel="sitemap" href="/sitemap-index.xml"/><script async src="https://plausible.tracking.events/js/pa-BHcumuOemKz4XIQeWkTn4.js"></script><script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script><link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v7.3.8"/><meta name="generator" content="Starlight v0.42.6"/><meta property="og:title" content="Guided tour"/><meta property="og:type" content="article"/><meta property="og:url" content="https://v7.invoke.ai/users-guide/workbench/introduction/"/><meta property="og:locale" content="en"/><meta property="og:description" content="How the Invoke workbench is laid out, how to arrange panels in the rails and the center, and how to save favourite arrangements as layout presets."/><meta property="og:site_name" content="InvokeAI Documentation"/><meta name="description" content="How the Invoke workbench is laid out, how to arrange panels in the rails and the center, and how to save favourite arrangements as layout presets."/><meta property="og:image" content="https://v7.invoke.ai/coverimage.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://v7.invoke.ai/coverimage.png"/><script>
+  document.documentElement.dataset.theme = 'dark';
+</script><link rel="stylesheet" href="/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/_astro/middleware.B7Y_Cbl_.css"><style>@layer starlight.components{svg:where(.astro-wion3bmv){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em;overflow:visible}}
+@layer starlight.components{.sl-link-button:where(.astro-lbdzh53u){font-size:var(--sl-text-sm);outline-offset:.25rem;border:1px solid #0000;border-radius:999rem;align-items:center;gap:.5em;padding:.4375rem 1.125rem;line-height:1.1875;text-decoration:none;display:inline-flex}.sl-link-button:where(.astro-lbdzh53u).primary{background:var(--sl-color-text-accent);border-color:var(--sl-color-text-accent);color:var(--sl-color-black)}.sl-link-button:where(.astro-lbdzh53u).primary:hover{color:var(--sl-color-black)}.sl-link-button:where(.astro-lbdzh53u).secondary{border-color:inherit;color:var(--sl-color-white)}.sl-link-button:where(.astro-lbdzh53u).minimal{color:var(--sl-color-white);padding-inline:0}.sl-link-button:where(.astro-lbdzh53u) svg{flex-shrink:0}@media (width>=50rem){.sl-link-button:where(.astro-lbdzh53u){font-size:var(--sl-text-base);padding:.9375rem 1.25rem}}.sl-markdown-content .sl-link-button:where(.astro-lbdzh53u){margin-inline-end:1rem}.sl-markdown-content .sl-link-button:where(.astro-lbdzh53u):not(:where(p *)){margin-block:1rem}}
+</style><script type="module" src="/_astro/page.qmvz7R8c.js"></script></head><body class="astro-egzmvxx6"><a class="sl-skip-link astro-rvpogu26" href="#_top">Skip to content</a><div class="page sl-flex astro-6c4fglrz"><header class="header astro-6c4fglrz"><div class="header astro-wdezznm2"><div class="title-wrapper sl-flex astro-wdezznm2"><a href="/" class="site-title sl-flex astro-iyxa2yxr"><img class="astro-iyxa2yxr" alt="InvokeAI Logo" src="/_astro/invoke-icon-wide.BR5B9gqd.svg" width="75" height="32"><span class="sr-only astro-iyxa2yxr" translate="no">InvokeAI Documentation</span></a></div><div class="sl-flex print:hidden astro-wdezznm2"><site-search class="astro-wdezznm2 astro-na6z7irt" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;,&quot;clear_search&quot;:&quot;Clear&quot;,&quot;load_more&quot;:&quot;Load more results&quot;,&quot;search_label&quot;:&quot;Search this site&quot;,&quot;filters_label&quot;:&quot;Filters&quot;,&quot;zero_results&quot;:&quot;No results for [SEARCH_TERM]&quot;,&quot;many_results&quot;:&quot;[COUNT] results for [SEARCH_TERM]&quot;,&quot;one_result&quot;:&quot;[COUNT] result for [SEARCH_TERM]&quot;,&quot;alt_search&quot;:&quot;No results for [SEARCH_TERM]. Showing results for [DIFFERENT_TERM] instead&quot;,&quot;search_suggestion&quot;:&quot;No results for [SEARCH_TERM]. Try one of the following searches:&quot;,&quot;searching&quot;:&quot;Searching for [SEARCH_TERM]...&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-na6z7irt"><svg aria-hidden="true" class="astro-na6z7irt astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-na6z7irt" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-na6z7irt" style="display: none;"><kbd class="astro-na6z7irt">Ctrl</kbd><kbd class="astro-na6z7irt">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-na6z7irt"><div class="dialog-frame sl-flex astro-na6z7irt"><button data-close-modal class="sl-flex md:sl-hidden astro-na6z7irt">Cancel</button><div class="search-container astro-na6z7irt"><div id="starlight__search" class="astro-na6z7irt"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.BOTS06Pe.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-wdezznm2"><div class="sl-flex social-icons astro-wdezznm2"><a href="https://github.com/invoke-ai/InvokeAI" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">GitHub</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a href="https://discord.gg/ZmtBAhwWhy" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">Discord</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"/></svg></a><a href="https://www.youtube.com/@invokeai" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">YouTube</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M23.5 6.2A3 3 0 0 0 21.4 4c-1.9-.5-9.4-.5-9.4-.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8 0 12 0 12s0 4 .5 5.8A3 3 0 0 0 2.6 20c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2c.5-2 .5-5.9.5-5.9s0-4-.5-5.8zm-14 9.4V8.4l6.3 3.6-6.3 3.6z"/></svg></a></div><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div></header><nav class="sidebar print:hidden astro-6c4fglrz" aria-label="Main"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-hd76dzne"><svg aria-hidden="true" class="open-menu astro-hd76dzne astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-hd76dzne astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-hd76dzne">Menu</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-6c4fglrz"><div class="sidebar-content sl-flex astro-6c4fglrz"><sl-sidebar-state-persist data-hash="1v4l50c" class="astro-6e4jnn55"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-fe7k3flc"><li class="astro-fe7k3flc"><details open class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Start Here</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/start-here/system-requirements/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Hardware Requirements</span></a></li><li class="astro-fe7k3flc"><a href="/start-here/installation/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Simple Installation</span></a></li><li class="astro-fe7k3flc"><a href="/start-here/manual/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Manual Installation</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Configuration</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/configuration/invokeai-yaml/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">YAML Config</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/docker/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Docker</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/external-database/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">MySQL and MariaDB</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Optimization</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/configuration/optimization/low-vram-mode/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Low-VRAM mode</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/optimization/fp8-storage/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FP8 Storage &amp; Compute</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/optimization/sdnq-quantization/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">SDNQ Quantization</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/optimization/patchmatch/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Patchmatch</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Multi-User Mode</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="3"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/configuration/multi-user-mode/user-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Multi-User Guide</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/multi-user-mode/admin-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Multi-User Administrator Guide</span></a></li><li class="astro-fe7k3flc"><a href="/configuration/multi-user-mode/api-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Multi-User API Guide</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details open class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Users Guide</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="4"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><details open class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Workbench</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="5"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/workbench/introduction/" aria-current="page" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Guided tour</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workbench/hotkeys/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Hotkey shortcuts</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Projects</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="6"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/projects/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Working with Projects</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Models</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="7"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/models/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Managing media generation models</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/model-families/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Model Formats and Families</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/model-format-support/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Model Format Support</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Local Models</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="8"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/anima/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Anima</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/cogview4/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">CogView4</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/ernie-image/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">ERNIE-Image</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/flux-1/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FLUX.1</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/flux-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FLUX.2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/ideogram4/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Ideogram 4</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/krea-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Krea-2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/ltx-2/" class="astro-fe7k3flc" data-cross-listed><span class="astro-fe7k3flc">LTX-2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/minimax-h3/" class="astro-fe7k3flc" data-cross-listed><span class="astro-fe7k3flc">MiniMax H3</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/qwen-image/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Qwen Image</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/sdxl/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">SDXL</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/stable-diffusion-1-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Stable Diffusion 1.5 / 2.x</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/sd-3/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Stable Diffusion 3.5</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/wan-22/" class="astro-fe7k3flc" data-cross-listed><span class="astro-fe7k3flc">Wan 2.2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/local-models/z-image/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Z-Image</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">External Models</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="9"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Using external models</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/alibabacloud/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Alibaba Cloud DashScope</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/gemini/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Google Gemini</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/openai/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">OpenAI</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/models/external-models/seedream/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">BytePlus Seedream</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Image Generation</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="10"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Generating and modifying still images</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/generate-panel/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Generate Panel Reference</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/prompting-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Prompting Guide</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-prompt-syntax/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Advanced Prompt Syntax</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/prompt-tools/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Prompt Tools</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/parameters/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Parameter Selection Guide</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/image-generation/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Concepts and Terms</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/intermediates/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Intermediates</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/upscale/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Upscaling</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Advanced Topics</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="11"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-topics/diffusion/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Diffusion</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-topics/pid-decode/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">PiD Super-Resolution Decode</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-generation/advanced-topics/hidiffusion/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">HiDiffusion</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Video Generation</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="12"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Generating and modifying short videos</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/wan-22/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Wan 2.2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/minimax-h3/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">MiniMax H3</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/ltx-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">LTX-2</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/video-generation/video-workflows/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Video Workflows</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Gallery</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="13"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/gallery/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Organizing your media</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/gallery/gallery-reference/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Gallery Reference</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/gallery/image-storage-maintenance/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Image Storage Maintenance</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Canvas</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="14"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/canvas/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Crafting images with the Canvas</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/canvas/canvas-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Canvas guide</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/canvas/layers-panel/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Layers panel guide</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Workflows</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="15"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/workflows/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Automating with Workflows</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/editor-reference/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Workflow Editor Reference</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/loop-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Loop Nodes</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/custom-node-manager/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Custom Node Manager</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/comfyui-migration/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">ComfyUI Migration</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/community-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Community Nodes</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/workflows/face-tools/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Face Tools Nodes</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Image Map</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="16"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/users-guide/image-map/introduction/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Image Map Indexing and Search</span></a></li><li class="astro-fe7k3flc"><a href="/users-guide/image-map/customizing/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Customizing the Image Map</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Development</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="17"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">InvokeAI Development</span></a></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Architecture</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="18"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/architecture/overview/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Overview</span></a></li><li class="astro-fe7k3flc"><a href="/development/architecture/invocations/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Invocations</span></a></li><li class="astro-fe7k3flc"><a href="/development/architecture/media-metadata/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Media Metadata</span></a></li><li class="astro-fe7k3flc"><a href="/development/architecture/model-manager/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Model Manager</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Documentation</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="19"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/documentation/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Documentation</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Front End</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="20"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/front-end/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Frontend Development</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/canvas-projects/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Canvas Projects</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/project-files/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Project Files (.invk)</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/state-management/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">State Management</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/text-tool/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Canvas Text Tool</span></a></li><li class="astro-fe7k3flc"><a href="/development/front-end/workflows/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Workflows</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Guides</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="21"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/guides/api-development/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">API Development</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/creating-node-pack/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Creating Node Packs</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/creating-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Creating Nodes</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/database-layer/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Database Layer</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/recall-api/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Recall Parameters API</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/sqlite-migrations/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Database Migrations</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/tests/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Writing Tests</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/video-recall-api/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Video Recall API</span></a></li><li class="astro-fe7k3flc"><a href="/development/guides/workflow-api/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Workflow Execution API</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Process</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="22"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/process/pr-merge-policy/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">PR Merge Policy</span></a></li><li class="astro-fe7k3flc"><a href="/development/process/release-process/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Release Process</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Setup</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="23"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/development/setup/dev-environment/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Development Environment</span></a></li></ul></details></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Contributing</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="24"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/contributing/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Contributing to InvokeAI</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/blocking-work-in-api-routes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Blocking Work in API Routes</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/call-saved-workflow/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Call Saved Workflow Architecture</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/code-of-conduct/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Code of Conduct</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/contributors/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Contributors</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/external-providers/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">External Provider Integration</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/loop-nodes/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Loop Nodes Architecture</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/new-contributor-guide/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">New Contributor Guide</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/new-model-integration/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">New Model Type Integration Checklist</span></a></li><li class="astro-fe7k3flc"><a href="/contributing/translations/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Translations</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Troubleshooting &amp; Help</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="25"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/troubleshooting/faq/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">FAQ</span></a></li><li class="astro-fe7k3flc"><a href="/troubleshooting/known-bugs/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Known Bugs</span></a></li><li class="astro-fe7k3flc"><a href="/troubleshooting/videos/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">InvokeAI YouTube Videos</span></a></li></ul></details></li><li class="astro-fe7k3flc"><details class="astro-fe7k3flc"><summary class="astro-fe7k3flc"><span class="group-label astro-fe7k3flc"><span class="large astro-fe7k3flc">Releases</span></span><svg aria-hidden="true" class="caret astro-fe7k3flc astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="26"></sl-sidebar-restore><ul class="astro-fe7k3flc"><li class="astro-fe7k3flc"><a href="/releases/version/version-6-14-2/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Version 6.14.2</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/version-6-14-1/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">Version 6.14.1</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/invokeai-6-14-0/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">InvokeAI 6.14.0</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/v6-13-8/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">v6.13.8</span></a></li><li class="astro-fe7k3flc"><a href="/releases/version/v6-13-7/" class="astro-fe7k3flc"><span class="astro-fe7k3flc">v6.13.7</span></a></li></ul></details></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-srta2qkb"><div class="social-icons astro-srta2qkb"><a href="https://github.com/invoke-ai/InvokeAI" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">GitHub</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a href="https://discord.gg/ZmtBAhwWhy" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">Discord</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"/></svg></a><a href="https://www.youtube.com/@invokeai" rel="me" class="sl-flex astro-gtjlgpph"><span class="sr-only astro-gtjlgpph">YouTube</span><svg aria-hidden="true" class="astro-gtjlgpph astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M23.5 6.2A3 3 0 0 0 21.4 4c-1.9-.5-9.4-.5-9.4-.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8 0 12 0 12s0 4 .5 5.8A3 3 0 0 0 2.6 20c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2c.5-2 .5-5.9.5-5.9s0-4-.5-5.8zm-14 9.4V8.4l6.3 3.6-6.3 3.6z"/></svg></a></div></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-6c4fglrz"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-3zf4g5vl"><aside class="right-sidebar-container print:hidden astro-3zf4g5vl"><div class="right-sidebar astro-3zf4g5vl"><div class="lg:sl-hidden astro-psmrpsxm"><mobile-starlight-toc data-min-h="2" data-max-h="4" class="astro-thay6anh"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-thay6anh"><details id="starlight__mobile-toc" class="astro-thay6anh"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-thay6anh"><span class="toggle sl-flex astro-thay6anh">On this page<svg aria-hidden="true" class="caret astro-thay6anh astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-thay6anh"></span></summary><div class="dropdown astro-thay6anh"><ul class="isMobile astro-y5qnks4t" style="--depth: 0;"><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#_top" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Overview</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#the-parts-of-the-workbench" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">The parts of the workbench</span></a><ul class="isMobile astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#rails-and-side-panels" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Rails and side panels</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#the-center-panel" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">The center panel</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#the-status-bar-and-bottom-panel" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">The status bar and bottom panel</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#floating-windows" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Floating windows</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#arranging-panels" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Arranging panels</span></a><ul class="isMobile astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#available-panels" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Available panels</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#adding-and-removing-panels" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Adding and removing panels</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#moving-panels-between-rails" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Moving panels between rails</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#layout-shortcuts" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Layout shortcuts</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#layout-presets" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Layout presets</span></a><ul class="isMobile astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#built-in-presets" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Built-in presets</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#switching-presets" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Switching presets</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#changing-a-preset" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Changing a preset</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#creating-your-own-preset" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Creating your own preset</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#managing-presets" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Managing presets</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#what-is-saved-where" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">What is saved where</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#tips" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Tips</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-psmrpsxm"><div class="sl-container astro-psmrpsxm"><starlight-toc data-min-h="2" data-max-h="4"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-y5qnks4t" style="--depth: 0;"><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#_top" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Overview</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#the-parts-of-the-workbench" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">The parts of the workbench</span></a><ul class="astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#rails-and-side-panels" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Rails and side panels</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#the-center-panel" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">The center panel</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#the-status-bar-and-bottom-panel" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">The status bar and bottom panel</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#floating-windows" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Floating windows</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#arranging-panels" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Arranging panels</span></a><ul class="astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#available-panels" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Available panels</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#adding-and-removing-panels" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Adding and removing panels</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#moving-panels-between-rails" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Moving panels between rails</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#layout-shortcuts" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Layout shortcuts</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#layout-presets" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Layout presets</span></a><ul class="astro-y5qnks4t" style="--depth: 1;"><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#built-in-presets" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Built-in presets</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#switching-presets" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Switching presets</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#changing-a-preset" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Changing a preset</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#creating-your-own-preset" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Creating your own preset</span></a></li><li style="--depth: 1;" class="astro-y5qnks4t"><a href="#managing-presets" style="--depth: 1;" class="astro-y5qnks4t"><span style="--depth: 1;" class="astro-y5qnks4t">Managing presets</span></a></li></ul></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#what-is-saved-where" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">What is saved where</span></a></li><li style="--depth: 0;" class="astro-y5qnks4t"><a href="#tips" style="--depth: 0;" class="astro-y5qnks4t"><span style="--depth: 0;" class="astro-y5qnks4t">Tips</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-3zf4g5vl"><main data-pagefind-body class="astro-egzmvxx6" lang="en" dir="ltr"><div class="content-panel astro-uug4jd3t"><div class="sl-container astro-uug4jd3t"><h1 id="_top" class="astro-alldfk7m">Guided tour</h1></div></div><div class="content-panel astro-uug4jd3t"><div class="sl-container astro-uug4jd3t"><div class="sl-markdown-content"><p>Invoke’s main window, the <strong>workbench</strong>, is built from panels that you can arrange to suit the job in front of you. Put the tools you use together side by side, move the gallery to whichever side you prefer, float the Preview over the canvas, and save the result as a <strong>layout preset</strong> so you can return to it with one click.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="the-parts-of-the-workbench">The parts of the workbench</h2><a class="sl-anchor-link" href="#the-parts-of-the-workbench"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The parts of the workbench”</span></a></div>
+<svg viewBox="0 -10 1200 770" width="1200" height="770" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" role="group" aria-label="Diagram of the Invoke workbench: the top bar across the top, an icon rail and a panel on each side, the center panel in the middle with a floating Image Map window, and the status bar along the bottom. Numbered callouts mark the controls described below." style="width: 100%; height: auto;">
+  <style>
+    .wbl-callout { cursor: help; outline: none; }
+    .wbl-callout text { font-size: 15px; font-weight: 800; fill: #14161a; text-anchor: middle; pointer-events: none; }
+    .wbl-callout circle { transition: r 120ms ease-out; }
+    .wbl-callout:hover circle, .wbl-callout:focus circle { r: 17px; stroke: #ffffff; }
+    .wbl-tip { opacity: 0; pointer-events: none; transition: opacity 120ms ease-out; }
+    .wbl-tip rect { fill: #0e1013; stroke: #e4fd1d; stroke-width: 2; }
+    .wbl-tip text { fill: #d7dbe0; font-size: 20px; }
+    .wbl-tip .wbl-tip-title { fill: #ffffff; font-size: 23px; font-weight: 700; }
+    #wbl-c1:hover ~ #wbl-t1, #wbl-c1:focus-visible ~ #wbl-t1, #wbl-c1:focus ~ #wbl-t1,
+    #wbl-c2:hover ~ #wbl-t2, #wbl-c2:focus-visible ~ #wbl-t2, #wbl-c2:focus ~ #wbl-t2,
+    #wbl-c3:hover ~ #wbl-t3, #wbl-c3:focus-visible ~ #wbl-t3, #wbl-c3:focus ~ #wbl-t3,
+    #wbl-c4:hover ~ #wbl-t4, #wbl-c4:focus-visible ~ #wbl-t4, #wbl-c4:focus ~ #wbl-t4,
+    #wbl-c5:hover ~ #wbl-t5, #wbl-c5:focus-visible ~ #wbl-t5, #wbl-c5:focus ~ #wbl-t5,
+    #wbl-c6a:hover ~ #wbl-t6a, #wbl-c6a:focus-visible ~ #wbl-t6a, #wbl-c6a:focus ~ #wbl-t6a,
+    #wbl-c6b:hover ~ #wbl-t6b, #wbl-c6b:focus-visible ~ #wbl-t6b, #wbl-c6b:focus ~ #wbl-t6b,
+    #wbl-c7:hover ~ #wbl-t7, #wbl-c7:focus-visible ~ #wbl-t7, #wbl-c7:focus ~ #wbl-t7,
+    #wbl-c8a:hover ~ #wbl-t8a, #wbl-c8a:focus-visible ~ #wbl-t8a, #wbl-c8a:focus ~ #wbl-t8a,
+    #wbl-c8b:hover ~ #wbl-t8b, #wbl-c8b:focus-visible ~ #wbl-t8b, #wbl-c8b:focus ~ #wbl-t8b,
+    #wbl-c9:hover ~ #wbl-t9, #wbl-c9:focus-visible ~ #wbl-t9, #wbl-c9:focus ~ #wbl-t9,
+    #wbl-c10:hover ~ #wbl-t10, #wbl-c10:focus-visible ~ #wbl-t10, #wbl-c10:focus ~ #wbl-t10,
+    #wbl-c11:hover ~ #wbl-t11, #wbl-c11:focus-visible ~ #wbl-t11, #wbl-c11:focus ~ #wbl-t11,
+    #wbl-c12:hover ~ #wbl-t12, #wbl-c12:focus-visible ~ #wbl-t12, #wbl-c12:focus ~ #wbl-t12,
+    #wbl-c13:hover ~ #wbl-t13, #wbl-c13:focus-visible ~ #wbl-t13, #wbl-c13:focus ~ #wbl-t13,
+    #wbl-c14:hover ~ #wbl-t14, #wbl-c14:focus-visible ~ #wbl-t14, #wbl-c14:focus ~ #wbl-t14 { opacity: 1; }
+  </style>
+  <defs>
+    <pattern id="wbl-dots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2c3139" />
+    </pattern>
+      </defs><!-- Window -->
+  <rect x="20" y="20" width="1160" height="720" rx="12" fill="#1c1f23" stroke="#3a3f47" stroke-width="2" /><!-- Top bar -->
+  <path d="M20 32a12 12 0 0 1 12-12h1136a12 12 0 0 1 12 12v42H20z" fill="#25282d" />
+  <line x1="20" y1="74" x2="1180" y2="74" stroke="#3a3f47" stroke-width="2" /><!-- App menu -->
+  <rect x="38" y="35" width="24" height="24" rx="5" fill="#e4fd1d" />
+  <path d="M44 42h12M44 47h12M44 52h8" stroke="#1c1f23" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M68 45l4 4 4-4" fill="none" stroke="#9aa1ab" stroke-width="2" stroke-linecap="round" /><!-- Project switcher -->
+  <text x="94" y="52" fill="#e8eaed" font-size="15" font-weight="600">My Project</text>
+  <path d="M184 44l4-4 4 4M184 52l4 4 4-4" fill="none" stroke="#9aa1ab" stroke-width="1.8" stroke-linecap="round" /><!-- Preset tabs -->
+  <rect x="412" y="31" width="136" height="32" rx="7" fill="#353a42" />
+  <text x="426" y="52" fill="#e4fd1d" font-size="14" font-weight="700">T</text>
+  <text x="444" y="52" fill="#e8eaed" font-size="14" font-weight="600">Compose</text>
+  <circle cx="518" cy="47" r="3.5" fill="#6cc4f0" />
+  <path d="M530 45l4 4 4-4" fill="none" stroke="#9aa1ab" stroke-width="1.8" stroke-linecap="round" />
+  <text x="564" y="52" fill="#b5bbc4" font-size="14">Edit</text>
+  <text x="614" y="52" fill="#b5bbc4" font-size="14">Video</text>
+  <text x="672" y="52" fill="#b5bbc4" font-size="14">Automate</text>
+  <path d="M758 47h14M765 40v14" stroke="#e8eaed" stroke-width="2.2" stroke-linecap="round" /><!-- Invoke cluster -->
+  <rect x="908" y="31" width="40" height="32" rx="6" fill="#1c1f23" stroke="#454b55" />
+  <text x="923" y="52" fill="#e8eaed" font-size="14">1</text>
+  <rect x="948" y="31" width="104" height="32" fill="#b8cc1a" />
+  <path d="M962 40l10 7-10 7z" fill="none" stroke="#1c1f23" stroke-width="2" stroke-linejoin="round" />
+  <text x="980" y="52" fill="#1c1f23" font-size="14" font-weight="700">Invoke</text>
+  <rect x="1052" y="31" width="36" height="32" rx="6" fill="#1c1f23" stroke="#454b55" />
+  <path d="M1062 42h16l-4-4M1078 52h-16l4 4" fill="none" stroke="#b5bbc4" stroke-width="1.8" stroke-linecap="round" /><!-- Queue -->
+  <rect x="1100" y="31" width="64" height="32" rx="6" fill="#1c1f23" stroke="#454b55" />
+  <path d="M1110 41h10M1110 47h10M1110 53h10" stroke="#b5bbc4" stroke-width="1.8" stroke-linecap="round" />
+  <text x="1128" y="52" fill="#e8eaed" font-size="14">0</text>
+  <path d="M1146 45l4 4 4-4" fill="none" stroke="#9aa1ab" stroke-width="1.8" stroke-linecap="round" /><!-- Left rail -->
+  <rect x="20" y="75" width="52" height="615" fill="#1f2226" />
+  <line x1="72" y1="75" x2="72" y2="690" stroke="#3a3f47" stroke-width="2" />
+  <rect x="28" y="86" width="36" height="36" rx="7" fill="#353a42" />
+  <path d="M36 97h20M36 104h20M36 111h20" stroke="#e4fd1d" stroke-width="2" stroke-linecap="round" />
+  <circle cx="42" cy="97" r="2.5" fill="#353a42" stroke="#e4fd1d" stroke-width="2" />
+  <circle cx="51" cy="111" r="2.5" fill="#353a42" stroke="#e4fd1d" stroke-width="2" />
+  <rect x="36" y="134" width="20" height="18" rx="3" fill="none" stroke="#9aa1ab" stroke-width="2" />
+  <path d="M40 148l5-6 4 4 3-3 4 5" fill="none" stroke="#9aa1ab" stroke-width="1.6" />
+  <circle cx="36" cy="182" r="2.2" fill="#9aa1ab" /><circle cx="46" cy="182" r="2.2" fill="#9aa1ab" /><circle cx="56" cy="182" r="2.2" fill="#9aa1ab" /><!-- Left panel -->
+  <rect x="73" y="75" width="297" height="615" fill="#1c1f23" />
+  <line x1="73" y1="113" x2="370" y2="113" stroke="#30353c" stroke-width="2" />
+  <text x="88" y="100" fill="#e8eaed" font-size="14" font-weight="600">Generate</text>
+  <circle cx="318" cy="95" r="2" fill="#9aa1ab" /><circle cx="326" cy="95" r="2" fill="#9aa1ab" /><circle cx="334" cy="95" r="2" fill="#9aa1ab" />
+  <text x="88" y="140" fill="#9aa1ab" font-size="12">Model</text>
+  <rect x="88" y="148" width="266" height="30" rx="6" fill="#25282d" stroke="#3a3f47" />
+  <text x="88" y="202" fill="#9aa1ab" font-size="12">Prompt</text>
+  <rect x="88" y="210" width="266" height="90" rx="6" fill="#25282d" stroke="#3a3f47" />
+  <rect x="88" y="316" width="266" height="34" rx="6" fill="#25282d" />
+  <rect x="88" y="358" width="266" height="34" rx="6" fill="#25282d" />
+  <rect x="88" y="400" width="266" height="34" rx="6" fill="#25282d" />
+  <text x="221" y="560" fill="#5d6570" font-size="22" font-weight="700" text-anchor="middle" letter-spacing="2">LEFT PANEL</text><!-- Left resize handle -->
+  <line x1="370" y1="75" x2="370" y2="690" stroke="#3a3f47" stroke-width="2" />
+  <rect x="365" y="364" width="10" height="36" rx="5" fill="#1c1f23" stroke="#6b737e" stroke-width="2" /><!-- Center -->
+  <rect x="371" y="75" width="458" height="615" fill="#14161a" />
+  <rect x="371" y="75" width="458" height="615" fill="url(#wbl-dots)" />
+  <rect x="385" y="88" width="122" height="34" rx="8" fill="#25282d" stroke="#454b55" />
+  <circle cx="404" cy="105" r="6" fill="none" stroke="#e8eaed" stroke-width="2" />
+  <circle cx="404" cy="105" r="2" fill="#e8eaed" />
+  <text x="418" y="110" fill="#e8eaed" font-size="14" font-weight="600">Preview</text>
+  <path d="M484 102l4 4 4-4" fill="none" stroke="#9aa1ab" stroke-width="1.8" stroke-linecap="round" />
+  <rect x="746" y="88" width="70" height="34" rx="8" fill="#25282d" stroke="#454b55" />
+  <rect x="756" y="96" width="18" height="18" rx="4" fill="#6cc4f0" />
+  <rect x="784" y="96" width="18" height="18" rx="4" fill="none" stroke="#9aa1ab" stroke-width="2" />
+  <rect x="460" y="170" width="280" height="230" rx="8" fill="#23272d" stroke="#3a3f47" />
+  <path d="M470 380l70-80 50 50 40-35 100 65z" fill="#2f353d" />
+  <circle cx="690" cy="220" r="18" fill="#2f353d" />
+  <text x="600" y="470" fill="#5d6570" font-size="22" font-weight="700" text-anchor="middle" letter-spacing="2">CENTER PANEL</text><!-- Floating window -->
+  <g>
+    <rect x="596" y="508" width="222" height="164" rx="9" fill="#1c1f23" stroke="#6cc4f0" stroke-width="2" />
+    <path d="M596 517a9 9 0 0 1 9-9h204a9 9 0 0 1 9 9v21H596z" fill="#2a2e34" />
+    <text x="610" y="528" fill="#e8eaed" font-size="12.5" font-weight="600">Image Map</text>
+    <path d="M760 523h10" stroke="#b5bbc4" stroke-width="1.8" stroke-linecap="round" />
+    <rect x="778" y="517" width="11" height="11" rx="2" fill="none" stroke="#b5bbc4" stroke-width="1.6" />
+    <path d="M797 528l8-8M799 520h6v6" fill="none" stroke="#b5bbc4" stroke-width="1.6" stroke-linecap="round" />
+    <circle cx="640" cy="580" r="5" fill="#e4a53d" /><circle cx="652" cy="592" r="4" fill="#e4a53d" /><circle cx="662" cy="575" r="4" fill="#e4a53d" />
+    <circle cx="720" cy="610" r="5" fill="#6cc4f0" /><circle cx="734" cy="600" r="4" fill="#6cc4f0" /><circle cx="728" cy="624" r="4" fill="#6cc4f0" />
+    <circle cx="770" cy="570" r="4" fill="#9b7de8" /><circle cx="782" cy="582" r="5" fill="#9b7de8" />
+    <circle cx="660" cy="640" r="4" fill="#5fc47a" /><circle cx="674" cy="648" r="4" fill="#5fc47a" />
+  </g><!-- Right resize handle -->
+  <line x1="830" y1="75" x2="830" y2="690" stroke="#3a3f47" stroke-width="2" />
+  <rect x="825" y="364" width="10" height="36" rx="5" fill="#1c1f23" stroke="#6b737e" stroke-width="2" /><!-- Right panel -->
+  <rect x="831" y="75" width="297" height="615" fill="#1c1f23" />
+  <line x1="831" y1="113" x2="1128" y2="113" stroke="#30353c" stroke-width="2" />
+  <text x="846" y="100" fill="#e8eaed" font-size="14" font-weight="600">Gallery</text>
+  <circle cx="1102" cy="95" r="6" fill="none" stroke="#9aa1ab" stroke-width="2" />
+  <rect x="846" y="128" width="266" height="28" rx="6" fill="#25282d" stroke="#3a3f47" />
+  <g fill="#2f353d">
+    <rect x="846" y="170" width="84" height="84" rx="5" /><rect x="937" y="170" width="84" height="84" rx="5" /><rect x="1028" y="170" width="84" height="84" rx="5" />
+    <rect x="846" y="261" width="84" height="84" rx="5" /><rect x="937" y="261" width="84" height="84" rx="5" /><rect x="1028" y="261" width="84" height="84" rx="5" />
+    <rect x="846" y="352" width="84" height="84" rx="5" /><rect x="937" y="352" width="84" height="84" rx="5" /><rect x="1028" y="352" width="84" height="84" rx="5" />
+  </g>
+  <text x="979" y="560" fill="#5d6570" font-size="22" font-weight="700" text-anchor="middle" letter-spacing="2">RIGHT PANEL</text><!-- Right rail -->
+  <line x1="1128" y1="75" x2="1128" y2="690" stroke="#3a3f47" stroke-width="2" />
+  <rect x="1129" y="75" width="51" height="615" fill="#1f2226" />
+  <rect x="1136" y="86" width="36" height="36" rx="7" fill="#353a42" />
+  <rect x="1144" y="95" width="20" height="18" rx="3" fill="none" stroke="#e4fd1d" stroke-width="2" />
+  <path d="M1148 109l5-6 4 4 3-3 4 5" fill="none" stroke="#e4fd1d" stroke-width="1.6" />
+  <rect x="1144" y="134" width="20" height="18" rx="2" fill="none" stroke="#6cc4f0" stroke-width="2" stroke-dasharray="3 2" />
+  <path d="M1144 182h20M1144 189h20M1144 196h20" stroke="#9aa1ab" stroke-width="2" stroke-linecap="round" />
+  <circle cx="1144" cy="224" r="2.2" fill="#9aa1ab" /><circle cx="1154" cy="224" r="2.2" fill="#9aa1ab" /><circle cx="1164" cy="224" r="2.2" fill="#9aa1ab" /><!-- Status bar -->
+  <line x1="20" y1="690" x2="1180" y2="690" stroke="#3a3f47" stroke-width="2" />
+  <path d="M20 690h1160v38a12 12 0 0 1-12 12H32a12 12 0 0 1-12-12z" fill="#25282d" />
+  <circle cx="40" cy="715" r="4" fill="#5fc47a" />
+  <text x="50" y="719" fill="#b5bbc4" font-size="12">Server Status</text>
+  <text x="150" y="719" fill="#b5bbc4" font-size="12">Queue idle</text>
+  <text x="230" y="719" fill="#b5bbc4" font-size="12">Gallery</text>
+  <text x="292" y="719" fill="#b5bbc4" font-size="12">Autosave: Saved</text>
+  <circle cx="404" cy="715" r="2" fill="#9aa1ab" /><circle cx="411" cy="715" r="2" fill="#9aa1ab" /><circle cx="418" cy="715" r="2" fill="#9aa1ab" />
+  <text x="1164" y="719" fill="#b5bbc4" font-size="12" text-anchor="end">Notifications</text><!-- Callouts, then their tooltips: a tooltip follows its callout so a sibling selector can show it,
+       and every tooltip comes after every callout so it paints above them. -->
+  <g>
+    <g class="wbl-callout" id="wbl-c1" tabindex="0" role="img" aria-label="1. App menu: Projects, Model Manager, Fonts, Queue, Settings and help">
+      <circle cx="50" cy="12" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="50" y="17">1</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c2" tabindex="0" role="img" aria-label="2. Project switcher: Switch, rename, export or close projects Ctrl+P / ⌘P">
+      <circle cx="140" cy="12" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="140" y="17">2</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c3" tabindex="0" role="img" aria-label="3. Layout preset tabs: Click to switch layouts. A dot means unsaved changes; the arrow opens the preset menu">
+      <circle cx="590" cy="12" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="590" y="17">3</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c4" tabindex="0" role="img" aria-label="4. Save as new preset: Save the current arrangement as a preset">
+      <circle cx="765" cy="12" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="765" y="17">4</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c5" tabindex="0" role="img" aria-label="5. Invoke controls: Iterations, the Invoke button, and routing: where settings come from and results go">
+      <circle cx="1000" cy="12" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="1000" y="17">5</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c6a" tabindex="0" role="img" aria-label="6. Left rail: One icon per panel. Click to show a panel; click the active icon to collapse it">
+      <circle cx="46" cy="260" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="46" y="265">6</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c6b" tabindex="0" role="img" aria-label="6. Right rail: One icon per panel. Click to show a panel; click the active icon to collapse it">
+      <circle cx="1154" cy="260" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="1154" y="265">6</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c7" tabindex="0" role="img" aria-label="7. Rail menu (…): Add panels to this rail or remove them">
+      <circle cx="46" cy="206" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="46" y="211">7</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c8a" tabindex="0" role="img" aria-label="8. Left panel: Shows the selected left-rail panel">
+      <circle cx="221" cy="600" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="221" y="605">8</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c8b" tabindex="0" role="img" aria-label="8. Right panel: Shows the selected right-rail panel">
+      <circle cx="979" cy="600" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="979" y="605">8</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c9" tabindex="0" role="img" aria-label="9. Resize handle: Drag to resize the panel; drag past its minimum to collapse it">
+      <circle cx="370" cy="340" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="370" y="345">9</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c10" tabindex="0" role="img" aria-label="10. Center panel: The main work area: Preview, Canvas, Gallery, Workflow editor or Image Map">
+      <circle cx="600" cy="440" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="600" y="445">10</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c11" tabindex="0" role="img" aria-label="11. Center view menu: Switch the center view, add another, or close the current one. Z swaps in Preview">
+      <circle cx="522" cy="92" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="522" y="97">11</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c12" tabindex="0" role="img" aria-label="12. Floating window: Preview and Image Map can float. Drag to move; Dock to panel returns it to its rail">
+      <circle cx="580" cy="515" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="580" y="520">12</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c13" tabindex="0" role="img" aria-label="13. Floating panel’s rail slot: Marks where a floating panel came from. Click to dock it again">
+      <circle cx="1118" cy="143" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="1118" y="148">13</text>
+    </g>
+    <g class="wbl-callout" id="wbl-c14" tabindex="0" role="img" aria-label="14. Status bar: Server, queue, gallery, autosave and notifications. Some chips open a bottom panel">
+      <circle cx="460" cy="715" r="14" fill="#e4fd1d" stroke="#14161a" stroke-width="3" />
+      <text x="460" y="720">14</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t1" aria-hidden="true">
+      <rect x="4" y="34" width="458" height="108" rx="9" />
+      <text x="20" y="68" class="wbl-tip-title">App menu</text>
+      <text x="20" y="96">Projects, Model Manager, Fonts, Queue,</text>
+      <text x="20" y="124">Settings and help</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t2" aria-hidden="true">
+      <rect x="4" y="34" width="480" height="108" rx="9" />
+      <text x="20" y="68" class="wbl-tip-title">Project switcher</text>
+      <text x="20" y="96">Switch, rename, export or close projects</text>
+      <text x="20" y="124">Ctrl+P / ⌘P</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t3" aria-hidden="true">
+      <rect x="328" y="34" width="525" height="108" rx="9" />
+      <text x="344" y="68" class="wbl-tip-title">Layout preset tabs</text>
+      <text x="344" y="96">Click to switch layouts. A dot means unsaved</text>
+      <text x="344" y="124">changes; the arrow opens the preset menu</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t4" aria-hidden="true">
+      <rect x="525" y="34" width="480" height="80" rx="9" />
+      <text x="541" y="68" class="wbl-tip-title">Save as new preset</text>
+      <text x="541" y="96">Save the current arrangement as a preset</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t5" aria-hidden="true">
+      <rect x="682" y="34" width="514" height="108" rx="9" />
+      <text x="698" y="68" class="wbl-tip-title">Invoke controls</text>
+      <text x="698" y="96">Iterations, the Invoke button, and routing:</text>
+      <text x="698" y="124">where settings come from and results go</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t6a" aria-hidden="true">
+      <rect x="4" y="282" width="502" height="108" rx="9" />
+      <text x="20" y="316" class="wbl-tip-title">Left rail</text>
+      <text x="20" y="344">One icon per panel. Click to show a panel;</text>
+      <text x="20" y="372">click the active icon to collapse it</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t6b" aria-hidden="true">
+      <rect x="694" y="282" width="502" height="108" rx="9" />
+      <text x="710" y="316" class="wbl-tip-title">Right rail</text>
+      <text x="710" y="344">One icon per panel. Click to show a panel;</text>
+      <text x="710" y="372">click the active icon to collapse it</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t7" aria-hidden="true">
+      <rect x="4" y="228" width="458" height="80" rx="9" />
+      <text x="20" y="262" class="wbl-tip-title">Rail menu (…)</text>
+      <text x="20" y="290">Add panels to this rail or remove them</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t8a" aria-hidden="true">
+      <rect x="15" y="622" width="413" height="80" rx="9" />
+      <text x="31" y="656" class="wbl-tip-title">Left panel</text>
+      <text x="31" y="684">Shows the selected left-rail panel</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t8b" aria-hidden="true">
+      <rect x="767" y="622" width="424" height="80" rx="9" />
+      <text x="783" y="656" class="wbl-tip-title">Right panel</text>
+      <text x="783" y="684">Shows the selected right-rail panel</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t9" aria-hidden="true">
+      <rect x="152" y="362" width="435" height="108" rx="9" />
+      <text x="168" y="396" class="wbl-tip-title">Resize handle</text>
+      <text x="168" y="424">Drag to resize the panel;</text>
+      <text x="168" y="452">drag past its minimum to collapse it</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t10" aria-hidden="true">
+      <rect x="377" y="462" width="446" height="108" rx="9" />
+      <text x="393" y="496" class="wbl-tip-title">Center panel</text>
+      <text x="393" y="524">The main work area: Preview, Canvas,</text>
+      <text x="393" y="552">Gallery, Workflow editor or Image Map</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t11" aria-hidden="true">
+      <rect x="260" y="114" width="525" height="108" rx="9" />
+      <text x="276" y="148" class="wbl-tip-title">Center view menu</text>
+      <text x="276" y="176">Switch the center view, add another,</text>
+      <text x="276" y="204">or close the current one. Z swaps in Preview</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t12" aria-hidden="true">
+      <rect x="306" y="537" width="547" height="108" rx="9" />
+      <text x="322" y="571" class="wbl-tip-title">Floating window</text>
+      <text x="322" y="599">Preview and Image Map can float. Drag to move;</text>
+      <text x="322" y="627">Dock to panel returns it to its rail</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t13" aria-hidden="true">
+      <rect x="727" y="165" width="469" height="108" rx="9" />
+      <text x="743" y="199" class="wbl-tip-title">Floating panel’s rail slot</text>
+      <text x="743" y="227">Marks where a floating panel came from.</text>
+      <text x="743" y="255">Click to dock it again</text>
+    </g>
+    <g class="wbl-tip" id="wbl-t14" aria-hidden="true">
+      <rect x="192" y="585" width="536" height="108" rx="9" />
+      <text x="208" y="619" class="wbl-tip-title">Status bar</text>
+      <text x="208" y="647">Server, queue, gallery, autosave and</text>
+      <text x="208" y="675">notifications. Some chips open a bottom panel</text>
+    </g>
+  </g>
+</svg>
+<p>Hover over a numbered circle, or tap it on a touchscreen, for a short description. The table below describes each one in full.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Part</th><th>What it does</th></tr></thead><tbody><tr><td>1</td><td><strong>App menu</strong></td><td>Links to Projects, the Model Manager, Fonts, the Queue, Settings and help.</td></tr><tr><td>2</td><td><strong>Project switcher</strong></td><td>Shows the active project and switches between projects. See <a href="/users-guide/projects/introduction/">Working with Projects</a>.</td></tr><tr><td>3</td><td><strong>Layout preset tabs</strong></td><td>One tab per saved layout. A dot on a tab’s icon means that layout has unsaved changes in this project; the active tab’s arrow opens the preset menu.</td></tr><tr><td>4</td><td><strong>Save as new preset</strong></td><td>Saves the current arrangement as a new preset.</td></tr><tr><td>5</td><td><strong>Invoke controls</strong></td><td>The number of iterations, the <strong>Invoke</strong> button, and routing, which chooses where the settings come from and where results go.</td></tr><tr><td>6</td><td><strong>Rails</strong></td><td>A strip of icons down each edge of the window, one icon per panel placed on that side.</td></tr><tr><td>7</td><td><strong>Rail menu (…)</strong></td><td>Adds panels to a rail or removes them.</td></tr><tr><td>8</td><td><strong>Side panels</strong></td><td>Show the selected panel from the neighbouring rail.</td></tr><tr><td>9</td><td><strong>Resize handle</strong></td><td>Drag to make a side panel wider or narrower, or to collapse it.</td></tr><tr><td>10</td><td><strong>Center panel</strong></td><td>The main work area: Preview, Canvas, Gallery, Workflow editor or Image Map.</td></tr><tr><td>11</td><td><strong>Center view menu</strong></td><td>Switches what the center shows, and adds or closes center views.</td></tr><tr><td>12</td><td><strong>Floating window</strong></td><td>A panel detached from its rail, which you can move and resize anywhere.</td></tr><tr><td>13</td><td><strong>Floating panel’s rail slot</strong></td><td>A dashed icon that marks where a floating panel came from. Click it to bring the window to the front; right-click it to dock or remove the panel.</td></tr><tr><td>14</td><td><strong>Status bar</strong></td><td>Small status chips: server connection, queue, gallery, autosave and notifications.</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="rails-and-side-panels">Rails and side panels</h3><a class="sl-anchor-link" href="#rails-and-side-panels"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Rails and side panels”</span></a></div>
+<p>The <strong>left rail</strong> is for panels you <em>create</em> with, such as <strong>Generate</strong>, <strong>Upscale</strong> and <strong>Video</strong>. The <strong>right rail</strong> is for panels you <em>inspect</em> results with, such as <strong>Gallery</strong>, <strong>Layers</strong> and <strong>Queue</strong>. Each rail can hold several panels, but its side panel shows one at a time:</p>
+<ul>
+<li>Click a rail icon to show that panel. Hover over an icon to see its name.</li>
+<li>Click the icon of the panel that is already showing to collapse the side panel and give the center more room. Click it again to bring the panel back at the same width.</li>
+<li>Drag the <strong>resize handle</strong> between a side panel and the center to change its width. Dragging well past its narrowest size collapses it.</li>
+</ul>
+<p>Side panels shrink as needed when the window gets narrow, so the center always keeps a usable width.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="the-center-panel">The center panel</h3><a class="sl-anchor-link" href="#the-center-panel"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The center panel”</span></a></div>
+<p>The center panel shows one <strong>view</strong> at a time. The button in its top-left corner (for example <strong>Preview</strong>) names the current view; click it to open the center view menu:</p>
+<ul>
+<li><strong>Center Views</strong> lists the views already placed in the center. Choose one to switch to it.</li>
+<li><strong>Add To Center</strong> lists other panels that can be shown in the center.</li>
+<li><strong>Close</strong> removes the current view. The center always keeps at least one view.</li>
+</ul>
+<p>Press <kbd>Z</kbd> to swap the Preview into the center and back to the view you had before. It is a quick way to check a result while you work on the canvas or a workflow.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="the-status-bar-and-bottom-panel">The status bar and bottom panel</h3><a class="sl-anchor-link" href="#the-status-bar-and-bottom-panel"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The status bar and bottom panel”</span></a></div>
+<p>The status bar along the bottom holds small chips. Hover over <strong>Server Status</strong>, the queue chip or <strong>Autosave</strong> for details; click <strong>Notifications</strong> to see recent messages. Some chips, such as <strong>Gallery</strong>, open a <strong>bottom panel</strong> above the status bar. Drag the top edge of the bottom panel to resize it.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="floating-windows">Floating windows</h3><a class="sl-anchor-link" href="#floating-windows"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Floating windows”</span></a></div>
+<p><strong>Preview</strong> and <strong>Image Map</strong> can float in their own windows above the rest of the workbench. Click <strong>Float Window</strong> in the panel’s header to detach it. Then:</p>
+<ul>
+<li>Drag the title bar to move the window, and drag any edge or corner to resize it.</li>
+<li>From the keyboard, focus the title bar and press the arrow keys to move the window, or focus the grip in the bottom-right corner and press the arrow keys to resize it. Hold <kbd>Shift</kbd> for larger steps; <kbd>Home</kbd> on the grip shrinks the window to its smallest size.</li>
+<li>Double-click the title bar, or use <strong>Maximize</strong>, to fill the workbench; double-click again, or use <strong>Restore</strong>, to return to the previous size and position. Double-clicking a collapsed window’s title bar expands it.</li>
+<li><strong>Collapse</strong> shrinks the window to just its title bar and <strong>Expand</strong> opens it again. The panel keeps what you were doing while collapsed.</li>
+<li>Click a window, or move keyboard focus into it, to make it the active one: it comes to the front and is outlined like a focused panel, and keyboard shortcuts for its panel apply to it.</li>
+<li>The dock button in the title bar, named for where the window came from (for example <strong>Dock to right panel</strong>), returns the panel to the place it floated from.</li>
+<li>The panel’s dashed rail icon keeps its place while the window floats. Click it to bring the window to the front and expand it; right-click it to dock or remove the panel.</li>
+</ul>
+<p>A window remembers where it was. Dock or remove a floating panel and float it again later, and it reopens at the same position and size.</p>
+<p>If the panel you float was also the only view in the center, the center shows where it went, with <strong>Show window</strong> and a dock button. Docking or removing the window gives the center its view back.</p>
+<p>A floating Preview is handy on the <strong>Edit</strong> layout: keep the canvas in the center and watch results in a small window beside your work.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="arranging-panels">Arranging panels</h2><a class="sl-anchor-link" href="#arranging-panels"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Arranging panels”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="available-panels">Available panels</h3><a class="sl-anchor-link" href="#available-panels"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Available panels”</span></a></div>
+<p>Each panel can be placed only where it makes sense:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Panel</th><th align="center">Left rail</th><th align="center">Right rail</th><th align="center">Center</th><th align="center">Bottom</th><th align="center">Can float</th></tr></thead><tbody><tr><td>Generate, Upscale, Video</td><td align="center">✓</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td>Workflow</td><td align="center">✓</td><td align="center"></td><td align="center">✓</td><td align="center">✓</td><td align="center"></td></tr><tr><td>Canvas</td><td align="center"></td><td align="center"></td><td align="center">✓</td><td align="center"></td><td align="center"></td></tr><tr><td>Gallery</td><td align="center">✓</td><td align="center">✓</td><td align="center">✓</td><td align="center">✓</td><td align="center"></td></tr><tr><td>Image Map</td><td align="center">✓</td><td align="center">✓</td><td align="center">✓</td><td align="center"></td><td align="center">✓</td></tr><tr><td>Preview</td><td align="center"></td><td align="center">✓</td><td align="center">✓</td><td align="center"></td><td align="center">✓</td></tr><tr><td>Project</td><td align="center">✓</td><td align="center">✓</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td>Layers, Queue</td><td align="center"></td><td align="center">✓</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td>Diagnostics</td><td align="center"></td><td align="center">✓</td><td align="center"></td><td align="center">✓</td><td align="center"></td></tr></tbody></table>
+<p>A panel can appear in more than one place at once, for example the Gallery in the right rail <em>and</em> in the center, but only once in each place. The <strong>Project</strong> panel isn’t in any built-in layout; add it to a rail to keep the project’s name, sync status and details in view.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="adding-and-removing-panels">Adding and removing panels</h3><a class="sl-anchor-link" href="#adding-and-removing-panels"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Adding and removing panels”</span></a></div>
+<p>Click the <strong>…</strong> button at the bottom of a rail, or right-click an empty part of the rail, to open its menu (<strong>Create widgets</strong> on the left, <strong>Inspect widgets</strong> on the right). It lists every panel that rail can hold, with a check mark beside those already placed. Choose a panel to add it, or choose a checked panel to remove it.</p>
+<p>To remove a panel quickly, right-click its rail icon and choose <strong>Remove</strong>. Removing a panel only takes it out of the layout. Its contents and settings are kept, and it comes back as you left it when you add it again.</p>
+<p>Center views are added and closed from the <a href="#the-center-panel">center view menu</a>.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="moving-panels-between-rails">Moving panels between rails</h3><a class="sl-anchor-link" href="#moving-panels-between-rails"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Moving panels between rails”</span></a></div>
+<p>Drag a rail icon to reorder it within its rail, or drop it on the other rail to move the panel to the other side. The side panel opens to show the panel you moved. You can also drag an icon onto the status bar to tuck the panel into the bottom panel, and drag a chip back up to a rail.</p>
+<p>While you drag, each place shows <strong>Drop here</strong> if the panel can go there, <strong>Unavailable</strong> if that panel isn’t allowed there, or <strong>Already placed</strong> if it is there already.</p>
+<p>On a touchscreen, press and hold an icon briefly before dragging.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="layout-shortcuts">Layout shortcuts</h3><a class="sl-anchor-link" href="#layout-shortcuts"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Layout shortcuts”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Keys</th><th>Action</th></tr></thead><tbody><tr><td><kbd>T</kbd> or <kbd>O</kbd></td><td>Collapse or expand the left panel</td></tr><tr><td><kbd>G</kbd></td><td>Collapse or expand the right panel</td></tr><tr><td><kbd>F</kbd></td><td>Collapse or expand all side and bottom panels at once, for a clear view of the center</td></tr><tr><td><kbd>Z</kbd></td><td>Swap the Preview into or out of the center</td></tr><tr><td><kbd>Shift</kbd>+<kbd>R</kbd></td><td>Revert to the active preset’s saved layout</td></tr><tr><td><kbd>Alt</kbd>+<kbd>1</kbd> to <kbd>Alt</kbd>+<kbd>4</kbd></td><td>Switch to the Compose, Edit, Video or Automate preset</td></tr></tbody></table>
+<p>These shortcuts don’t fire while you are typing in a text field. You can change any of them; see <a href="/users-guide/workbench/hotkeys/">Hotkeys</a>.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="layout-presets">Layout presets</h2><a class="sl-anchor-link" href="#layout-presets"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Layout presets”</span></a></div>
+<p>A <strong>layout preset</strong> is a saved arrangement of panels. The tabs in the middle of the top bar switch between them, so you can move from generating to canvas editing to building workflows without rearranging anything by hand.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="built-in-presets">Built-in presets</h3><a class="sl-anchor-link" href="#built-in-presets"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Built-in presets”</span></a></div>
+<p>Invoke comes with four presets:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Preset</th><th>Center</th><th>Left rail</th><th>Right rail</th></tr></thead><tbody><tr><td><strong>Compose</strong>: generate images from text</td><td>Preview (Gallery also available)</td><td>Generate, Upscale</td><td>Gallery, Image Map, Queue</td></tr><tr><td><strong>Edit</strong>: paint and composite on the canvas</td><td>Canvas (Preview also available)</td><td>Generate, Upscale</td><td>Layers, Preview</td></tr><tr><td><strong>Video</strong>: generate video</td><td>Preview</td><td>Video, Upscale</td><td>Gallery, Queue</td></tr><tr><td><strong>Automate</strong>: build and run workflows</td><td>Workflow editor (Preview also available)</td><td>Workflow</td><td>Queue, Preview, Gallery, Image Map</td></tr></tbody></table>
+<p>Each preset also sets where <strong>Invoke</strong> takes its settings from and where results go. For example, Compose generates from the Generate panel into the Gallery, while Edit works from and into the Canvas. A source or destination you have locked from the routing control next to <strong>Invoke</strong> is left alone.</p>
+<p>New projects open with Compose unless you choose a different starting point when you create them.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="switching-presets">Switching presets</h3><a class="sl-anchor-link" href="#switching-presets"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Switching presets”</span></a></div>
+<p>Click a preset’s tab, or press <kbd>Alt</kbd>+<kbd>1</kbd> to <kbd>Alt</kbd>+<kbd>4</kbd> for the built-in presets. Switching changes only the arrangement: every panel keeps its contents, so a half-written prompt or a scrolled gallery is exactly as you left it.</p>
+<p>When the window is narrow, the tabs show only their icons. Hover over one to see its name.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="changing-a-preset">Changing a preset</h3><a class="sl-anchor-link" href="#changing-a-preset"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Changing a preset”</span></a></div>
+<p>Once you move, add or remove panels, the active preset’s tab shows a dot on its icon to say the layout no longer matches the saved preset; hover over or focus the tab to see <strong>Unsaved layout changes</strong>. Nothing is lost if you switch away: each preset keeps the arrangement you left it in, floating windows included, and switching back brings that arrangement back, so several presets can have unsaved changes at once. These working arrangements belong to the project and are saved with it; other projects open each preset as it was saved.</p>
+<p>Click the arrow on the active tab, or right-click any tab, to open the preset menu:</p>
+<ul>
+<li><strong>Save changes</strong> stores the preset’s arrangement in the preset, so it opens that way from now on. On a tab that isn’t active, it saves the arrangement that preset was left in without switching to it.</li>
+<li><strong>Revert to saved layout</strong> puts the panels back as the preset saved them. <kbd>Shift</kbd>+<kbd>R</kbd> does the same for the active preset, and so does choosing the active preset again with its shortcut (<kbd>Alt</kbd>+<kbd>1</kbd> to <kbd>Alt</kbd>+<kbd>4</kbd>) or from the command palette. On a tab that isn’t active, it forgets that preset’s unsaved arrangement. Either way, undo brings the arrangement back.</li>
+<li><strong>Edit preset…</strong> changes the preset’s name, icon and default routing.</li>
+<li><strong>Delete preset…</strong> removes a preset you created.</li>
+<li><strong>Manage presets</strong> opens the list of all presets.</li>
+<li>On a tab that isn’t active, <strong>Switch to this layout</strong> switches to it.</li>
+</ul>
+<p>You can also save changes to the built-in presets. Your version replaces the original for your account only, and you can restore the original at any time from <strong>Manage presets</strong>.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="creating-your-own-preset">Creating your own preset</h3><a class="sl-anchor-link" href="#creating-your-own-preset"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Creating your own preset”</span></a></div>
+<ol>
+<li>Arrange the panels the way you like them.</li>
+<li>Click the <strong>+</strong> button to the right of the preset tabs (<strong>Save this layout as a new preset</strong>).</li>
+<li>In <strong>Save as new preset</strong>, enter a <strong>Preset name</strong> and choose an <strong>Icon</strong> for its tab.</li>
+<li>Choose the <strong>Default source</strong>, the panel <strong>Invoke</strong> reads its settings from (such as Generate or Workflow), and the <strong>Default destination</strong>, <strong>Canvas</strong> or <strong>Gallery</strong>.</li>
+<li>Click <strong>Save preset</strong>.</li>
+</ol>
+<p>The new preset captures the whole arrangement, including floating windows and their positions. It becomes the active preset and gets a tab at the end of the row; the preset you started from keeps its saved arrangement.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="managing-presets">Managing presets</h3><a class="sl-anchor-link" href="#managing-presets"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Managing presets”</span></a></div>
+<p><strong>Manage presets</strong> lists every preset in tab order. From there you can:</p>
+<ul>
+<li>drag presets by their grip to change the order of the tabs;</li>
+<li>click the pencil to edit a preset’s name, icon and routing;</li>
+<li>restore a built-in preset you have changed to its original arrangement. Changed built-ins are marked with a dot;</li>
+<li>delete presets you created. Built-in presets can’t be deleted.</li>
+</ul>
+<p>You can also reorder tabs by dragging them in the top bar. With the keyboard, focus a tab, press <kbd>Space</kbd>, move it with the arrow keys, and press <kbd>Space</kbd> again to drop it.</p>
+<p>Deleting a preset only removes the saved preset. Projects that were using it keep their current arrangement.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="what-is-saved-where">What is saved where</h2><a class="sl-anchor-link" href="#what-is-saved-where"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “What is saved where”</span></a></div>
+<ul>
+<li><strong>The current arrangement belongs to the project.</strong> Each project remembers its own panels, sizes, center view and floating windows, so switching projects also switches layouts. See <a href="/users-guide/projects/introduction/">Working with Projects</a>.</li>
+<li><strong>Presets belong to your account.</strong> Custom presets, changes to built-in presets and the order of the tabs are available in all of your projects. With <a href="/configuration/multi-user-mode/user-guide/">multiple users</a>, each person has their own presets.</li>
+</ul>
+<p>To start over, press <kbd>Shift</kbd>+<kbd>R</kbd>, or use <strong>Reset layout</strong> under <strong>Data &#x26; workspace</strong> in Settings. Both put the current project’s panels back as the active preset saved them.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="tips">Tips</h2><a class="sl-anchor-link" href="#tips"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Tips”</span></a></div>
+<ul>
+<li><strong>Build a preset for each kind of work.</strong> A “Portraits” preset might keep Generate and the Gallery side by side with a floating Preview; an “Inpainting” preset might keep Layers and Preview on the right of the canvas.</li>
+<li><strong>Keep the center for the work itself.</strong> Use <kbd>F</kbd> to hide all side panels when you need the whole window for the canvas, and press it again to bring them back.</li>
+<li><strong>Use the Gallery in the center for triage.</strong> Add the Gallery to the center to review a large batch at full width, then press <kbd>Z</kbd> to jump between it and the Preview.</li>
+<li><strong>Save built-in changes you like.</strong> If you always move the Queue to the left, save that change into the preset rather than repeating it in each project.</li>
+<li><strong>Highlight the focused area.</strong> <strong>Highlight focused regions</strong> in Settings (on by default) outlines the part of the workbench that keyboard shortcuts will act on.</li>
+</ul></div><footer class="sl-flex astro-kxhlr25s"><div class="meta sl-flex astro-kxhlr25s"><a href="https://github.com/invoke-ai/InvokeAI/edit/main/docs/src/content/docs/Users%20Guide/01.Workbench/01.introduction.mdx" class="sl-flex print:hidden astro-7c4khlgo"><svg aria-hidden="true" class="astro-7c4khlgo astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.2em;"><path d="M22 7.24a1 1 0 0 0-.29-.71l-4.24-4.24a1 1 0 0 0-1.1-.22 1 1 0 0 0-.32.22l-2.83 2.83L2.29 16.05a1 1 0 0 0-.29.71V21a1 1 0 0 0 1 1h4.24a1 1 0 0 0 .76-.29l10.87-10.93L21.71 8c.1-.1.17-.2.22-.33a1 1 0 0 0 0-.24v-.14l.07-.05ZM6.83 20H4v-2.83l9.93-9.93 2.83 2.83L6.83 20ZM18.17 8.66l-2.83-2.83 1.42-1.41 2.82 2.82-1.41 1.42Z"/></svg>Edit page</a><p>Last updated: <time datetime="2026-09-29T00:00:00.000Z">Sep 29, 2026</time></p></div><div class="pagination-links print:hidden astro-i5o6fzs2" dir="ltr"><a href="/configuration/multi-user-mode/api-guide/" rel="prev" class="astro-i5o6fzs2"><svg aria-hidden="true" class="astro-i5o6fzs2 astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-i5o6fzs2">Previous<br class="astro-i5o6fzs2"><span class="link-title astro-i5o6fzs2">Multi-User API Guide</span></span></a><a href="/users-guide/workbench/hotkeys/" rel="next" class="astro-i5o6fzs2"><svg aria-hidden="true" class="astro-i5o6fzs2 astro-wion3bmv" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg><span class="astro-i5o6fzs2">Next<br class="astro-i5o6fzs2"><span class="link-title astro-i5o6fzs2">Hotkey shortcuts</span></span></a></div></footer><div class="built-by astro-jcegb7pj">This site was designed and developed by <a target="_blank" rel="noreferrer noopener" href="https://aetherfox.studio" class="astro-jcegb7pj">Aether Fox Studio</a>.</div></div></div></main></div></div></div></div></body></html>
