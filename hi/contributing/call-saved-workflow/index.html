@@ -1,0 +1,903 @@
+<!DOCTYPE html><html lang="hi" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-l37l4sch"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Call Saved Workflow Architecture | InvokeAI Documentation</title><link rel="canonical" href="https://v7.invoke.ai/contributing/call-saved-workflow/"/><link rel="sitemap" href="/sitemap-index.xml"/><script async src="https://plausible.tracking.events/js/pa-BHcumuOemKz4XIQeWkTn4.js"></script><script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script><link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v7.4.2"/><meta name="generator" content="Starlight v0.42.7"/><meta property="og:title" content="Call Saved Workflow Architecture"/><meta property="og:type" content="article"/><meta property="og:url" content="https://v7.invoke.ai/hi/contributing/call-saved-workflow/"/><meta property="og:locale" content="hi"/><meta property="og:site_name" content="InvokeAI Documentation"/><meta property="og:image" content="https://v7.invoke.ai/coverimage.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://v7.invoke.ai/coverimage.png"/><meta name="docs-topic" content="contribute" data-title="Contribute"/><script>
+  document.documentElement.dataset.theme = 'dark';
+</script><link rel="stylesheet" href="/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/_astro/middleware.1ZajKLu2.css"><style>@layer starlight.components{:root{--sl-badge-default-border:var(--sl-color-accent);--sl-badge-default-bg:var(--sl-color-accent-low);--sl-badge-default-text:#fff;--sl-badge-note-border:var(--sl-color-blue);--sl-badge-note-bg:var(--sl-color-blue-low);--sl-badge-note-text:#fff;--sl-badge-danger-border:var(--sl-color-red);--sl-badge-danger-bg:var(--sl-color-red-low);--sl-badge-danger-text:#fff;--sl-badge-success-border:var(--sl-color-green);--sl-badge-success-bg:var(--sl-color-green-low);--sl-badge-success-text:#fff;--sl-badge-caution-border:var(--sl-color-orange);--sl-badge-caution-bg:var(--sl-color-orange-low);--sl-badge-caution-text:#fff;--sl-badge-tip-border:var(--sl-color-purple);--sl-badge-tip-bg:var(--sl-color-purple-low);--sl-badge-tip-text:#fff}[data-theme=light]:root{--sl-badge-default-bg:var(--sl-color-accent-high);--sl-badge-note-bg:var(--sl-color-blue-high);--sl-badge-danger-bg:var(--sl-color-red-high);--sl-badge-success-bg:var(--sl-color-green-high);--sl-badge-caution-bg:var(--sl-color-orange-high);--sl-badge-tip-bg:var(--sl-color-purple-high)}.sl-badge:where(.astro-uilfdb55){border:1px solid var(--sl-color-border-badge);font-family:var(--sl-font-system-mono);color:var(--sl-color-text-badge);background-color:var(--sl-color-bg-badge);overflow-wrap:anywhere;border-radius:.25rem;line-height:normal;display:inline-block}.sidebar-content .sl-badge:where(.astro-uilfdb55){line-height:1;font-size:var(--sl-text-xs);padding:.125rem .375rem}.sidebar-content a[aria-current=page]>.sl-badge:where(.astro-uilfdb55){--sl-color-bg-badge:transparent;--sl-color-border-badge:currentColor;color:inherit}.default:where(.astro-uilfdb55){--sl-color-bg-badge:var(--sl-badge-default-bg);--sl-color-border-badge:var(--sl-badge-default-border);--sl-color-text-badge:var(--sl-badge-default-text)}.note:where(.astro-uilfdb55){--sl-color-bg-badge:var(--sl-badge-note-bg);--sl-color-border-badge:var(--sl-badge-note-border);--sl-color-text-badge:var(--sl-badge-note-text)}.danger:where(.astro-uilfdb55){--sl-color-bg-badge:var(--sl-badge-danger-bg);--sl-color-border-badge:var(--sl-badge-danger-border);--sl-color-text-badge:var(--sl-badge-danger-text)}.success:where(.astro-uilfdb55){--sl-color-bg-badge:var(--sl-badge-success-bg);--sl-color-border-badge:var(--sl-badge-success-border);--sl-color-text-badge:var(--sl-badge-success-text)}.tip:where(.astro-uilfdb55){--sl-color-bg-badge:var(--sl-badge-tip-bg);--sl-color-border-badge:var(--sl-badge-tip-border);--sl-color-text-badge:var(--sl-badge-tip-text)}.caution:where(.astro-uilfdb55){--sl-color-bg-badge:var(--sl-badge-caution-bg);--sl-color-border-badge:var(--sl-badge-caution-border);--sl-color-text-badge:var(--sl-badge-caution-text)}.small:where(.astro-uilfdb55){font-size:var(--sl-text-xs);padding:.125rem .25rem}.medium:where(.astro-uilfdb55){font-size:var(--sl-text-sm);padding:.175rem .35rem}.large:where(.astro-uilfdb55){font-size:var(--sl-text-base);padding:.225rem .45rem}.sl-markdown-content :is(h1,h2,h3,h4,h5,h6) .sl-badge:where(.astro-uilfdb55){vertical-align:middle}}
+@layer starlight.components{.card:where(.astro-w32babsa){--sl-card-border:var(--sl-color-purple);--sl-card-bg:var(--sl-color-purple-low);border:1px solid var(--sl-color-gray-5);background-color:var(--sl-color-black);flex-direction:column;gap:clamp(.5rem,.125rem + 1vw,1rem);padding:clamp(1rem,.125rem + 3vw,2.5rem)}.card:where(.astro-w32babsa):nth-child(4n+1){--sl-card-border:var(--sl-color-orange);--sl-card-bg:var(--sl-color-orange-low)}.card:where(.astro-w32babsa):nth-child(4n+3){--sl-card-border:var(--sl-color-green);--sl-card-bg:var(--sl-color-green-low)}.card:where(.astro-w32babsa):nth-child(4n+4){--sl-card-border:var(--sl-color-red);--sl-card-bg:var(--sl-color-red-low)}.card:where(.astro-w32babsa):nth-child(4n+5){--sl-card-border:var(--sl-color-blue);--sl-card-bg:var(--sl-color-blue-low)}.title:where(.astro-w32babsa){font-weight:600;font-size:var(--sl-text-h4);color:var(--sl-color-white);line-height:var(--sl-line-height-headings);align-items:center;gap:1rem}.card:where(.astro-w32babsa) .icon:where(.astro-w32babsa){border:1px solid var(--sl-card-border);background-color:var(--sl-card-bg);border-radius:.25rem;flex-shrink:0;padding:.2em}.card:where(.astro-w32babsa) .body:where(.astro-w32babsa){font-size:clamp(var(--sl-text-sm), calc(.5rem + 1vw), var(--sl-text-body));margin:0}}
+@layer starlight.components{.card-grid:where(.astro-fxrrbeuv){grid-template-columns:100%;gap:1rem;display:grid}.card-grid:where(.astro-fxrrbeuv)>*{margin-top:0!important}@media (width>=50rem){.card-grid:where(.astro-fxrrbeuv){grid-template-columns:1fr 1fr;gap:1.5rem}.stagger:where(.astro-fxrrbeuv){--stagger-height:5rem;padding-bottom:var(--stagger-height)}.stagger:where(.astro-fxrrbeuv)>:nth-child(2n){transform:translateY(var(--stagger-height))}}}
+@layer starlight.components{svg:where(.astro-h34usyis){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em;overflow:visible}}
+@layer starlight.components{starlight-tabs:where(.astro-ehqz4gzw){display:block}.tablist-wrapper:where(.astro-ehqz4gzw){overflow-x:auto}:where(.astro-ehqz4gzw)[role=tablist]{border-bottom:2px solid var(--sl-color-gray-5);padding:0;list-style:none;display:flex}.tab:where(.astro-ehqz4gzw){display:flex}.tab:where(.astro-ehqz4gzw)>:where(.astro-ehqz4gzw)[role=tab]{--sl-tab-color-border:var(--sl-color-gray-5);line-height:var(--sl-line-height-headings);box-shadow:0 2px 0 var(--sl-tab-color-border);color:var(--sl-color-gray-3);outline-offset:var(--sl-outline-offset-inside);overflow-wrap:initial;align-items:center;gap:.5rem;padding:.275rem 1.25rem;text-decoration:none;display:flex}.tab:where(.astro-ehqz4gzw) :where(.astro-ehqz4gzw)[role=tab][aria-selected=true]{--sl-tab-color-border:var(--sl-color-text-accent);color:var(--sl-color-white);font-weight:600}.tablist-wrapper:where(.astro-ehqz4gzw)~[role=tabpanel]{margin-top:1rem}}
+@layer starlight.components{.sl-link-card:where(.astro-ia53jsej){border:1px solid var(--sl-color-gray-5);box-shadow:var(--sl-shadow-sm);border-radius:.5rem;grid-template-columns:1fr auto;gap:.5rem;padding:1rem;display:grid;position:relative}a:where(.astro-ia53jsej){line-height:var(--sl-line-height-headings);text-decoration:none}a:where(.astro-ia53jsej):before{content:"";position:absolute;inset:0}.stack:where(.astro-ia53jsej){flex-direction:column;gap:.5rem}.title:where(.astro-ia53jsej){color:var(--sl-color-white);font-weight:600;font-size:var(--sl-text-lg)}.description:where(.astro-ia53jsej){color:var(--sl-color-gray-3);line-height:1.5}.icon:where(.astro-ia53jsej){color:var(--sl-color-gray-3)}.sl-link-card:where(.astro-ia53jsej):hover{background:var(--sl-color-gray-7,var(--sl-color-gray-6));border-color:var(--sl-color-gray-2)}.sl-link-card:where(.astro-ia53jsej):hover .icon:where(.astro-ia53jsej){color:var(--sl-color-white)}}
+@layer starlight.components{.sl-steps{--bullet-size:calc(var(--sl-line-height) * 1rem);--bullet-margin:.375rem;counter-reset:steps-counter var(--sl-steps-start,0);padding-inline-start:0;list-style:none}.sl-steps>li{counter-increment:steps-counter;padding-inline-start:calc(var(--bullet-size) + 1rem);min-height:calc(var(--bullet-size) + var(--bullet-margin));padding-bottom:1px;position:relative}.sl-steps>li+li{margin-top:0}.sl-steps>li:before{content:counter(steps-counter);top:0;width:var(--bullet-size);height:var(--bullet-size);line-height:var(--bullet-size);font-size:var(--sl-text-xs);text-align:center;color:var(--sl-color-white);background-color:var(--sl-color-gray-6);box-shadow:inset 0 0 0 1px var(--sl-color-gray-5);border-radius:99rem;font-weight:600;position:absolute;inset-inline-start:0}.sl-steps>li:after{--guide-width:1px;content:"";top:calc(var(--bullet-size) + var(--bullet-margin));bottom:var(--bullet-margin);width:var(--guide-width);background-color:var(--sl-color-hairline-light);position:absolute;inset-inline-start:calc((var(--bullet-size) - var(--guide-width)) / 2)}}@layer starlight.content{.sl-steps>li>:first-child{--lh:calc(1em * var(--sl-line-height));--shift-y:calc(.5 * (var(--bullet-size) - var(--lh)));transform:translateY(var(--shift-y));margin-bottom:var(--shift-y)}.sl-steps>li>:first-child:where(h1,h2,h3,h4,h5,h6){--lh:calc(1em * var(--sl-line-height-headings))}@supports (--prop:1lh){.sl-steps>li>:first-child{--lh:1lh}}}
+@layer starlight.components{starlight-file-tree:where(.astro-3jcnvmve){--x-space:1.5rem;--y-space:.125rem;--y-pad:0;border:1px solid var(--sl-color-gray-5);background-color:var(--sl-color-gray-6);font-size:var(--sl-text-xs);font-family:var(--__sl-font-mono);padding:1rem;display:block;overflow-x:auto}starlight-file-tree:where(.astro-3jcnvmve) .directory>details{padding:0;background:0 0;border:0;padding-inline-start:var(--x-space)}starlight-file-tree:where(.astro-3jcnvmve) .directory>details>summary{padding:var(--y-pad) .625rem;color:var(--sl-color-white);border:0;max-width:100%;margin-inline-start:calc(-1 * var(--x-space));font-weight:400}starlight-file-tree:where(.astro-3jcnvmve) .directory>details>summary::marker,starlight-file-tree:where(.astro-3jcnvmve) .directory>details>summary::-webkit-details-marker{color:var(--sl-color-gray-3)}starlight-file-tree:where(.astro-3jcnvmve) .directory>details>summary:hover,starlight-file-tree:where(.astro-3jcnvmve) .directory>details>summary:hover .tree-icon{cursor:pointer;color:var(--sl-color-text-accent);fill:currentColor}starlight-file-tree:where(.astro-3jcnvmve) .directory>details>summary:hover~ul{border-color:var(--sl-color-gray-4)}starlight-file-tree:where(.astro-3jcnvmve) .directory>details>summary:hover .highlight .tree-icon{color:var(--sl-color-text-invert);fill:currentColor}starlight-file-tree:where(.astro-3jcnvmve) ul{border-inline-start:1px solid var(--sl-color-gray-5);margin-inline-start:.5rem;padding:0;padding-inline-start:.125rem;list-style:none}starlight-file-tree:where(.astro-3jcnvmve)>ul{border:0;margin:0;padding:0}starlight-file-tree:where(.astro-3jcnvmve) li{margin:var(--y-space) 0;padding:var(--y-pad) 0}starlight-file-tree:where(.astro-3jcnvmve) .file{color:var(--sl-color-white);margin-inline-start:calc(var(--x-space) - .125rem)}starlight-file-tree:where(.astro-3jcnvmve) .tree-entry{flex-wrap:wrap;align-items:flex-start;max-width:calc(100% - 1rem);display:inline-flex}@media (width>=30em){starlight-file-tree:where(.astro-3jcnvmve) .tree-entry{flex-wrap:nowrap}}starlight-file-tree:where(.astro-3jcnvmve) .tree-entry>:first-child{flex-shrink:0}starlight-file-tree:where(.astro-3jcnvmve) .empty{color:var(--sl-color-gray-3);padding-inline-start:.375rem}starlight-file-tree:where(.astro-3jcnvmve) .comment{color:var(--sl-color-gray-3);min-width:12rem;max-width:24rem;padding-inline-start:1.625rem}starlight-file-tree:where(.astro-3jcnvmve) .highlight{color:var(--sl-color-text-invert);background-color:var(--sl-color-text-accent);border-radius:.25rem;padding-inline-end:.5rem;display:inline-block}starlight-file-tree:where(.astro-3jcnvmve) svg{fill:var(--sl-color-gray-3);vertical-align:middle;width:.875rem;height:.875rem;margin-inline:.25rem .375rem;display:inline;overflow:visible}starlight-file-tree:where(.astro-3jcnvmve) .highlight svg.tree-icon{fill:currentColor}}
+@layer starlight.components{.sl-link-button:where(.astro-3djcj2ca){font-size:var(--sl-text-sm);outline-offset:.25rem;border:1px solid #0000;border-radius:999rem;align-items:center;gap:.5em;padding:.4375rem 1.125rem;line-height:1.1875;text-decoration:none;display:inline-flex}.sl-link-button:where(.astro-3djcj2ca).primary{background:var(--sl-color-text-accent);border-color:var(--sl-color-text-accent);color:var(--sl-color-black)}.sl-link-button:where(.astro-3djcj2ca).primary:hover{color:var(--sl-color-black)}.sl-link-button:where(.astro-3djcj2ca).secondary{border-color:inherit;color:var(--sl-color-white)}.sl-link-button:where(.astro-3djcj2ca).minimal{color:var(--sl-color-white);padding-inline:0}.sl-link-button:where(.astro-3djcj2ca) svg{flex-shrink:0}@media (width>=50rem){.sl-link-button:where(.astro-3djcj2ca){font-size:var(--sl-text-base);padding:.9375rem 1.25rem}}.sl-markdown-content .sl-link-button:where(.astro-3djcj2ca){margin-inline-end:1rem}.sl-markdown-content .sl-link-button:where(.astro-3djcj2ca):not(:where(p *)){margin-block:1rem}}
+</style><script type="module" src="/_astro/page.cNngjUgL.js"></script></head><body class="astro-l37l4sch"><a class="sl-skip-link astro-aa2esjsm" href="#_top">इसे छोड़कर कंटेंट पर जाएं</a><div class="page sl-flex astro-l7dgauyn"><header class="header astro-l7dgauyn"><div class="docs-header docs-header--has-language-menu astro-e55y2gh7"><a href="/hi/" class="home astro-e55y2gh7" aria-label="Invoke home"><svg class="logomark astro-e55y2gh7" width="22" height="22" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M29.1951 10.6667H42V2H2V10.6667H14.8049L29.1951 33.3333H42V42H2V33.3333H14.8049" stroke-width="3.6" class="astro-e55y2gh7"></path></svg><span class="wordmark astro-e55y2gh7">Invoke</span></a><nav aria-label="Site" class="astro-65g6sb6o main-nav main-nav--header main-nav--in-drawer-when-narrow"><ul class="docs-segment-tabs docs-segment-tabs--lg astro-65g6sb6o"><li class="astro-65g6sb6o"><a class="docs-segment-tab astro-65g6sb6o" href="/hi/start-here/installation/" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text astro-65g6sb6o" aria-hidden="true"><path d="M12 5v16"></path><path d="M16 13h2"></path><path d="M16 9h2"></path><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"></path><path d="M6 13h2"></path><path d="M6 9h2"></path></svg>Docs</a></li><li class="astro-65g6sb6o"><a class="docs-segment-tab astro-65g6sb6o" href="/showcase/"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-images astro-65g6sb6o" aria-hidden="true"><path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16"></path><path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2"></path><circle cx="13" cy="7" r="1" fill="currentColor"></circle><rect x="8" y="2" width="14" height="14" rx="2"></rect></svg>Showcase</a></li></ul></nav><div class="search print:hidden astro-e55y2gh7"><docs-search data-i18n="{&quot;topicTitles&quot;:[[&quot;get-started&quot;,&quot;Get Started&quot;],[&quot;guide&quot;,&quot;Guide&quot;],[&quot;models&quot;,&quot;Models&quot;],[&quot;configure&quot;,&quot;Configure &amp; Deploy&quot;],[&quot;developers&quot;,&quot;Developers&quot;],[&quot;contribute&quot;,&quot;Contribute&quot;],[&quot;troubleshooting&quot;,&quot;Troubleshooting&quot;],[&quot;releases&quot;,&quot;Releases&quot;]],&quot;otherPages&quot;:&quot;Other pages&quot;,&quot;recent&quot;:&quot;Recent&quot;,&quot;settingsGroup&quot;:&quot;Settings · invokeai.yaml&quot;,&quot;settingDefault&quot;:&quot;default {{value}}&quot;,&quot;loadError&quot;:&quot;Search couldn’t load. Check your connection, then try again.&quot;,&quot;devNotice&quot;:&quot;खोज केवल उत्पादन बिल्ड में उपलब्ध है। \nस्थानीय स्तर पर परीक्षण करने के लिए साइट बनाए और उसका पूर्वावलोकन करने का प्रयास करें।&quot;,&quot;searchingIn&quot;:&quot;Searching in {{topic}}&quot;,&quot;searchingAll&quot;:&quot;Searching all docs&quot;,&quot;scopeChangeStatus&quot;:&quot;{{scope}}: {{results}}&quot;,&quot;noResults&quot;:&quot;No results for “{{query}}”. Try fewer or different words.&quot;,&quot;noResultsInTopic&quot;:&quot;No results for “{{query}}” in {{topic}}.&quot;,&quot;resultCount&quot;:{&quot;one&quot;:&quot;{{count}} result&quot;,&quot;other&quot;:&quot;{{count}} results&quot;},&quot;moreInAllDocs&quot;:{&quot;one&quot;:&quot;{{count}} more result in All docs&quot;,&quot;other&quot;:&quot;{{count}} more results in All docs&quot;},&quot;showInAllDocs&quot;:{&quot;one&quot;:&quot;Show {{count}} result in All docs&quot;,&quot;other&quot;:&quot;Show {{count}} results in All docs&quot;}}" data-locale="hi" class="astro-of4el3ka"><button type="button" class="trigger astro-of4el3ka" aria-label="खोजें" aria-haspopup="dialog" aria-keyshortcuts="Control+K /"><svg class="trigger__icon astro-of4el3ka" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7" class="astro-of4el3ka"></circle><path d="m20 20-3.5-3.5" class="astro-of4el3ka"></path></svg><span class="trigger__label astro-of4el3ka" aria-hidden="true">खोजें</span><kbd class="trigger__shortcut astro-of4el3ka" aria-hidden="true" style="display: none;"><kbd class="astro-of4el3ka">Ctrl</kbd><kbd class="astro-of4el3ka">K</kbd></kbd></button><dialog class="modal astro-of4el3ka" aria-label="खोजें"><div class="field astro-of4el3ka"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" class="astro-of4el3ka"><circle cx="11" cy="11" r="7" class="astro-of4el3ka"></circle><path d="m20 20-3.5-3.5" class="astro-of4el3ka"></path></svg><input type="text" role="combobox" aria-label="खोजें" aria-autocomplete="list" aria-controls="docs-search-results" aria-expanded="false" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" placeholder="Search docs, settings, hotkeys, models…" class="astro-of4el3ka"><kbd class="field__esc astro-of4el3ka" aria-hidden="true">esc</kbd><button type="button" class="field__cancel astro-of4el3ka">रद्द करे</button></div><div class="scopes astro-of4el3ka" role="group" aria-label="Search scope"><span class="scopes__label astro-of4el3ka" aria-hidden="true">In</span><div class="docs-segment-tabs astro-of4el3ka"><button type="button" class="chip docs-segment-tab astro-of4el3ka" data-scope="topic" aria-pressed="false" hidden></button><button type="button" class="chip docs-segment-tab astro-of4el3ka" data-scope="all" aria-pressed="true">All docs</button></div></div><div class="body astro-of4el3ka"><div class="results astro-of4el3ka" id="docs-search-results" role="listbox" aria-label="Search results"></div><p class="notice astro-of4el3ka" hidden></p><button type="button" class="widen astro-of4el3ka" hidden></button></div><div class="hints astro-of4el3ka" aria-hidden="true"><span class="astro-of4el3ka"><kbd class="astro-of4el3ka">↑</kbd><kbd class="astro-of4el3ka">↓</kbd> move</span><span class="astro-of4el3ka"><kbd class="astro-of4el3ka">↵</kbd> open</span><span class="hints__credit astro-of4el3ka">Search by Pagefind</span></div><p class="sr-only astro-of4el3ka" role="status"></p></dialog></docs-search><script>
+  (() => {
+    const trigger = document.querySelector('docs-search .trigger');
+    const shortcut = trigger?.querySelector('.trigger__shortcut');
+    if (!trigger || !(shortcut instanceof HTMLElement)) return;
+    if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+      shortcut.firstElementChild.textContent = '⌘';
+      trigger.setAttribute('aria-keyshortcuts', 'Meta+K /');
+    }
+    shortcut.style.display = '';
+  })();
+</script><script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.b7bVaS4g.js"></script></div><div class="actions print:hidden astro-e55y2gh7"><div class="language-menu language-menu--in-drawer-when-narrow astro-kuxqnjzw"><docs-link-menu class="link-menu astro-toiea27b"><button type="button" class="trigger docs-button docs-button--secondary docs-button--lg trigger--icon-when-narrow astro-toiea27b" aria-expanded="false" aria-controls="docs-language-menu-header" aria-label="भाषा चुने: HI (हिन्दी)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages astro-kuxqnjzw" aria-hidden="true" slot="icon"><path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path></svg><span class="trigger__label astro-toiea27b">HI</span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down trigger__chevron astro-toiea27b" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button><ul id="docs-language-menu-header" class="popup docs-popup astro-toiea27b" hidden><li class="astro-toiea27b"><a href="/contributing/call-saved-workflow/" hreflang="en" class="astro-toiea27b"><span class="label astro-toiea27b" lang="en">English</span></a></li><li class="astro-toiea27b"><a href="/de/contributing/call-saved-workflow/" hreflang="de" class="astro-toiea27b"><span class="label astro-toiea27b" lang="de">Deutsch</span></a></li><li class="astro-toiea27b"><a href="/es/contributing/call-saved-workflow/" hreflang="es" class="astro-toiea27b"><span class="label astro-toiea27b" lang="es">Español</span></a></li><li class="astro-toiea27b"><a href="/hi/contributing/call-saved-workflow/" hreflang="hi" aria-current="true" class="astro-toiea27b"><span class="label astro-toiea27b" lang="hi">हिन्दी</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check check astro-toiea27b" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></a></li></ul></docs-link-menu><script type="module" src="/_astro/LinkMenu.astro_astro_type_script_index_0_lang.BPC0xRSt.js"></script></div><div class="version astro-e55y2gh7"><docs-link-menu class="link-menu astro-toiea27b"><button type="button" class="trigger docs-button docs-button--secondary docs-button--lg astro-toiea27b" aria-expanded="false" aria-controls="docs-version-menu-list" aria-label="Docs version: v7"><span class="trigger__label astro-toiea27b">v7</span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down trigger__chevron astro-toiea27b" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button><ul id="docs-version-menu-list" class="popup docs-popup astro-toiea27b" hidden><li class="astro-toiea27b"><a href="/hi/" aria-current="true" class="astro-toiea27b"><span class="label astro-toiea27b">v7</span><span class="note astro-toiea27b">Current</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check check astro-toiea27b" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></a></li><li class="astro-toiea27b"><a href="https://invoke.ai/" class="astro-toiea27b"><span class="label astro-toiea27b">v6</span><span class="note astro-toiea27b">Previous release</span></a></li></ul></docs-link-menu></div><a class="social docs-button docs-button--ghost docs-button--icon docs-button--lg astro-e55y2gh7" href="https://github.com/invoke-ai/InvokeAI" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" class="astro-e55y2gh7 astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 18px;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a class="social docs-button docs-button--ghost docs-button--icon docs-button--lg astro-e55y2gh7" href="https://discord.gg/ZmtBAhwWhy" aria-label="Discord" title="Discord"><svg aria-hidden="true" class="astro-e55y2gh7 astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 18px;"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"/></svg></a><a class="download docs-button docs-button--primary docs-button--lg astro-e55y2gh7" href="/download/"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download astro-e55y2gh7" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg><span class="download__label astro-e55y2gh7">Download</span></a></div></div></header><nav class="sidebar print:hidden astro-l7dgauyn" aria-label="मुख्य"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-ujhdrwqj"><svg aria-hidden="true" class="open-menu astro-ujhdrwqj astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-ujhdrwqj astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-ujhdrwqj">मेन्यू</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><script type="module" src="/_astro/TopicSwitcher.astro_astro_type_script_index_0_lang.Bsk-2BTn.js"></script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-l7dgauyn"><div class="sidebar-content sl-flex astro-l7dgauyn"><div class="md:sl-hidden astro-3a4ksqe6"><div class="astro-65g6sb6o main-nav main-nav--drawer"><ul class="docs-segment-tabs docs-segment-tabs--lg astro-65g6sb6o"><li class="astro-65g6sb6o"><a class="docs-segment-tab astro-65g6sb6o" href="/hi/start-here/installation/" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text astro-65g6sb6o" aria-hidden="true"><path d="M12 5v16"></path><path d="M16 13h2"></path><path d="M16 9h2"></path><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"></path><path d="M6 13h2"></path><path d="M6 9h2"></path></svg>Docs</a></li><li class="astro-65g6sb6o"><a class="docs-segment-tab astro-65g6sb6o" href="/showcase/"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-images astro-65g6sb6o" aria-hidden="true"><path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16"></path><path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2"></path><circle cx="13" cy="7" r="1" fill="currentColor"></circle><rect x="8" y="2" width="14" height="14" rx="2"></rect></svg>Showcase</a></li></ul></div></div><docs-topic-switcher class="topic-switcher astro-quf2n7km"><button type="button" class="trigger astro-quf2n7km" aria-expanded="false" aria-controls="docs-topic-switcher-popup" aria-haspopup="dialog" aria-label="Topic: Contribute. Change topic"><span class="tile tile--selected astro-quf2n7km"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-pull-request astro-quf2n7km" aria-hidden="true"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" x2="6" y1="9" y2="21"></line></svg></span><span class="text astro-quf2n7km"><span class="title astro-quf2n7km">Contribute</span><span class="description astro-quf2n7km">Code, translations, process</span></span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up-down chevrons astro-quf2n7km" aria-hidden="true"><path d="m7 15 5 5 5-5"></path><path d="m7 9 5-5 5 5"></path></svg></button><div id="docs-topic-switcher-popup" class="popup docs-popup astro-quf2n7km" role="dialog" aria-label="Choose a docs topic" hidden><div class="filter astro-quf2n7km"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search astro-quf2n7km" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg><input type="text" role="combobox" aria-label="Filter topics" aria-controls="docs-topic-switcher-list" aria-expanded="true" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="Filter topics" class="astro-quf2n7km"></div><div id="docs-topic-switcher-list" class="list astro-quf2n7km" role="listbox" aria-label="Topics"><div class="group astro-quf2n7km" role="group" aria-labelledby="docs-topic-group-use"><div class="group-label docs-eyebrow astro-quf2n7km" id="docs-topic-group-use">Use</div><a id="docs-topic-option-get-started" class="option astro-quf2n7km" role="option" href="/hi/start-here/installation/" tabindex="-1" aria-selected="false" data-filter-text="get started install, requirements, upgrades"><span class="tile astro-quf2n7km"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket astro-quf2n7km" aria-hidden="true"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"></path><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"></path></svg></span><span class="text astro-quf2n7km"><span class="title astro-quf2n7km">Get Started</span><span class="description astro-quf2n7km">Install, requirements, upgrades</span></span></a><a id="docs-topic-option-guide" class="option astro-quf2n7km" role="option" href="/hi/users-guide/workbench/introduction/" tabindex="-1" aria-selected="false" data-filter-text="guide workbench, canvas, gallery, workflows"><span class="tile astro-quf2n7km"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open astro-quf2n7km" aria-hidden="true"><path d="M12 5v16"></path><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"></path></svg></span><span class="text astro-quf2n7km"><span class="title astro-quf2n7km">Guide</span><span class="description astro-quf2n7km">Workbench, canvas, gallery, workflows</span></span></a><a id="docs-topic-option-models" class="option astro-quf2n7km" role="option" href="/hi/users-guide/models/introduction/" tabindex="-1" aria-selected="false" data-filter-text="models families, installs, providers"><span class="tile astro-quf2n7km"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-box astro-quf2n7km" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg></span><span class="text astro-quf2n7km"><span class="title astro-quf2n7km">Models</span><span class="description astro-quf2n7km">Families, installs, providers</span></span></a></div><div class="group astro-quf2n7km" role="group" aria-labelledby="docs-topic-group-run"><div class="group-label docs-eyebrow astro-quf2n7km" id="docs-topic-group-run">Run</div><a id="docs-topic-option-configure" class="option astro-quf2n7km" role="option" href="/hi/configuration/invokeai-yaml/" tabindex="-1" aria-selected="false" data-filter-text="configure &amp; deploy invokeai.yaml, docker, multi-user"><span class="tile astro-quf2n7km"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings astro-quf2n7km" aria-hidden="true"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle cx="12" cy="12" r="3"></circle></svg></span><span class="text astro-quf2n7km"><span class="title astro-quf2n7km">Configure &amp; Deploy</span><span class="description astro-quf2n7km">invokeai.yaml, Docker, multi-user</span></span></a></div><div class="group astro-quf2n7km" role="group" aria-labelledby="docs-topic-group-build"><div class="group-label docs-eyebrow astro-quf2n7km" id="docs-topic-group-build">Build</div><a id="docs-topic-option-developers" class="option astro-quf2n7km" role="option" href="/hi/development/" tabindex="-1" aria-selected="false" data-filter-text="developers architecture, nodes, apis"><span class="tile astro-quf2n7km"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml lucide-code-2 astro-quf2n7km" aria-hidden="true"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg></span><span class="text astro-quf2n7km"><span class="title astro-quf2n7km">Developers</span><span class="description astro-quf2n7km">Architecture, nodes, APIs</span></span></a><a id="docs-topic-option-contribute" class="option astro-quf2n7km" role="option" href="/hi/contributing/" tabindex="-1" aria-selected="false" aria-current="page" data-filter-text="contribute code, translations, process"><span class="tile astro-quf2n7km"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-pull-request astro-quf2n7km" aria-hidden="true"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" x2="6" y1="9" y2="21"></line></svg></span><span class="text astro-quf2n7km"><span class="title astro-quf2n7km">Contribute</span><span class="description astro-quf2n7km">Code, translations, process</span></span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check check astro-quf2n7km" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></a></div><div class="group astro-quf2n7km" role="group" aria-labelledby="docs-topic-group-help"><div class="group-label docs-eyebrow astro-quf2n7km" id="docs-topic-group-help">Help</div><a id="docs-topic-option-troubleshooting" class="option astro-quf2n7km" role="option" href="/hi/troubleshooting/faq/" tabindex="-1" aria-selected="false" data-filter-text="troubleshooting faq, known bugs, videos"><span class="tile astro-quf2n7km"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-life-buoy astro-quf2n7km" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path><circle cx="12" cy="12" r="4"></circle></svg></span><span class="text astro-quf2n7km"><span class="title astro-quf2n7km">Troubleshooting</span><span class="description astro-quf2n7km">FAQ, known bugs, videos</span></span></a><a id="docs-topic-option-releases" class="option astro-quf2n7km" role="option" href="/releases/" tabindex="-1" aria-selected="false" data-filter-text="releases changelog for every version"><span class="tile astro-quf2n7km"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag astro-quf2n7km" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg></span><span class="text astro-quf2n7km"><span class="title astro-quf2n7km">Releases</span><span class="description astro-quf2n7km">Changelog for every version</span></span></a></div></div><p class="empty astro-quf2n7km" role="status" data-empty-text="No topics match."></p><div class="hints astro-quf2n7km" aria-hidden="true"><span class="astro-quf2n7km"><kbd class="astro-quf2n7km">↑</kbd><kbd class="astro-quf2n7km">↓</kbd> move</span><span class="astro-quf2n7km"><kbd class="astro-quf2n7km">↵</kbd> open</span><span class="astro-quf2n7km"><kbd class="astro-quf2n7km">esc</kbd> close</span></div></div></docs-topic-switcher><docs-sidebar-tree class="astro-3a4ksqe6"><ul class="top-level astro-sn3mqfrf"><li class="astro-sn3mqfrf"><a href="/hi/contributing/" class="link astro-sn3mqfrf"><span class="astro-sn3mqfrf">Contributing to InvokeAI</span></a></li><li class="astro-sn3mqfrf"><a href="/hi/contributing/blocking-work-in-api-routes/" class="link astro-sn3mqfrf"><span class="astro-sn3mqfrf">Blocking Work in API Routes</span></a></li><li class="astro-sn3mqfrf"><a href="/hi/contributing/call-saved-workflow/" aria-current="page" class="link astro-sn3mqfrf"><span class="astro-sn3mqfrf">Call Saved Workflow Architecture</span></a></li><li class="astro-sn3mqfrf"><a href="/hi/contributing/code-of-conduct/" class="link astro-sn3mqfrf"><span class="astro-sn3mqfrf">Code of Conduct</span></a></li><li class="astro-sn3mqfrf"><a href="/hi/contributing/contributors/" class="link astro-sn3mqfrf"><span class="astro-sn3mqfrf">Contributors</span></a></li><li class="astro-sn3mqfrf"><a href="/hi/contributing/external-providers/" class="link astro-sn3mqfrf"><span class="astro-sn3mqfrf">External Provider Integration</span></a></li><li class="astro-sn3mqfrf"><a href="/hi/contributing/loop-nodes/" class="link astro-sn3mqfrf"><span class="astro-sn3mqfrf">Loop Nodes Architecture</span></a></li><li class="astro-sn3mqfrf"><a href="/hi/contributing/new-contributor-guide/" class="link astro-sn3mqfrf"><span class="astro-sn3mqfrf">New Contributor Guide</span></a></li><li class="astro-sn3mqfrf"><a href="/hi/contributing/new-model-integration/" class="link astro-sn3mqfrf"><span class="astro-sn3mqfrf">New Model Type Integration Checklist</span></a></li><li class="astro-sn3mqfrf"><a href="/hi/contributing/translations/" class="link astro-sn3mqfrf"><span class="astro-sn3mqfrf">Translations</span></a></li><li class="astro-sn3mqfrf"><a href="/hi/contributing/wan-vae-memory-calibration/" class="link astro-sn3mqfrf"><span class="astro-sn3mqfrf">Wan VAE Memory Calibration</span></a></li></ul></docs-sidebar-tree><script>((tree, key, resolve, scrollTopToKeep) => {
+	const scroller = document.getElementById("starlight__sidebar");
+	/** A section's directory (`SidebarTree.astro`), the same in every locale; state kept under other keys is ignored. */
+	const sectionOf = (details) => details.dataset.section ?? "";
+	/** @type {{ open: Record<string, boolean>, scroll?: number }} */
+	let state = { open: {} };
+	try {
+		const stored = JSON.parse(sessionStorage.getItem(key) || "{}");
+		if (stored && typeof stored.open === "object" && stored.open) state = stored;
+	} catch {}
+	const save = () => {
+		try {
+			sessionStorage.setItem(key, JSON.stringify(state));
+		} catch {}
+	};
+	for (const details of tree.querySelectorAll("details")) details.open = resolve({
+		rendered: details.open,
+		containsCurrent: details.querySelector("[aria-current=\"page\"]") !== null,
+		stored: state.open[sectionOf(details)]
+	});
+	if (scroller && typeof state.scroll === "number") scroller.scrollTop = state.scroll;
+	tree.addEventListener("click", (event) => {
+		const details = event.target instanceof Element ? event.target.closest("summary")?.parentElement : null;
+		if (!(details instanceof HTMLDetailsElement)) return;
+		state.open[sectionOf(details)] = !details.open;
+		save();
+	});
+	addEventListener("pagehide", () => {
+		const scroll = scrollTopToKeep(scroller);
+		if (scroll === void 0) return;
+		state.scroll = scroll;
+		save();
+	});
+})(document.currentScript.previousElementSibling, "docs-sidebar:contribute", ({ rendered, containsCurrent, stored }) => containsCurrent || (typeof stored === "boolean" ? stored : rendered), (scroller) => scroller && scroller.clientHeight > 0 ? scroller.scrollTop : void 0);</script><div class="md:sl-hidden astro-3a4ksqe6"><div class="mobile-preferences sl-flex astro-icvrynrl"><div class="social-icons astro-icvrynrl"><a href="https://github.com/invoke-ai/InvokeAI" rel="me" class="sl-flex astro-25w7sggc"><span class="sr-only astro-25w7sggc">GitHub</span><svg aria-hidden="true" class="astro-25w7sggc astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a href="https://discord.gg/ZmtBAhwWhy" rel="me" class="sl-flex astro-25w7sggc"><span class="sr-only astro-25w7sggc">Discord</span><svg aria-hidden="true" class="astro-25w7sggc astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"/></svg></a><a href="https://www.youtube.com/@invokeai" rel="me" class="sl-flex astro-25w7sggc"><span class="sr-only astro-25w7sggc">YouTube</span><svg aria-hidden="true" class="astro-25w7sggc astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M23.5 6.2A3 3 0 0 0 21.4 4c-1.9-.5-9.4-.5-9.4-.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8 0 12 0 12s0 4 .5 5.8A3 3 0 0 0 2.6 20c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2c.5-2 .5-5.9.5-5.9s0-4-.5-5.8zm-14 9.4V8.4l6.3 3.6-6.3 3.6z"/></svg></a></div><div class="language-menu astro-kuxqnjzw"><docs-link-menu class="link-menu astro-toiea27b"><button type="button" class="trigger docs-button docs-button--secondary docs-button--lg astro-toiea27b" aria-expanded="false" aria-controls="docs-language-menu-drawer" aria-label="भाषा चुने: HI (हिन्दी)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages astro-kuxqnjzw" aria-hidden="true" slot="icon"><path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path></svg><span class="trigger__label astro-toiea27b">HI</span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down trigger__chevron astro-toiea27b" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button><ul id="docs-language-menu-drawer" class="popup docs-popup popup--up astro-toiea27b" hidden><li class="astro-toiea27b"><a href="/contributing/call-saved-workflow/" hreflang="en" class="astro-toiea27b"><span class="label astro-toiea27b" lang="en">English</span></a></li><li class="astro-toiea27b"><a href="/de/contributing/call-saved-workflow/" hreflang="de" class="astro-toiea27b"><span class="label astro-toiea27b" lang="de">Deutsch</span></a></li><li class="astro-toiea27b"><a href="/es/contributing/call-saved-workflow/" hreflang="es" class="astro-toiea27b"><span class="label astro-toiea27b" lang="es">Español</span></a></li><li class="astro-toiea27b"><a href="/hi/contributing/call-saved-workflow/" hreflang="hi" aria-current="true" class="astro-toiea27b"><span class="label astro-toiea27b" lang="hi">हिन्दी</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check check astro-toiea27b" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></a></li></ul></docs-link-menu></div></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-l7dgauyn"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-equr43et"><aside class="right-sidebar-container print:hidden astro-equr43et"><div class="right-sidebar astro-equr43et"><div class="lg:sl-hidden astro-yybbgk7d"><mobile-starlight-toc data-min-h="2" data-max-h="4" class="astro-5vtxnhib"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-5vtxnhib"><details id="starlight__mobile-toc" class="astro-5vtxnhib"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-5vtxnhib"><span class="toggle sl-flex astro-5vtxnhib">इस पृष्ठ पर<svg aria-hidden="true" class="caret astro-5vtxnhib astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-5vtxnhib"></span></summary><div class="dropdown astro-5vtxnhib"><ul class="isMobile astro-jxrlbvbn" style="--depth: 0;"><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#_top" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">अवलोकन</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#callable-workflow-contract" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Callable Workflow Contract</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#design-principles" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Design Principles</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#current-behavior" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Current Behavior</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#architecture" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Architecture</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#current-limitations" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Current Limitations</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#execution-contract" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Execution Contract</span></a><ul class="isMobile astro-jxrlbvbn" style="--depth: 1;"><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#1-callable-interface" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">1. Callable Interface</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#2-input-arguments" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">2. Input Arguments</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#3-input-binding-at-runtime" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">3. Input Binding At Runtime</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#4-child-workflow-execution" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">4. Child Workflow Execution</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#4a-queue-lifecycle-contract" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">4a. Queue Lifecycle Contract</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#4b-batch-child-workflows" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">4b. Batch Child Workflows</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#4c-tricky-areas" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">4c. Tricky Areas</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#5-return-values" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">5. Return Values</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#6-error-propagation" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">6. Error Propagation</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#7-access-control" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">7. Access Control</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#8-recursion-and-nesting" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">8. Recursion And Nesting</span></a></li></ul></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#runtime-ownership" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Runtime Ownership</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#runtime-components" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Runtime Components</span></a><ul class="isMobile astro-jxrlbvbn" style="--depth: 1;"><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#callsavedworkflowruntime" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">CallSavedWorkflowRuntime</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#workflow-return-node" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Workflow Return Node</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#execution-relationship-tracking" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Execution Relationship Tracking</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#workflow-return-value-flow" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Workflow Return Value Flow</span></a></li></ul></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#named-return-contract" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Named Return Contract</span></a><ul class="isMobile astro-jxrlbvbn" style="--depth: 1;"><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#backend-return-contract" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Backend Return Contract</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#caller-side-extraction-primitive" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Caller-Side Extraction Primitive</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#runtime-propagation" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Runtime Propagation</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#batch-return-aggregation" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Batch Return Aggregation</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#frontend-schema-ui-and-docs" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Frontend Schema, UI, And Docs</span></a></li></ul></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#frontend-responsibilities" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Frontend Responsibilities</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#validation-coverage" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Validation Coverage</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#operational-guidance" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Operational Guidance</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-yybbgk7d"><div class="sl-container astro-yybbgk7d"><div class="page-tools astro-52a75vey"><docs-page-actions class="page-actions astro-zsnqnkft" data-markdown-href="/contributing/call-saved-workflow/index.md" data-i18n="{&quot;copy&quot;:&quot;Copy page&quot;,&quot;copied&quot;:&quot;Copied&quot;,&quot;copiedStatus&quot;:&quot;Page copied as Markdown.&quot;,&quot;copyFailed&quot;:&quot;Copy failed&quot;,&quot;copyFailedStatus&quot;:&quot;Could not copy the page.&quot;}"><div class="buttons astro-zsnqnkft"><button type="button" class="copy docs-button docs-button--secondary astro-zsnqnkft"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy astro-zsnqnkft" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg><span data-label class="astro-zsnqnkft">Copy page</span></button><button type="button" class="toggle docs-button docs-button--secondary docs-button--icon astro-zsnqnkft" aria-expanded="false" aria-controls="docs-page-actions-menu-rail" aria-label="More page actions"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down astro-zsnqnkft" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><ul id="docs-page-actions-menu-rail" class="menu docs-popup astro-zsnqnkft" hidden><li class="astro-zsnqnkft"><a href="/contributing/call-saved-workflow/index.md" target="_blank" rel="noopener noreferrer" class="astro-zsnqnkft">View as Markdown<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right astro-zsnqnkft" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li><li class="astro-zsnqnkft"><a href="https://chatgpt.com/?q=Read%20from%20https%3A%2F%2Fv7.invoke.ai%2Fhi%2Fcontributing%2Fcall-saved-workflow%2F%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="noopener noreferrer" class="astro-zsnqnkft">Open in ChatGPT<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right astro-zsnqnkft" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li><li class="astro-zsnqnkft"><a href="https://claude.ai/new?q=Read%20from%20https%3A%2F%2Fv7.invoke.ai%2Fhi%2Fcontributing%2Fcall-saved-workflow%2F%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="noopener noreferrer" class="astro-zsnqnkft">Open in Claude<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right astro-zsnqnkft" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li></ul><span class="sr-only astro-zsnqnkft" role="status"></span></docs-page-actions><script type="module" src="/_astro/PageActions.astro_astro_type_script_index_0_lang.CUtX6U9C.js"></script><starlight-toc data-min-h="2" data-max-h="4"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">इस पृष्ठ पर</h2><ul class="astro-jxrlbvbn" style="--depth: 0;"><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#_top" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">अवलोकन</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#callable-workflow-contract" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Callable Workflow Contract</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#design-principles" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Design Principles</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#current-behavior" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Current Behavior</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#architecture" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Architecture</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#current-limitations" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Current Limitations</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#execution-contract" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Execution Contract</span></a><ul class="astro-jxrlbvbn" style="--depth: 1;"><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#1-callable-interface" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">1. Callable Interface</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#2-input-arguments" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">2. Input Arguments</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#3-input-binding-at-runtime" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">3. Input Binding At Runtime</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#4-child-workflow-execution" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">4. Child Workflow Execution</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#4a-queue-lifecycle-contract" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">4a. Queue Lifecycle Contract</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#4b-batch-child-workflows" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">4b. Batch Child Workflows</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#4c-tricky-areas" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">4c. Tricky Areas</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#5-return-values" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">5. Return Values</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#6-error-propagation" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">6. Error Propagation</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#7-access-control" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">7. Access Control</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#8-recursion-and-nesting" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">8. Recursion And Nesting</span></a></li></ul></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#runtime-ownership" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Runtime Ownership</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#runtime-components" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Runtime Components</span></a><ul class="astro-jxrlbvbn" style="--depth: 1;"><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#callsavedworkflowruntime" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">CallSavedWorkflowRuntime</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#workflow-return-node" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Workflow Return Node</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#execution-relationship-tracking" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Execution Relationship Tracking</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#workflow-return-value-flow" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Workflow Return Value Flow</span></a></li></ul></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#named-return-contract" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Named Return Contract</span></a><ul class="astro-jxrlbvbn" style="--depth: 1;"><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#backend-return-contract" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Backend Return Contract</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#caller-side-extraction-primitive" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Caller-Side Extraction Primitive</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#runtime-propagation" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Runtime Propagation</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#batch-return-aggregation" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Batch Return Aggregation</span></a></li><li style="--depth: 1;" class="astro-jxrlbvbn"><a href="#frontend-schema-ui-and-docs" style="--depth: 1;" class="astro-jxrlbvbn"><span style="--depth: 1;" class="astro-jxrlbvbn">Frontend Schema, UI, And Docs</span></a></li></ul></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#frontend-responsibilities" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Frontend Responsibilities</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#validation-coverage" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Validation Coverage</span></a></li><li style="--depth: 0;" class="astro-jxrlbvbn"><a href="#operational-guidance" style="--depth: 0;" class="astro-jxrlbvbn"><span style="--depth: 0;" class="astro-jxrlbvbn">Operational Guidance</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script><docs-page-feedback class="feedback astro-utxxypyg"><div class="question astro-utxxypyg" role="group" aria-labelledby="docs-feedback-label-rail"><p id="docs-feedback-label-rail" class="astro-utxxypyg">Was this page helpful?</p><div class="answers astro-utxxypyg"><button type="button" class="docs-button docs-button--secondary astro-utxxypyg" data-helpful="yes"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up astro-utxxypyg" aria-hidden="true"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"></path><path d="M7 10v12"></path></svg>Yes</button><button type="button" class="docs-button docs-button--secondary astro-utxxypyg" data-helpful="no"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-down astro-utxxypyg" aria-hidden="true"><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"></path><path d="M17 14V2"></path></svg>No</button></div></div><div class="thanks astro-utxxypyg" tabindex="-1" hidden><p class="astro-utxxypyg">Thanks for your feedback.</p><p data-unhelpful hidden class="astro-utxxypyg">Tell us what was missing or wrong: <a href="https://github.com/invoke-ai/InvokeAI/issues/new?template=DOCS_ISSUE.yml&amp;title=%5Bdocs%5D%3A+Call+Saved+Workflow+Architecture&amp;page=https%3A%2F%2Fv7.invoke.ai%2Fhi%2Fcontributing%2Fcall-saved-workflow%2F" class="astro-utxxypyg">Report an issue</a></p></div></docs-page-feedback><script type="module">var e=class extends HTMLElement{connectedCallback(){let e=this.querySelector(`.question`),t=this.querySelector(`.thanks`);for(let n of this.querySelectorAll(`button[data-helpful]`))n.addEventListener(`click`,()=>{let r=n.dataset.helpful,{plausible:i}=window;typeof i==`function`&&i(`Docs feedback`,{props:{page:location.pathname,helpful:r}}),e.hidden=!0,t.hidden=!1,t.querySelector(`[data-unhelpful]`).hidden=r!==`no`,t.focus()})}};customElements.define(`docs-page-feedback`,e);</script><div class="meta astro-52a75vey"><div class="page-meta astro-6l7e7ffm"><a href="https://github.com/invoke-ai/InvokeAI/edit/main/docs/src/content/docs/contributing/call-saved-workflow.md" class="print:hidden astro-6l7e7ffm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil astro-6l7e7ffm" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg>पृष्ठ संपादित करें</a><a href="https://github.com/invoke-ai/InvokeAI/issues/new?template=DOCS_ISSUE.yml&amp;title=%5Bdocs%5D%3A+Call+Saved+Workflow+Architecture&amp;page=https%3A%2F%2Fv7.invoke.ai%2Fhi%2Fcontributing%2Fcall-saved-workflow%2F" class="print:hidden astro-6l7e7ffm"><svg aria-hidden="true" class="astro-6l7e7ffm astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 14px;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg>Report an issue</a><p class="astro-6l7e7ffm">Updated <time datetime="2026-10-08T13:08:17.000Z" class="astro-6l7e7ffm">8 अक्टू॰ 2026</time></p></div></div></div></div></div></div></aside><div class="main-pane astro-equr43et"><main data-pagefind-body class="astro-l37l4sch" lang="en" dir="ltr"><div class="content-panel astro-6izjg5h3"><div class="sl-container astro-6izjg5h3"><div class="page-heading astro-tc2xwcnx"><nav aria-label="Breadcrumb" data-pagefind-ignore data-pagefind-filter="topic:contribute" class="astro-tc2xwcnx"><ol class="astro-tc2xwcnx"><li class="astro-tc2xwcnx"><a href="/hi/contributing/" class="astro-tc2xwcnx">Contribute</a></li><li aria-current="page" class="astro-tc2xwcnx">Call Saved Workflow Architecture</li></ol></nav><h1 id="_top" class="astro-tc2xwcnx">Call Saved Workflow Architecture</h1></div><p class="sl-flex astro-2uwiexzq"><svg aria-hidden="true" class="astro-2uwiexzq astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-color: var(--sl-color-orange-high);--sl-icon-size: 1.5em;"><path d="M12 16a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm10.67 1.47-8.05-14a3 3 0 0 0-5.24 0l-8 14A3 3 0 0 0 3.94 22h16.12a3 3 0 0 0 2.61-4.53Zm-1.73 2a1 1 0 0 1-.88.51H3.94a1 1 0 0 1-.88-.51 1 1 0 0 1 0-1l8-14a1 1 0 0 1 1.78 0l8.05 14a1 1 0 0 1 .05 1.02v-.02ZM12 8a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1Z"/></svg><span class="astro-2uwiexzq">यह कंटेंट अभी तक आपकी भाषा में उपलब्ध नहीं है।</span></p></div></div><div class="content-panel astro-6izjg5h3"><div class="sl-container astro-6izjg5h3"><div class="sl-markdown-content" data-table-label="Table"><div class="sl-heading-wrapper level-h2"><h2 id="callable-workflow-contract">Callable Workflow Contract</h2><a class="sl-anchor-link" href="#callable-workflow-contract"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Callable Workflow Contract”</span></a></div>
+<p><code dir="auto">CallSavedWorkflowInvocation</code> is an engine-native workflow call boundary, not a frontend-only dynamic node and not a
+compile-time graph inliner.</p>
+<p>The callable-workflow contract is:</p>
+<ul>
+<li>A parent workflow can call a saved workflow selected by ID.</li>
+<li>The call node redraws in the editor based on the selected workflow’s exposed form fields.</li>
+<li>Parent values and inbound connections bind to those exposed fields as call arguments.</li>
+<li>Execution suspends at the call node, runs the selected workflow as a dependent workflow execution, captures explicit
+return values, and then resumes the parent workflow.</li>
+<li>The architecture must work for Invoke frontend graphs and for externally submitted graphs that use the same node
+type.</li>
+</ul>
+<p>This document describes the callable-workflow architecture and execution contract. Saved-workflow calls use a dedicated
+queue boundary for durable rows and queue transitions, while invocation and graph state use the lifecycle
+effect/dependency seam to declare, persist, and resume the call.</p>
+<p>The callable node, saved-workflow, and queue interaction contract is stable. Internal execution references, tokens,
+effects, frames, and scheduler records are persistence-only implementation metadata. Version-2
+<code dir="auto">dump_execution_state()</code> rebuilds execution references and ordinary output tokens, retains frame-scoped activation
+tokens and compact dispatch metadata needed for active recovery, and omits terminal saved-workflow lifecycle effects
+and completed child dependencies. The active child queue row is the recovery authority: attached child state remains
+available in memory but is omitted from the persisted parent snapshot, while terminal child state is omitted entirely.
+Ordinary model serialization and public schemas exclude these four internal ledgers. Existing fields,
+requiredness, statuses, events, and client behavior remain compatible. Frontend application behavior is outside this
+backend architecture. No code under <code dir="auto">invokeai/frontend/...</code>, including generated <code dir="auto">openapi.json</code> or <code dir="auto">schema.ts</code>, is part
+of this execution behavior; the existing frontend/backend external interface is stable.</p>
+<p>The internal generic boundary is implemented in <code dir="auto">invokeai.app.services.shared.execution_engine</code>. It provides
+frame-scoped gates, ordered streams, continuations, and capability-bound child dependency records. These records are
+used as adapters around the existing queue and materialization paths; they do not add frontend handles, queue statuses,
+event payloads, or author-time graph fields.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="design-principles">Design Principles</h2><a class="sl-anchor-link" href="#design-principles"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Design Principles”</span></a></div>
+<p>Favor the architecturally correct design over the fastest implementation path.</p>
+<p>Changes to this area should satisfy all of the following:</p>
+<ul>
+<li>testable in isolation</li>
+<li>compatible with the long-term architecture described here</li>
+<li>non-breaking to existing code and existing workflow execution behavior</li>
+</ul>
+<p>The durable design is preferred over throwaway execution semantics.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="current-behavior">Current Behavior</h2><a class="sl-anchor-link" href="#current-behavior"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Current Behavior”</span></a></div>
+<p>The callable-workflow feature provides:</p>
+<ul>
+<li>A real invocation exists: <code dir="auto">call_saved_workflow</code>.</li>
+<li>A real return node exists: <code dir="auto">workflow_return</code>.</li>
+<li>Named returns exist through <code dir="auto">workflow_return_value</code>, <code dir="auto">workflow_return</code>, and caller-side <code dir="auto">workflow_return_get</code>.</li>
+<li><code dir="auto">workflow_return</code> accepts one key/value return member directly or a collected list of return members, then emits a
+named <code dir="auto">values: dict[str, Any]</code> map.</li>
+<li>Only one <code dir="auto">workflow_return</code> node is allowed per workflow, enforced in both frontend validation and Python validation.</li>
+<li>The frontend provides a saved-workflow picker using a reusable <code dir="auto">SavedWorkflowField</code> UI type.</li>
+<li>The node redraws dynamically based on the selected saved workflow’s exposed form fields.</li>
+<li>Dynamic field values persist with the parent workflow. A refresh of the selected workflow keeps compatible values
+and the user’s label and description overrides; selecting a different workflow takes that workflow’s own values,
+even where the two share exposed field identities.</li>
+<li>Compatible inbound edges are preserved when switching between workflows with matching exposed field identities and
+compatible types. The previous workflow’s inputs and edges stay while the new selection loads.</li>
+<li>Incompatible or no-longer-exposed inbound edges are removed in the editor, with a notice naming how many. An edge
+from a connector with nothing upstream stays while its input still exists.</li>
+<li>If a newly selected workflow cannot be loaded, the previous workflow’s inputs and their edges are removed. Inputs
+that belong to the selected workflow itself stay through a load failure.</li>
+<li>Backend validation exists for <code dir="auto">workflow_id</code> existence and access rights.</li>
+</ul>
+<p>The runtime uses an additive execution-effects seam:</p>
+<ul>
+<li>the runner invokes <code dir="auto">invoke_internal_with_effects()</code> and applies its result through <code dir="auto">GraphExecutionState.apply()</code>;</li>
+<li>stable execution references, frames, output tokens, and accepted effects are persisted with the runtime state;</li>
+<li><code dir="auto">emit</code> and <code dir="auto">close_stream</code> are dispatchable by default;</li>
+<li>lifecycle recording for <code dir="auto">spawn</code>, <code dir="auto">await</code>, and <code dir="auto">fail</code> is capability-gated and returns a validated child handle where
+applicable; queue mutation remains in the queue adapter;</li>
+<li>saved workflow calls continue through <code dir="auto">WorkflowCallCoordinator</code> and <code dir="auto">WorkflowCallQueueLifecycle</code>, with a generic
+child dependency record validating their relationship and aggregation.</li>
+</ul>
+<p>Runtime state:</p>
+<ul>
+<li><code dir="auto">GraphExecutionState</code> now persists workflow-call runtime state:
+<ul>
+<li><code dir="auto">workflow_call_stack</code></li>
+<li><code dir="auto">workflow_call_history</code></li>
+<li><code dir="auto">workflow_call_parent</code></li>
+<li><code dir="auto">waiting_workflow_call</code></li>
+<li><code dir="auto">waiting_workflow_call_execution</code></li>
+<li><code dir="auto">waiting_workflow_call_child_session</code></li>
+<li><code dir="auto">max_workflow_call_depth</code></li>
+</ul>
+</li>
+<li>Nested and recursive calls are represented by the stack, with a runtime depth cap of 4.</li>
+<li>Parent/child workflow-call identity is now explicit in runtime state:
+<ul>
+<li>the parent tracks an active <code dir="auto">WorkflowCallExecution</code> record while waiting</li>
+<li>completed and failed calls are preserved in <code dir="auto">workflow_call_history</code></li>
+<li>child sessions carry a <code dir="auto">workflow_call_parent</code> reference back to the parent call relationship</li>
+</ul>
+</li>
+<li><code dir="auto">GraphExecutionState.next()</code> returns no runnable node while the parent session is waiting on a child workflow call.</li>
+<li><code dir="auto">GraphExecutionState.is_complete()</code> stays false while waiting.</li>
+<li><code dir="auto">DefaultSessionRunner.run_node()</code> invokes <code dir="auto">call_saved_workflow</code> through the same effect-aware invocation path as
+other nodes. The invocation records one capability-bound <code dir="auto">spawn_execution</code> effect and one matching <code dir="auto">await</code> effect;
+authorization and input collection happen before those effects are recorded.</li>
+<li><code dir="auto">GraphExecutionState.apply()</code> persists the pending lifecycle effects without completing the call node. The queue
+adapter then consumes the effects to:
+<ul>
+<li>build a workflow call frame</li>
+<li>convert the saved workflow JSON into a backend <code dir="auto">Graph</code></li>
+<li>validate and apply parent call arguments to the child graph</li>
+<li>create child <code dir="auto">GraphExecutionState</code> instances and durable child queue rows</li>
+<li>attach those child sessions to the waiting parent session</li>
+</ul>
+</li>
+<li>When the generic child dependency reaches a terminal result, the queue adapter projects the legacy workflow-call
+fields, resumes the parent through <code dir="auto">GraphExecutionState.apply()</code>, and completes the call node with ordered return
+values. A capability-gated <code dir="auto">fail</code> effect records a parent failure without creating child rows.</li>
+<li>Workflow-call runtime responsibilities are now split:
+<ul>
+<li><code dir="auto">WorkflowCallCoordinator</code> handles call-specific setup:
+<ul>
+<li>build the child graph</li>
+<li>apply parent call arguments</li>
+<li>create the child <code dir="auto">GraphExecutionState</code></li>
+<li>suspend the parent and enqueue the child queue item</li>
+</ul>
+</li>
+<li><code dir="auto">WorkflowCallQueueLifecycle</code> handles queue-visible parent/child lifecycle:
+<ul>
+<li>dispatch child queue items through the normal session runner</li>
+<li>resume waiting parents after child success</li>
+<li>complete the parent call node with the child <code dir="auto">workflow_return</code> values</li>
+<li>fail suspended parents after child failure and cascade that failure upward through parent call chains</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Child <code dir="auto">SessionQueueItem</code> rows now carry explicit relationship metadata:
+<ul>
+<li><code dir="auto">workflow_call_id</code></li>
+<li><code dir="auto">parent_item_id</code></li>
+<li><code dir="auto">parent_session_id</code></li>
+<li><code dir="auto">root_item_id</code></li>
+<li><code dir="auto">workflow_call_depth</code></li>
+<li>this metadata is now used directly by queue-visible child execution and parent resume/failure handling</li>
+</ul>
+</li>
+<li>The <code dir="auto">session_queue</code> table now has matching durable columns for that relationship metadata:
+<ul>
+<li><code dir="auto">workflow_call_id</code></li>
+<li><code dir="auto">parent_item_id</code></li>
+<li><code dir="auto">parent_session_id</code></li>
+<li><code dir="auto">root_item_id</code></li>
+<li><code dir="auto">workflow_call_depth</code></li>
+<li>child workflow executions are now inserted as their own pending queue rows using those columns</li>
+</ul>
+</li>
+<li>Child queue rows and the parent’s complete waiting-session projection are published in one durable queue transaction.
+Concurrent child completions update the latest parent session transactionally, so a sibling cannot overwrite another
+sibling’s completion.</li>
+<li>Parent queue items now enter a real <code dir="auto">waiting</code> status while suspended on a child workflow execution.</li>
+<li><code dir="auto">_on_after_run_session()</code> no longer completes queue items whose sessions are incomplete but waiting.</li>
+<li>Dynamic call arguments now execute end-to-end in the current runner path:
+<ul>
+<li>literal dynamic values are serialized into a hidden <code dir="auto">workflow_inputs</code> payload on the parent node at graph-build
+time</li>
+<li>stale hidden <code dir="auto">workflow_inputs</code> values from recalled graphs are ignored unless a matching current dynamic field
+exists</li>
+<li>existing dynamic input values are preserved across refresh only while the exposed field type remains compatible; if
+the selected child workflow changes the exposed field type at the same node/field path, the caller input resets to
+the child workflow’s current initial value</li>
+<li>connected dynamic values are accepted as special call-boundary edges and are resolved from parent results at
+runtime</li>
+<li>both are validated against the child workflow’s exposed form interface before being applied to the child graph</li>
+</ul>
+</li>
+<li>Queue lifecycle semantics now exist for workflow-call chains:
+<ul>
+<li>parent queue items are suspended in <code dir="auto">waiting</code> while a child queue row runs</li>
+<li>child success resumes the suspended parent and completes the parent call node with the child <code dir="auto">workflow_return</code>
+values</li>
+<li>child failure fails the suspended parent and cascades upward through any waiting parent chain</li>
+<li>canceling a parent cancels its descendant child chain</li>
+<li>canceling a child cancels the waiting parent chain upward</li>
+<li>canceling remaining siblings after a batched child failure also cancels descendants of those sibling rows</li>
+<li>deleting any queue row in a workflow-call chain deletes the full chain to avoid leaving orphaned parent or child
+rows behind</li>
+<li><code dir="auto">cancel_all_except_current</code> and <code dir="auto">delete_all_except_current</code> preserve the active queue item plus its workflow-call
+ancestors and descendants; this also covers the handoff window where a parent is <code dir="auto">waiting</code> and its child is still
+<code dir="auto">pending</code>; unrelated waiting chains are still canceled or deleted</li>
+<li>retry is root-oriented rather than child-oriented; child queue rows should not be directly retried from the UI</li>
+<li>the current UI policy is:
+<ul>
+<li>child queue rows keep <code dir="auto">Cancel</code></li>
+<li>child queue rows hide <code dir="auto">Retry</code></li>
+</ul>
+</li>
+<li>child queue-row creation is now fail-clean:
+<ul>
+<li>if call-boundary setup fails after some child rows have already been inserted, those child rows are deleted
+before the parent invocation is failed</li>
+</ul>
+</li>
+<li>child queue-row fan-out is bounded by remaining queue capacity, not just the global queue-size setting:
+<ul>
+<li>a workflow call that would exceed the remaining pending capacity now fails instead of silently truncating or
+over-enqueuing child rows</li>
+<li>child insertion rechecks pending capacity in the same database transaction as the insert</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Workflow conversion:</p>
+<ul>
+<li><code dir="auto">workflow_graph_builder.py</code> converts saved workflow JSON into an executable backend <code dir="auto">Graph</code>.</li>
+<li>It currently supports the invocation-node subset needed for this feature.</li>
+<li>It flattens connector nodes and omits explicit destination field values when a connection exists, matching frontend
+graph-build semantics.</li>
+<li>It enforces the callable-workflow boundary:
+<ul>
+<li>the selected workflow must contain exactly one <code dir="auto">workflow_return</code> node</li>
+<li>connected batch child inputs produced by ordinary non-generator upstream nodes still fail early with a clear
+unsupported-feature error</li>
+<li>malformed batch input wiring, including multiple connected inputs to one batch field, is reported as
+<code dir="auto">unsupported_batch_input</code> compatibility rather than a generic unsupported-node failure</li>
+<li>child workflows that mix supported batch nodes with unrelated generator nodes are currently rejected with a clear
+unsupported-feature error</li>
+<li>unsupported callees are rejected before any child queue row is created</li>
+</ul>
+</li>
+<li>Compatibility metadata is now exposed through workflow library API responses:
+<ul>
+<li>workflow list items and workflow detail responses include <code dir="auto">call_saved_workflow_compatibility</code></li>
+<li>workflow list items use structural generator-backed batch checks so list/picker rendering does not enumerate every
+image in board-backed generators; workflow detail and runtime execution still resolve real generator values</li>
+<li>the saved-workflow picker uses that metadata to disable unsupported workflows before execution</li>
+<li>the picker still allows an already-selected unsupported workflow to render, with an explicit unsupported state and
+a localized frontend message selected from the structured backend reason</li>
+<li>workflow library list items now surface an explicit unsupported badge and localized reason without blocking normal
+workflow viewing or editing</li>
+</ul>
+</li>
+</ul>
+<p>Current callable-workflow limitations:</p>
+<ul>
+<li>connected batch child inputs whose batch values are produced by ordinary non-generator upstream nodes are still not
+supported and must fail with a clear domain error</li>
+<li>child workflows that mix supported batch nodes with unrelated generator nodes are still not supported and must fail
+with a clear domain error</li>
+<li>broader child-workflow compatibility coverage still needs to be expanded from real unsupported shapes rather than
+trying to interpret every frontend-only workflow representation through the current graph-builder path</li>
+<li>the queue lifecycle remains implemented by dedicated workflow-call runtime classes, but each waiting call also
+registers an internal <code dir="auto">ChildDependencyRecord</code> with an engine-issued capability. The record validates exact parent
+identity, ordered all-of aggregation, resource limits, and idempotent child terminal events before the existing queue
+adapter resumes, fails, or cancels the parent</li>
+</ul>
+<p>The editor contract, parent call boundary, child execution, argument forwarding, explicit return capture, suspended
+parent status, queue-visible child rows, and upward failure cascade are all handled by the current runtime.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="architecture">Architecture</h2><a class="sl-anchor-link" href="#architecture"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Architecture”</span></a></div>
+<p>The implementation uses the following architecture:</p>
+<ul>
+<li><code dir="auto">call_saved_workflow</code> is a call boundary.</li>
+<li>The parent graph does not inline the full child workflow into itself at queue time.</li>
+<li>Runtime execution pauses at the call node and creates a dependent child workflow execution.</li>
+<li>The child workflow receives arguments from the parent.</li>
+<li>The child workflow returns explicit outputs to the parent.</li>
+<li>The parent resumes once the child returns successfully.</li>
+</ul>
+<p>This keeps execution at the call boundary instead of expanding the full child graph because it:</p>
+<ul>
+<li>avoids execution-graph blowup</li>
+<li>preserves workflow boundaries</li>
+<li>matches the conceptual model of workflow reuse</li>
+<li>supports explicit return values</li>
+<li>keeps externally submitted graphs viable as long as they use the same node type and contract</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="current-limitations">Current Limitations</h2><a class="sl-anchor-link" href="#current-limitations"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Current Limitations”</span></a></div>
+<p>The current implementation does not provide:</p>
+<ul>
+<li>full inline graph expansion of called workflows</li>
+<li>unlimited nested workflow call support</li>
+<li>automatic exposure of arbitrary internal child workflow state</li>
+<li>implicit output inference from arbitrary child nodes</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="execution-contract">Execution Contract</h2><a class="sl-anchor-link" href="#execution-contract"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Execution Contract”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="1-callable-interface">1. Callable Interface</h3><a class="sl-anchor-link" href="#1-callable-interface"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “1. Callable Interface”</span></a></div>
+<p>The callable interface of a saved workflow is defined by its saved workflow JSON.</p>
+<p>Primary source:</p>
+<ul>
+<li><code dir="auto">workflow.form</code></li>
+</ul>
+<p>Fallback source for older workflows:</p>
+<ul>
+<li><code dir="auto">workflow.exposedFields</code></li>
+</ul>
+<p>Only fields exposed by the child workflow form are callable inputs. Internal child inputs that exist in the workflow
+graph but are not exposed by the form are not part of the public call interface.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="2-input-arguments">2. Input Arguments</h3><a class="sl-anchor-link" href="#2-input-arguments"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “2. Input Arguments”</span></a></div>
+<p><code dir="auto">CallSavedWorkflowInvocation</code> exposes dynamic inputs in the editor based on the selected workflow’s callable interface.</p>
+<p>The saved-workflow picker sends typed search text to the workflow-list endpoint. This keeps large workflow libraries
+discoverable even when the desired workflow has not already been loaded into the combobox pages.</p>
+<p>Each dynamic input must have:</p>
+<ul>
+<li>a stable external handle name</li>
+<li>a type</li>
+<li>a default value if defined by the child workflow</li>
+<li>a user-facing label and description when available</li>
+</ul>
+<p>Current fast-path identity is based on child <code dir="auto">nodeId + fieldName</code>. A stable interface ID may be useful if child
+workflows are frequently duplicated.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="3-input-binding-at-runtime">3. Input Binding At Runtime</h3><a class="sl-anchor-link" href="#3-input-binding-at-runtime"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “3. Input Binding At Runtime”</span></a></div>
+<p>At runtime, when the parent reaches <code dir="auto">call_saved_workflow</code>:</p>
+<ul>
+<li>the engine resolves <code dir="auto">workflow_id</code></li>
+<li>the engine loads the selected child workflow record</li>
+<li>the engine reconstructs the callable interface from the saved workflow JSON</li>
+<li>the engine collects argument values from the parent node’s dynamic inputs</li>
+<li>the engine starts a dependent child workflow execution using those arguments</li>
+</ul>
+<p>Argument values may come from:</p>
+<ul>
+<li>parent literal field values</li>
+<li>resolved inbound connections into the call node’s dynamic inputs</li>
+</ul>
+<p>For batch-aware child workflows, the parent call boundary passes normal exposed form inputs. Batching emerges from the
+child workflow’s own internal batch nodes or generators, not from a separate caller-side batch protocol.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="4-child-workflow-execution">4. Child Workflow Execution</h3><a class="sl-anchor-link" href="#4-child-workflow-execution"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “4. Child Workflow Execution”</span></a></div>
+<p>The child workflow runs as its own dependent execution context, not as an inlined copy of the parent graph.</p>
+<p>Execution semantics:</p>
+<ul>
+<li>parent execution pauses at the call node</li>
+<li>child execution runs with inherited context where appropriate</li>
+<li>child workflow finishes or fails</li>
+<li>parent resumes only if child execution succeeds</li>
+</ul>
+<p>The queue/session/runtime layer now implements an explicit parent-child execution relationship through runtime state,
+durable queue metadata, and queue-visible child rows.</p>
+<p>Child snapshot semantics are explicit:</p>
+<ul>
+<li>the saved workflow is resolved and converted to a child <code dir="auto">Graph</code> when the call is created</li>
+<li>the child queue row persists that graph snapshot and its inputs; resume/recovery uses that snapshot rather than
+resolving the saved workflow again</li>
+<li>an active parent retains the child session in memory while it is waiting, but its persisted snapshot keeps only
+compact lifecycle metadata because the child queue row is authoritative</li>
+<li>queue pruning is the boundary that removes the child row’s postmortem snapshot; retry creates a new execution and
+therefore resolves the saved workflow again under the retrying user’s authorization</li>
+</ul>
+<p>Current limitation:</p>
+<ul>
+<li>the <code dir="auto">workflow_graph_builder.py</code> path currently reconstructs only the ordinary invocation subset of child workflows</li>
+<li>direct batch-special child workflows now bypass that path and use queue batch expansion instead</li>
+<li>generator-backed batch child workflows now bypass that path too when the batch is fed directly by a supported
+generator node</li>
+<li>connected batch child inputs produced by ordinary non-generator upstream nodes are still not supported and fail early
+with a clear unsupported-feature error</li>
+<li>the current queue-visible child execution path still relies on <code dir="auto">WorkflowCallCoordinator</code> and
+<code dir="auto">WorkflowCallQueueLifecycle</code> for durable row creation and parent transitions; generic lifecycle effects and
+<code dir="auto">ChildDependencyRecord</code> supply the invocation intent, identity, ordered aggregation, idempotency, and terminal
+decision without changing the public queue contract</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="4a-queue-lifecycle-contract">4a. Queue Lifecycle Contract</h3><a class="sl-anchor-link" href="#4a-queue-lifecycle-contract"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “4a. Queue Lifecycle Contract”</span></a></div>
+<p>The current queue-visible implementation uses the following lifecycle contract. The generic child record is an internal
+validation and aggregation seam; it does not add queue columns, statuses, events, or frontend handles.</p>
+<ul>
+<li>root or parent queue items may enter <code dir="auto">waiting</code> while suspended on a child workflow call</li>
+<li>child workflow executions are represented as real queue rows with explicit parent/child relationship metadata</li>
+<li>child completion resumes the suspended parent and returns control to normal queue execution</li>
+<li>child failure fails the suspended parent call node and cascades upward through any ancestor chain</li>
+<li>cancel operations are chain-aware:
+<ul>
+<li>canceling a waiting parent cancels descendants</li>
+<li>canceling a child cancels waiting ancestors</li>
+<li>canceling batched siblings after one child fails includes nested descendants of those siblings</li>
+<li>bulk “all except current” actions preserve the active queue item and its parent/child chain, not just the single
+<code dir="auto">in_progress</code> row; a pending child with a waiting parent is treated as the active chain during processor handoff</li>
+</ul>
+</li>
+<li>retry operations are root-aware:
+<ul>
+<li>retrying a root queue item creates a new root execution</li>
+<li>retrying a child queue item should be normalized to the root by backend code</li>
+<li>retry and full-chain delete authorization is checked against the root queue item owner</li>
+<li>child queue rows should not expose direct retry affordances in the UI</li>
+<li>retry websocket delivery is owner-scoped; when an admin retries roots owned by multiple users, each non-admin user
+must receive only the retry item ids for their own roots, while admins can still observe the full retried set</li>
+</ul>
+</li>
+<li>workflow live-update sockets join workflow event rooms in both authenticated multiuser mode and unauthenticated
+single-user mode; the frontend relies on those events to invalidate workflow library data and clear deleted saved
+workflow selections; in single-user mode, workflow CRUD events emit only to the admin room to avoid duplicate
+delivery to sockets that are also joined to <code dir="auto">user:system</code></li>
+<li>a public-to-private transition emits a schema-defined <code dir="auto">workflow_access_revoked</code> event to shared-workflow subscribers;
+non-owner, non-admin clients clear references to that workflow while owners and admins retain access</li>
+<li>the saved-workflow node picker queries owned/default workflows and public shared workflows separately, merges them by
+workflow id, and fetches additional pages as the combobox menu reaches the end</li>
+<li>queue status events must preserve user isolation:
+<ul>
+<li><code dir="auto">QueueItemStatusChangedEvent.queue_status</code> may keep global aggregate counts</li>
+<li>embedded current-item identifiers (<code dir="auto">item_id</code>, <code dir="auto">session_id</code>, <code dir="auto">batch_id</code>) must only be present when the current
+in-progress item belongs to the event owner, or when the status is being built for an admin/global context</li>
+<li>workflow-call child enqueue events use the same owner-aware redaction as ordinary status transitions, even though
+they do not pass through <code dir="auto">_set_queue_item_status</code></li>
+</ul>
+</li>
+</ul>
+<p><code dir="auto">WorkflowCallCoordinator</code> owns child setup and enqueueing. <code dir="auto">WorkflowCallQueueLifecycle</code> owns parent resume and terminal
+propagation, using the session queue service for durable row transitions.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="4b-batch-child-workflows">4b. Batch Child Workflows</h3><a class="sl-anchor-link" href="#4b-batch-child-workflows"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “4b. Batch Child Workflows”</span></a></div>
+<p>The current implementation now supports direct batch-special child workflows for:</p>
+<ul>
+<li><code dir="auto">image_batch</code></li>
+<li><code dir="auto">string_batch</code></li>
+<li><code dir="auto">integer_batch</code></li>
+<li><code dir="auto">float_batch</code></li>
+</ul>
+<p>It also supports generator-backed batch child workflows when those batch nodes are fed directly by:</p>
+<ul>
+<li><code dir="auto">integer_generator</code></li>
+<li><code dir="auto">float_generator</code></li>
+<li><code dir="auto">string_generator</code></li>
+<li><code dir="auto">image_generator</code> using <code dir="auto">image_generator_images_from_board</code></li>
+</ul>
+<p>Current semantics:</p>
+<ul>
+<li>batch-special nodes are removed from the executable child graph before ordinary graph validation</li>
+<li>supported generator nodes that feed those batch-special nodes are removed from the executable child graph as well</li>
+<li>their outgoing edges are converted into queue batch substitutions</li>
+<li>ungrouped batch nodes expand as a cartesian product</li>
+<li>grouped batch nodes zip by <code dir="auto">batch_group_id</code></li>
+<li>the workflow call creates one child queue row per expanded batch session</li>
+<li>supported generator value shapes are resolved into concrete batch items before queue batch expansion</li>
+<li>declared generator counts are rejected before resolution when they exceed remaining child capacity</li>
+<li>cartesian expansion size is computed arithmetically before session generation rather than by materializing the
+product</li>
+<li>batch outputs may feed a named <code dir="auto">workflow_return_value.value</code> directly; each expanded child returns one value for that
+key</li>
+<li>parent resume waits for all child rows tied to that workflow call</li>
+<li>parent return aggregation produces <code dir="auto">values: dict[str, list[Any]]</code>, where each key maps to one value per child row</li>
+<li>all child rows in one batch call must return the same key set; mismatched keys fail the parent call clearly</li>
+<li>if any child row fails, remaining sibling child rows are canceled and the parent call fails</li>
+<li>generator-backed image batches must respect board access:
+<ul>
+<li>the caller may expand images from a board they own</li>
+<li>admins may expand any board</li>
+<li>shared/public boards may be expanded by other users</li>
+<li>inaccessible private boards must fail before image expansion rather than leaking board contents across users</li>
+</ul>
+</li>
+</ul>
+<p>Current generator coverage:</p>
+<ul>
+<li>integer generators:
+<ul>
+<li>arithmetic sequence</li>
+<li>linear distribution</li>
+<li>parse string</li>
+<li>seeded uniform random distribution</li>
+</ul>
+</li>
+<li>float generators:
+<ul>
+<li>arithmetic sequence</li>
+<li>linear distribution</li>
+<li>parse string</li>
+<li>seeded uniform random distribution</li>
+</ul>
+</li>
+<li>string generators:
+<ul>
+<li>parse string</li>
+<li>dynamic prompts combinatorial</li>
+<li>dynamic prompts random</li>
+</ul>
+</li>
+<li>image generators:
+<ul>
+<li>images from board</li>
+</ul>
+</li>
+</ul>
+<p>Still unsupported:</p>
+<ul>
+<li>connected batch inputs whose batch values are produced by non-generator upstream nodes</li>
+</ul>
+<p>Plain-English summary:</p>
+<ol>
+<li>The parent workflow reaches <code dir="auto">call_saved_workflow</code>.</li>
+<li>The parent pauses and enters <code dir="auto">waiting</code>.</li>
+<li>The child workflow is inspected before execution.</li>
+<li>If the child contains supported batch inputs, that one call expands into multiple child executions instead of one.</li>
+<li>Each expanded child execution becomes its own queue row.</li>
+<li>Each child queue row keeps the substituted batch <code dir="auto">field_values</code>, matching ordinary batch queue rows.</li>
+<li>Those child queue rows run independently.</li>
+<li>The parent does not resume until all child queue rows for that call have finished.</li>
+<li>Each child execution produces its own named <code dir="auto">workflow_return.values</code> map.</li>
+<li>The parent aggregates those maps into <code dir="auto">values: dict[str, list[Any]]</code>.</li>
+<li>The <code dir="auto">call_saved_workflow</code> node completes with that named values map, and the parent workflow continues.</li>
+</ol>
+<p>Expansion rules:</p>
+<ul>
+<li>ungrouped batch inputs expand as a cartesian product</li>
+<li>batch inputs that share the same <code dir="auto">batch_group_id</code> zip together by position</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li>ungrouped inputs <code dir="auto">[1, 2]</code> and <code dir="auto">[10, 20]</code> produce 4 child executions:
+<ul>
+<li><code dir="auto">(1, 10)</code></li>
+<li><code dir="auto">(1, 20)</code></li>
+<li><code dir="auto">(2, 10)</code></li>
+<li><code dir="auto">(2, 20)</code></li>
+</ul>
+</li>
+<li>grouped inputs <code dir="auto">[1, 2, 3]</code> and <code dir="auto">[10, 20, 30]</code> with the same <code dir="auto">batch_group_id</code> produce 3 child executions:
+<ul>
+<li><code dir="auto">(1, 10)</code></li>
+<li><code dir="auto">(2, 20)</code></li>
+<li><code dir="auto">(3, 30)</code></li>
+</ul>
+</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="4c-tricky-areas">4c. Tricky Areas</h3><a class="sl-anchor-link" href="#4c-tricky-areas"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “4c. Tricky Areas”</span></a></div>
+<p>The following parts of the runtime contract are easy to misread and should stay explicit in both code and tests.</p>
+<p>Waiting and resume:</p>
+<ul>
+<li>a parent queue row in <code dir="auto">waiting</code> is suspended, not completed</li>
+<li>a parent resumes only after every child queue row tied to that workflow call has reached a terminal state</li>
+</ul>
+<p>Return aggregation:</p>
+<ul>
+<li>each child queue row returns its own named <code dir="auto">workflow_return.values</code></li>
+<li>for batched calls, the parent call node output is <code dir="auto">values: dict[str, list[Any]]</code></li>
+<li>all child rows in one batched call must return the same key set so each returned list is row-aligned</li>
+<li>if one key should contain multiple images for a non-batch child, the child must collect those images into a single
+list value before returning that key</li>
+</ul>
+<p>Sibling failure behavior:</p>
+<ul>
+<li>if one child queue row in a batched workflow call fails, remaining sibling child rows for that same workflow call are
+canceled</li>
+<li>if parent return aggregation rejects a completed child row, remaining sibling child rows for that same workflow call
+are canceled</li>
+<li>after sibling cancelation, the parent call fails</li>
+<li>if that parent is itself a child of another workflow call, failure continues upward through the ancestor chain</li>
+</ul>
+<p>Cancel behavior:</p>
+<ul>
+<li>canceling a waiting parent cancels descendant child rows</li>
+<li>canceling a child row cancels waiting ancestors</li>
+<li>cancelation should stay cancelation; it should not be rewritten into ordinary failure semantics</li>
+<li>startup recovery cancels any interrupted <code dir="auto">in_progress</code> or <code dir="auto">waiting</code> workflow-call chain, including pending
+descendants, so a restart cannot leave a suspended parent waiting on a child row that will never report back</li>
+</ul>
+<p>Retry behavior:</p>
+<ul>
+<li>retry is root-oriented</li>
+<li>child queue rows should not be directly retried from the UI</li>
+<li>backend retry of a child id should normalize to the root workflow call chain rather than create an isolated
+child-only rerun</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="5-return-values">5. Return Values</h3><a class="sl-anchor-link" href="#5-return-values"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “5. Return Values”</span></a></div>
+<p>Return values should be explicit.</p>
+<p>Implemented model:</p>
+<ul>
+<li><code dir="auto">workflow_return</code> is the explicit return node for callable workflows</li>
+<li>the child workflow declares named return values through explicit <code dir="auto">workflow_return_value</code> key/value return members</li>
+<li>each return member has a stable string key and a connected value</li>
+<li>when the workflow is run independently, the return node has no caller-visible effect</li>
+<li>when the workflow is run via <code dir="auto">call_saved_workflow</code>, the named return map becomes the return value of the call</li>
+<li><code dir="auto">call_saved_workflow</code> exposes that named return map to the parent workflow</li>
+</ul>
+<p>Only one workflow return node may exist per workflow. That rule is enforced in both the frontend editor and in Python
+validation/runtime code.</p>
+<p>Do not infer child outputs from arbitrary terminal nodes. That is too ambiguous and too brittle.</p>
+<p>Named return contract:</p>
+<ul>
+<li>the called workflow builds return members with a dedicated key/value node</li>
+<li><code dir="auto">workflow_return</code> accepts one return member directly, or a collected list of return members when the workflow returns
+multiple named values</li>
+<li>non-batch execution rejects duplicate return keys</li>
+<li>if a non-batch workflow needs to return multiple images under one key, the child workflow should collect those images
+into one list value and return that list under the key</li>
+<li>the caller extracts a named return value with a companion caller-side extraction node</li>
+<li>missing keys should fail clearly unless the extraction node explicitly supports and receives a default value</li>
+</ul>
+<p>Batch return aggregation:</p>
+<ul>
+<li>when a called workflow expands into multiple child queue rows, each child row produces its own named return map</li>
+<li>the parent aggregates those child maps as <code dir="auto">dict[str, list[Any]]</code></li>
+<li>each key maps to child values in child enqueue order, preserving positional correspondence with batch inputs even
+when child executions complete out of order</li>
+<li>duplicate keys within a single child return map are still invalid; repeated keys across batch children are the normal
+aggregation path</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="6-error-propagation">6. Error Propagation</h3><a class="sl-anchor-link" href="#6-error-propagation"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “6. Error Propagation”</span></a></div>
+<p>If child execution fails:</p>
+<ul>
+<li>the call node fails</li>
+<li>the parent workflow fails</li>
+</ul>
+<p>Failure propagation is simple and strict.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="7-access-control">7. Access Control</h3><a class="sl-anchor-link" href="#7-access-control"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “7. Access Control”</span></a></div>
+<p>Runtime must enforce the same access rules used elsewhere for saved workflows.</p>
+<p>The caller may execute a child workflow only if it is allowed to access that saved workflow at runtime.</p>
+<p>This matters even if the parent workflow was authored in a context where the child was once visible.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="8-recursion-and-nesting">8. Recursion And Nesting</h3><a class="sl-anchor-link" href="#8-recursion-and-nesting"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “8. Recursion And Nesting”</span></a></div>
+<p>Nested and recursive <code dir="auto">call_saved_workflow</code> execution is allowed, but bounded.</p>
+<p>The runtime enforces:</p>
+<ul>
+<li>nested workflow calls are allowed</li>
+<li>recursive workflow calls are allowed</li>
+<li>maximum workflow call depth is capped at 4 call frames</li>
+<li>the depth cap is enforced at runtime, based on the active call stack, not by static validation alone</li>
+</ul>
+<p>This allows legitimate recursive or conditionally terminating workflow structures while still preventing unbounded call
+growth.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="runtime-ownership">Runtime Ownership</h2><a class="sl-anchor-link" href="#runtime-ownership"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Runtime Ownership”</span></a></div>
+<p>Externally submitted graphs and frontend-authored graphs use the same Python execution path. The backend owns the
+authoritative execution logic.</p>
+<p>The runtime design is:</p>
+<ul>
+<li>a backend <code dir="auto">GraphExpander</code> or broader graph-preparation service may still exist as an abstraction point</li>
+<li>the runtime uses a call-execution mechanism in the Python execution stack rather than full graph expansion</li>
+</ul>
+<p>Relevant existing path:</p>
+<ul>
+<li>frontend builds and submits a graph and workflow payload</li>
+<li>backend receives the batch via session queue APIs</li>
+<li>session queue stores session state</li>
+<li>runtime executes through <code dir="auto">GraphExecutionState</code></li>
+</ul>
+<p>Current insertion points already used:</p>
+<ul>
+<li><code dir="auto">DefaultSessionRunner.run_node()</code> supplies the call capability and inputs, invokes the node through the effect-aware
+path, persists its pending lifecycle effects through <code dir="auto">GraphExecutionState.apply()</code>, then dispatches the queue adapter</li>
+<li><code dir="auto">GraphExecutionState</code> stores the waiting/call-stack state and attached child session</li>
+<li><code dir="auto">WorkflowCallCoordinator</code> currently establishes the call boundary and enqueues child workflow executions as real
+queue rows</li>
+<li><code dir="auto">WorkflowCallQueueLifecycle</code> currently resumes or fails parents when those child rows complete</li>
+<li>child queue items already carry stable parent/child identifiers in both runtime objects and durable queue columns</li>
+</ul>
+<p>Queue lifecycle boundary:</p>
+<ul>
+<li><code dir="auto">WorkflowCallQueueLifecycle</code> remains the bounded workflow-call lifecycle component
+<ul>
+<li>the current workflow-call feature is the only caller of parent/child queue semantics</li>
+<li>replacing it with a generalized queue dependency scheduler now would add regression risk without unlocking a
+concrete user workflow</li>
+<li>revisit only if another feature needs dependent queue items, richer retry/cancel policies, or resumable waits</li>
+</ul>
+</li>
+<li>if support expands beyond the currently supported direct and generator-backed batch shapes, route those new child
+workflow execution shapes through machinery that can honor ordinary Invoke batch semantics</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="runtime-components">Runtime Components</h2><a class="sl-anchor-link" href="#runtime-components"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Runtime Components”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="callsavedworkflowruntime">CallSavedWorkflowRuntime</h3><a class="sl-anchor-link" href="#callsavedworkflowruntime"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “CallSavedWorkflowRuntime”</span></a></div>
+<p>Call-specific runtime behavior currently lives in <code dir="auto">WorkflowCallCoordinator</code> and <code dir="auto">WorkflowCallQueueLifecycle</code>.
+Responsibilities:</p>
+<ul>
+<li>load and validate the selected child workflow record</li>
+<li>validate runtime access rights</li>
+<li>extract callable inputs from the child workflow definition</li>
+<li>build child execution arguments from the parent node state</li>
+<li>launch dependent child queue rows</li>
+<li>collect declared returns</li>
+<li>map returned values back to the parent node outputs</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="workflow-return-node">Workflow Return Node</h3><a class="sl-anchor-link" href="#workflow-return-node"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Workflow Return Node”</span></a></div>
+<p>The dedicated child-workflow return nodes are implemented. Responsibilities:</p>
+<ul>
+<li>define the return interface of the called workflow</li>
+<li>build named key/value return members with <code dir="auto">workflow_return_value</code></li>
+<li>accept either one named return member or a collected list of return members with <code dir="auto">workflow_return</code></li>
+<li>provide that named values map back to the parent call site when invoked through <code dir="auto">call_saved_workflow</code></li>
+<li>remain inert from a caller perspective when the workflow is run independently</li>
+<li>guarantee that only one such node exists per workflow</li>
+<li>behave as a normal node in the editor, with singularity enforced by both frontend and Python validation/runtime code</li>
+</ul>
+<p>This is the canonical reusable return mechanism for subworkflow calls.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="execution-relationship-tracking">Execution Relationship Tracking</h3><a class="sl-anchor-link" href="#execution-relationship-tracking"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Execution Relationship Tracking”</span></a></div>
+<p>Session/runtime state records:</p>
+<ul>
+<li>parent execution waiting on child execution</li>
+<li>child execution belonging to a parent node call site</li>
+<li>result propagation back to the parent</li>
+<li>strict failure propagation rules</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="workflow-return-value-flow">Workflow Return Value Flow</h3><a class="sl-anchor-link" href="#workflow-return-value-flow"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Workflow Return Value Flow”</span></a></div>
+<p>The workflow return value is not persisted back into the saved workflow record and is not derived from frontend state.</p>
+<p>The intended runtime flow is:</p>
+<ol>
+<li>The child workflow computes named return members like ordinary node outputs.</li>
+<li>The child workflow connects one return member directly to <code dir="auto">workflow_return.values</code>, or collects multiple return
+members and connects that list to <code dir="auto">workflow_return.values</code>.</li>
+<li>When the child reaches <code dir="auto">workflow_return</code>, runtime captures the resolved named return map as the child workflow
+result.</li>
+<li>The child workflow result is stored in child execution state.</li>
+<li>That result is handed back to the suspended parent call frame.</li>
+<li>The parent <code dir="auto">call_saved_workflow</code> node is completed with that returned named value map.</li>
+<li>The parent graph resumes.</li>
+</ol>
+<div class="sl-heading-wrapper level-h2"><h2 id="named-return-contract">Named Return Contract</h2><a class="sl-anchor-link" href="#named-return-contract"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Named Return Contract”</span></a></div>
+<p>Named returns cover backend invocation behavior, caller-side extraction, runtime propagation, and batch aggregation.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="backend-return-contract">Backend Return Contract</h3><a class="sl-anchor-link" href="#backend-return-contract"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Backend Return Contract”</span></a></div>
+<p>Current behavior:</p>
+<ul>
+<li>establish the named return data model and invocation primitives</li>
+</ul>
+<p>Contract:</p>
+<ul>
+<li><code dir="auto">WorkflowReturnValueField</code> stores one <code dir="auto">key: str</code> and one <code dir="auto">value: Any</code></li>
+<li><code dir="auto">workflow_return_value</code> creates a single <code dir="auto">WorkflowReturnValueField</code> from a key and connected value</li>
+<li><code dir="auto">workflow_return</code> accepts either one <code dir="auto">WorkflowReturnValueField</code> member or a list of <code dir="auto">WorkflowReturnValueField</code>
+members</li>
+<li><code dir="auto">WorkflowReturnOutput</code> exposes <code dir="auto">values: dict[str, Any]</code></li>
+<li>duplicate keys in one non-batch <code dir="auto">workflow_return</code> execution are invalid and must fail clearly</li>
+</ul>
+<p>Validation:</p>
+<ul>
+<li><code dir="auto">workflow_return_value</code> emits the requested key/value pair</li>
+<li><code dir="auto">workflow_return</code> emits a named value map from one or more return members</li>
+<li>duplicate keys in one <code dir="auto">workflow_return</code> execution are rejected</li>
+<li>empty returns are valid only if that remains an intentional callable-workflow contract</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="caller-side-extraction-primitive">Caller-Side Extraction Primitive</h3><a class="sl-anchor-link" href="#caller-side-extraction-primitive"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Caller-Side Extraction Primitive”</span></a></div>
+<p>Current behavior:</p>
+<ul>
+<li>let the calling workflow extract a named return value without relying on collection position</li>
+</ul>
+<p>Contract:</p>
+<ul>
+<li><code dir="auto">workflow_return_get</code> accepts the named return map and a key</li>
+<li><code dir="auto">workflow_return_get</code> outputs the selected value as <code dir="auto">Any</code></li>
+<li>missing keys fail clearly</li>
+</ul>
+<p>Validation:</p>
+<ul>
+<li>extracting an existing key returns the stored value</li>
+<li>extracting a missing key fails with a useful message</li>
+<li>extracted <code dir="auto">Any</code> values can feed typed downstream nodes through the existing connection compatibility rules</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="runtime-propagation">Runtime Propagation</h3><a class="sl-anchor-link" href="#runtime-propagation"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Runtime Propagation”</span></a></div>
+<p>Current behavior:</p>
+<ul>
+<li>carry named return maps through queue-visible child execution and parent resume</li>
+</ul>
+<p>Contract:</p>
+<ul>
+<li>non-batch child execution returns <code dir="auto">values: dict[str, Any]</code></li>
+<li><code dir="auto">call_saved_workflow</code> exposes that map on its output</li>
+<li>failed child execution behavior is unchanged</li>
+<li>cancel/retry lifecycle behavior is unchanged</li>
+</ul>
+<p>Validation:</p>
+<ul>
+<li>a called workflow returning <code dir="auto">{image: image_value}</code> completes the parent <code dir="auto">call_saved_workflow</code> output with that key</li>
+<li>a caller-side extraction node can consume that output after parent resume</li>
+<li>missing or invalid <code dir="auto">workflow_return</code> nodes still fail with the existing clear errors</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="batch-return-aggregation">Batch Return Aggregation</h3><a class="sl-anchor-link" href="#batch-return-aggregation"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Batch Return Aggregation”</span></a></div>
+<p>Current behavior:</p>
+<ul>
+<li>define named returns for child workflows that expand into multiple queue rows</li>
+</ul>
+<p>Contract:</p>
+<ul>
+<li>each child queue row produces one named return map</li>
+<li>the parent aggregates child maps as <code dir="auto">dict[str, list[Any]]</code></li>
+<li>each key maps to values returned by completed child rows for that key</li>
+<li>all child rows in one batch call must return the same key set</li>
+<li>repeated keys across child rows are expected</li>
+<li>duplicate keys within one child row remain invalid</li>
+<li>if a non-batch workflow wants multiple images under one key, it must collect those images into a single list value
+before returning that key</li>
+</ul>
+<p>Validation:</p>
+<ul>
+<li>a batched child returning <code dir="auto">{image: image_value}</code> from each child row produces <code dir="auto">{image: [image_1, image_2, ...]}</code></li>
+<li>sibling failure still cancels remaining siblings and fails the parent</li>
+<li>duplicate keys inside one child row are rejected rather than silently aggregated</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="frontend-schema-ui-and-docs">Frontend Schema, UI, And Docs</h3><a class="sl-anchor-link" href="#frontend-schema-ui-and-docs"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Frontend Schema, UI, And Docs”</span></a></div>
+<p>Existing schema/type generation includes the backend nodes and fields; editor connection coverage and localized UI
+strings are in place for the current node wiring.</p>
+<p>Current behavior:</p>
+<ul>
+<li>make named returns usable and visible in the editor</li>
+</ul>
+<p>Contract:</p>
+<ul>
+<li>generated schema/types include the new return field, return-value node, and extraction node</li>
+<li>visible UI strings are localized through <code dir="auto">en.json</code></li>
+<li><code dir="auto">call_saved_workflow</code> exposes the named return map output</li>
+<li>users can wire that output to <code dir="auto">workflow_return_get</code></li>
+</ul>
+<p>Validation:</p>
+<ul>
+<li>frontend connection/type tests cover return-value collection wiring</li>
+<li>frontend connection/type tests cover wiring one <code dir="auto">workflow_return_value.value</code> directly to <code dir="auto">workflow_return.values</code></li>
+<li>frontend connection/type tests cover <code dir="auto">call_saved_workflow.values -> workflow_return_get.values</code></li>
+<li>docs describe how a called workflow creates named returns and how a caller extracts them</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="frontend-responsibilities">Frontend Responsibilities</h2><a class="sl-anchor-link" href="#frontend-responsibilities"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Frontend Responsibilities”</span></a></div>
+<p>The frontend remains responsible for editor-time behavior:</p>
+<ul>
+<li>choosing the saved workflow</li>
+<li>redrawing dynamic inputs based on the child workflow callable interface</li>
+<li>persisting those dynamic fields and their values</li>
+<li>preserving compatible inbound edges when workflow selection changes</li>
+<li>clearing incompatible edges and invalid selections in a predictable way</li>
+<li>using backend compatibility metadata so unsupported saved workflows are not presented as callable choices
+<ul>
+<li>compatibility analysis now tolerates required exposed caller inputs by synthesizing placeholder values for those
+inputs during backend compatibility evaluation, so workflows that are valid once the caller supplies exposed values
+are not disabled prematurely</li>
+</ul>
+</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="validation-coverage">Validation Coverage</h2><a class="sl-anchor-link" href="#validation-coverage"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Validation Coverage”</span></a></div>
+<p>Coverage includes:</p>
+<ul>
+<li>workflow-call stack and waiting state on <code dir="auto">GraphExecutionState</code></li>
+<li>depth-limit enforcement</li>
+<li>waiting blocks scheduling</li>
+<li>parent sessions are not completed while waiting</li>
+<li>runner boundary entry for <code dir="auto">call_saved_workflow</code></li>
+<li>validation failures and depth-limit failures still follow normal node-error behavior</li>
+<li>child workflow JSON conversion to backend <code dir="auto">Graph</code></li>
+<li>child graph build failure does not leave the parent in a partial waiting state</li>
+<li>child <code dir="auto">GraphExecutionState</code> is attached to the waiting parent session</li>
+<li>coordinator-owned child execution completes the parent queue item instead of leaving it stuck in <code dir="auto">in_progress</code></li>
+<li>literal and connected dynamic call arguments are applied to the child graph at runtime</li>
+<li>non-exposed dynamic call arguments are rejected at runtime</li>
+<li>child <code dir="auto">workflow_return</code> output is captured and becomes the parent <code dir="auto">call_saved_workflow</code> output</li>
+<li>named <code dir="auto">workflow_return</code> values can be constructed, propagated to the parent, extracted by key, and batch-aggregated
+as <code dir="auto">dict[str, list[Any]]</code></li>
+<li>child workflows without a <code dir="auto">workflow_return</code> node fail cleanly when called</li>
+<li>child execution events now include stable workflow-call relationship metadata on the child <code dir="auto">SessionQueueItem</code></li>
+<li>parent-child resume and failure propagation through queue-visible child rows</li>
+<li>nested runtime execution with bounded stack depth</li>
+<li>direct and generator-backed batch-special child workflows through queue child-row expansion</li>
+<li>compatibility metadata for required exposed inputs, missing/multiple returns, supported named batch-return shapes,
+and unsupported batch input wiring</li>
+</ul>
+<p>Supported extension policy:</p>
+<ul>
+<li>focused coverage for any newly supported batch or generator shape when its contract changes</li>
+<li>a more general scheduler or queue-lifecycle model is warranted only if another feature needs reusable dependent queue
+items; the current queue lifecycle remains authoritative</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="operational-guidance">Operational Guidance</h2><a class="sl-anchor-link" href="#operational-guidance"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Operational Guidance”</span></a></div>
+<p>The queue path owns durable child rows, parent waiting/resume transitions, cancellation, retry, recovery, and events.
+The generic child record validates identity, ordered aggregation, resource limits, and idempotent terminal events; it
+does not replace the queue lifecycle.</p></div><script type="module">var e=e=>{if(e.scrollWidth>e.clientWidth){e.tabIndex=0,e.setAttribute(`role`,`region`);let t=e.closest(`[data-table-label]`);e.setAttribute(`aria-label`,e.dataset.label||t.dataset.tableLabel)}else e.removeAttribute(`tabindex`),e.removeAttribute(`role`),e.removeAttribute(`aria-label`)},t=[...document.querySelectorAll(`.table-scroll`)],n=new ResizeObserver(t=>{for(let n of t)e(n.target.closest(`.table-scroll`))});for(let e of t){n.observe(e);let t=e.querySelector(`table`);t&&n.observe(t)}</script><footer class="docs-footer astro-jcegb7pj"><div class="tools lg:sl-hidden astro-jcegb7pj"><div class="page-tools astro-52a75vey"><docs-page-actions class="page-actions astro-zsnqnkft" data-markdown-href="/contributing/call-saved-workflow/index.md" data-i18n="{&quot;copy&quot;:&quot;Copy page&quot;,&quot;copied&quot;:&quot;Copied&quot;,&quot;copiedStatus&quot;:&quot;Page copied as Markdown.&quot;,&quot;copyFailed&quot;:&quot;Copy failed&quot;,&quot;copyFailedStatus&quot;:&quot;Could not copy the page.&quot;}"><div class="buttons astro-zsnqnkft"><button type="button" class="copy docs-button docs-button--secondary astro-zsnqnkft"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy astro-zsnqnkft" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg><span data-label class="astro-zsnqnkft">Copy page</span></button><button type="button" class="toggle docs-button docs-button--secondary docs-button--icon astro-zsnqnkft" aria-expanded="false" aria-controls="docs-page-actions-menu-footer" aria-label="More page actions"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down astro-zsnqnkft" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><ul id="docs-page-actions-menu-footer" class="menu docs-popup astro-zsnqnkft" hidden><li class="astro-zsnqnkft"><a href="/contributing/call-saved-workflow/index.md" target="_blank" rel="noopener noreferrer" class="astro-zsnqnkft">View as Markdown<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right astro-zsnqnkft" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li><li class="astro-zsnqnkft"><a href="https://chatgpt.com/?q=Read%20from%20https%3A%2F%2Fv7.invoke.ai%2Fhi%2Fcontributing%2Fcall-saved-workflow%2F%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="noopener noreferrer" class="astro-zsnqnkft">Open in ChatGPT<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right astro-zsnqnkft" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li><li class="astro-zsnqnkft"><a href="https://claude.ai/new?q=Read%20from%20https%3A%2F%2Fv7.invoke.ai%2Fhi%2Fcontributing%2Fcall-saved-workflow%2F%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="noopener noreferrer" class="astro-zsnqnkft">Open in Claude<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right astro-zsnqnkft" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li></ul><span class="sr-only astro-zsnqnkft" role="status"></span></docs-page-actions><docs-page-feedback class="feedback astro-utxxypyg"><div class="question astro-utxxypyg" role="group" aria-labelledby="docs-feedback-label-footer"><p id="docs-feedback-label-footer" class="astro-utxxypyg">Was this page helpful?</p><div class="answers astro-utxxypyg"><button type="button" class="docs-button docs-button--secondary astro-utxxypyg" data-helpful="yes"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up astro-utxxypyg" aria-hidden="true"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"></path><path d="M7 10v12"></path></svg>Yes</button><button type="button" class="docs-button docs-button--secondary astro-utxxypyg" data-helpful="no"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-down astro-utxxypyg" aria-hidden="true"><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"></path><path d="M17 14V2"></path></svg>No</button></div></div><div class="thanks astro-utxxypyg" tabindex="-1" hidden><p class="astro-utxxypyg">Thanks for your feedback.</p><p data-unhelpful hidden class="astro-utxxypyg">Tell us what was missing or wrong: <a href="https://github.com/invoke-ai/InvokeAI/issues/new?template=DOCS_ISSUE.yml&amp;title=%5Bdocs%5D%3A+Call+Saved+Workflow+Architecture&amp;page=https%3A%2F%2Fv7.invoke.ai%2Fhi%2Fcontributing%2Fcall-saved-workflow%2F" class="astro-utxxypyg">Report an issue</a></p></div></docs-page-feedback><div class="meta astro-52a75vey"><div class="page-meta astro-6l7e7ffm"><a href="https://github.com/invoke-ai/InvokeAI/edit/main/docs/src/content/docs/contributing/call-saved-workflow.md" class="print:hidden astro-6l7e7ffm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil astro-6l7e7ffm" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg>पृष्ठ संपादित करें</a><a href="https://github.com/invoke-ai/InvokeAI/issues/new?template=DOCS_ISSUE.yml&amp;title=%5Bdocs%5D%3A+Call+Saved+Workflow+Architecture&amp;page=https%3A%2F%2Fv7.invoke.ai%2Fhi%2Fcontributing%2Fcall-saved-workflow%2F" class="print:hidden astro-6l7e7ffm"><svg aria-hidden="true" class="astro-6l7e7ffm astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 14px;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg>Report an issue</a><p class="astro-6l7e7ffm">Updated <time datetime="2026-10-08T13:08:17.000Z" class="astro-6l7e7ffm">8 अक्टू॰ 2026</time></p></div></div></div></div><div class="pagination-links print:hidden astro-rjvyqigx" dir="ltr"><a class="docs-link-card astro-rjvyqigx" href="/hi/contributing/blocking-work-in-api-routes/" rel="prev"><span class="label docs-link-card__description astro-rjvyqigx"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left docs-link-card__icon astro-rjvyqigx" aria-hidden="true"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>पिछला</span><span class="docs-link-card__title astro-rjvyqigx">Blocking Work in API Routes</span></a><a class="docs-link-card astro-rjvyqigx" href="/hi/contributing/code-of-conduct/" rel="next"><span class="label docs-link-card__description astro-rjvyqigx">अगला<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right docs-link-card__icon astro-rjvyqigx" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><span class="docs-link-card__title astro-rjvyqigx">Code of Conduct</span></a></div><div class="bottom astro-jcegb7pj"><p class="astro-jcegb7pj">This site was designed and developed by <a href="https://aetherfox.studio" target="_blank" rel="noreferrer noopener" class="astro-jcegb7pj">Aether Fox Studio</a>.</p><ul class="social astro-jcegb7pj"><li class="astro-jcegb7pj"><a href="/showcase/" class="astro-jcegb7pj"><svg aria-hidden="true" class="astro-jcegb7pj astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 16px;"><path d="M22 9.67a1 1 0 0 0-.86-.67l-5.69-.83L12.9 3a1 1 0 0 0-1.8 0L8.55 8.16 2.86 9a1 1 0 0 0-.81.68 1 1 0 0 0 .25 1l4.13 4-1 5.68a1 1 0 0 0 1.45 1.07L12 18.76l5.1 2.68c.14.08.3.12.46.12a1 1 0 0 0 .99-1.19l-1-5.68 4.13-4A1 1 0 0 0 22 9.67Zm-6.15 4a1 1 0 0 0-.29.89l.72 4.19-3.76-2a1 1 0 0 0-.94 0l-3.76 2 .72-4.19a1 1 0 0 0-.29-.89l-3-3 4.21-.61a1 1 0 0 0 .76-.55L12 5.7l1.88 3.82a1 1 0 0 0 .76.55l4.21.61-3 2.99Z"/></svg>Showcase</a></li><li class="astro-jcegb7pj"><a href="https://github.com/invoke-ai/InvokeAI" rel="me" class="astro-jcegb7pj"><svg aria-hidden="true" class="astro-jcegb7pj astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 16px;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg>GitHub</a></li><li class="astro-jcegb7pj"><a href="https://discord.gg/ZmtBAhwWhy" rel="me" class="astro-jcegb7pj"><svg aria-hidden="true" class="astro-jcegb7pj astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 16px;"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"/></svg>Discord</a></li><li class="astro-jcegb7pj"><a href="https://www.youtube.com/@invokeai" rel="me" class="astro-jcegb7pj"><svg aria-hidden="true" class="astro-jcegb7pj astro-h34usyis" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 16px;"><path d="M23.5 6.2A3 3 0 0 0 21.4 4c-1.9-.5-9.4-.5-9.4-.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.3C0 8 0 12 0 12s0 4 .5 5.8A3 3 0 0 0 2.6 20c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2c.5-2 .5-5.9.5-5.9s0-4-.5-5.8zm-14 9.4V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a></li></ul></div></footer></div></div></main></div></div></div></div></body></html>

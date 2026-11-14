@@ -1,0 +1,1 @@
+import{t as e}from"./disclosure.BNxW95CA.js";var t=class extends HTMLElement{connectedCallback(){e(this,this.querySelector(`button`),this.querySelector(`ul`))}};customElements.define(`docs-link-menu`,t);
