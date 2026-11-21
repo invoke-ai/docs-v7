@@ -1,0 +1,1 @@
+var e=/\{\{\s*(\w+)\s*\}\}/g,t=(t,n)=>t.replace(e,(e,t)=>Object.hasOwn(n,t)?String(n[t]):e),n=(e,n,r)=>t(e[new Intl.PluralRules(r).select(n)]??e.other??``,{count:n});export{t as n,n as t};

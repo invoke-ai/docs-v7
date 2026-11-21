@@ -1,0 +1,300 @@
+# Documentation
+
+import { Steps, Tabs, TabItem, FileTree } from '@astrojs/starlight/components'
+
+The Invoke AI website, including its documentation are all contained within the `docs` directory.
+
+## Prerequisites
+
+The documentation is built using [Astro Starlight](https://starlight.astro.build/). It's suggested you familiarize yourself with the following technologies before getting started:
+
+<Steps>
+  1. [Markdown](https://www.markdownguide.org/) - a lightweight markup language for creating formatted text.
+  2. [MDX](https://mdxjs.com/) - a superset of Markdown that allows you to use React components in your content.
+  3. [Astro](https://astro.build/) - a modern static site builder that supports MDX and other front-end technologies.
+  4. [Starlight](https://starlight.astro.build/) - a theme for Astro that provides a clean and modern documentation experience.
+  5. [Vite](https://vitejs.dev/) - a fast development server and build tool for modern web projects.
+</Steps>
+
+Markdown powers the content of every page on the website (including the homepage), with additional help from [MDX](https://mdxjs.com/) to make the pages more interactive with imported React components.
+
+## Navigating the Documentation
+
+The documentation is organized into a file tree structure. It should be very familiar to anyone who has built modern web applications.
+
+<FileTree>
+  - docs/
+    - dist/ production build output
+    - public/ non-optimized, public assets
+    - src/ main source code
+      - assets/ optimized assets
+      - config/ astro/starlight configs
+      - content/ markdown pages and content
+        - docs/ documentation content
+        - i18n/ internationalized content
+      - generated/ generated json files for dynamic content
+      - layouts/ components used to wrap pages
+      - lib/ utility functions and shared code
+        - components/ reusable, custom components
+      - pages/ non-documentation pages
+      - styles/ global styles; colors, tabs and buttons follow the app's Classic theme (`plugins/theme-tokens.mjs`)
+</FileTree>
+
+## Development
+
+If you've ever worked within a react, astro or similar node-based library or framework, you should feel familiar with most of the setup here.
+
+If you're adding a feature, new behavior or etc. that changes how users expect Invoke to work, we expect you to deliver your PR with associated docs to support it. To get started, follow the steps below.
+
+### Dev Environment
+
+There are 2 main ways to get your development environment set up for documentation:
+
+<Tabs syncKey="docsDevMethod">
+  <TabItem label="Make">
+    Invoke's makefile makes it easy to set up your development environment for documentation in only a couple of commands. You can run these from the root of the repository.
+
+    <Steps>
+      1. First, install the required dependencies.
+
+          ```sh
+          make docs-install
+          ```
+
+      2. Next, run the development server.
+
+          ```sh
+          make docs-dev
+          ```
+
+      3. Open your browser and navigate to `http://localhost:4321` to view the documentation.
+    </Steps>
+  </TabItem>
+
+  <TabItem label="Manual">
+    If you prefer good ol' fashioned `cd` and `pnpm` commands, you can set up your development environment manually.
+
+    <Steps>
+      1. First, cd into the docs directory.
+
+          ```sh
+          cd docs
+          ```
+
+      2. Next, install the required dependencies.
+
+          ```sh
+          pnpm install
+          ```
+
+      3. Run the development server.
+
+          ```sh
+          pnpm dev
+          ```
+
+      4. Open your browser and navigate to `http://localhost:4321` to view the documentation.
+    </Steps>
+  </TabItem>
+</Tabs>
+
+If there's another local server running on port `4321` prior to running this, then use the port specified in the output.
+
+The docs' colors come from the app's theme, `invokeai/frontend/webv2/src/platform/ui/theme/themes.ts`. Saving that file restarts the dev server, so theme changes show up on their own; a change to `plugins/theme-tokens.mjs`, which turns the theme into the docs' tokens, needs a manual restart.
+
+### Adding Pages
+
+Located within the `src/content/docs/` directory, this is where the documentation pages are stored and organized by category. These categories are file-based and are mirrored to the sidebar navigation.
+
+:::caution
+Do not place your docs content contributions outside of the `content` directory, it will not be seen.
+:::
+
+If you wish to add a new sub category to document a feature or a behavior, simply create a new directory within the relevant top-level category directory.
+
+For example, if we wanted to document a new feature called "Instant Bananas", we would create a new directory within `src/content/docs/features/` like so:
+
+`src/content/docs/`
+<FileTree>
+  - concepts/
+  - configuration/
+  - contributing/
+  - development/
+  - features/
+    - **instant-bananas/**
+      - **index.md** Write your documentation here
+      - **requirements.mdx** You can add more pages in this directory
+  - start-here/
+  - troubleshooting/
+  - workflows/
+</FileTree>
+
+The way you organize your added pages dictates how the URL structure is generated for your documentation pages. In this example, the url for the `index.md` page would be `https://invoke.ai/features/instant-bananas/`, and the url for the `requirements.mdx` page would be `https://invoke.ai/features/instant-bananas/requirements/`.
+
+The sidebar is split into topics, such as Get Started, Guide and Models, and each page shows the sidebar of its own topic. `src/config/topics.ts` lists the topics with the label, description, icon and landing page that the topic switcher shows, and `src/config/sidebar.ts` gives each topic its sidebar items, usually a directory to autogenerate from. A new page in an existing directory joins its topic automatically. A new top-level directory needs a topic, or must be added to an existing topic's items, or the build fails with a message naming the page.
+
+```diff lang="js" title="src/config/sidebar.ts"
+const topicItems = {
+  // ...
+  configure: [{ autogenerate: { directory: 'configuration' } }],
++  'new-topic': [{ autogenerate: { directory: 'new-category' } }],
+  // ...
+};
+```
+
+### Ordering Pages
+
+To control the sidebar order, prefix a page file or directory name with a number and a dot, such as `01.projects.mdx` or `04.Image Generation/`. The sidebar lists prefixed siblings in numeric order, followed by any unprefixed siblings in their usual order. Among prefixed siblings, the number replaces `sidebar.order`. The prefix never appears in URLs or sidebar labels: `concepts/04.Image Generation/01.introduction.mdx` is served at `/concepts/image-generation/introduction/`, under a group labelled "Image Generation".
+
+Any leading run of digits followed by a dot counts as a prefix, so avoid names like `2.0-migration.mdx` for other purposes. Don't prefix the site's root `index.mdx`: the link checker can't match links to `/` against a prefixed root page. Two siblings that differ only in their prefix map to the same URL, and one of them is dropped.
+
+:::note
+If you renumber a file while `pnpm dev` is running, its page can disappear until you restart the dev server or touch the file. Builds are not affected.
+:::
+
+### Page Metadata
+
+Before your page becomes available, you will need to add frontmatter to define the page's metadata such as its title, description, last update date, sidebar position, and etc.
+
+Learn more about what frontmatter is and how to use it in your pages in the [Starlight Documentation](https://starlight.astro.build/reference/frontmatter/).
+
+Once you have some basic frontmatter defined, you should be able to see it reflected in the sidebar and the page title.
+
+### Adding Images
+
+We encourage adding imagery to your docs for creating a more engaging and visual experience for viewers. To add images, we prefer you to utilize an `assets` directory within the concerning category.
+
+<FileTree>
+  - features/
+    - instant-bananas/
+      - **assets/**
+        - **demonstration.webp**
+        - **foobar.avif**
+      - index.mdx
+</FileTree>
+
+The Astro image optimizer/renderer is quite flexible with image formats and sizes, but we'd prefer stored images to be at reasonable sizes (not 4k), and using optimized formats (webp, avif, jpeg).
+
+To render the image, you'd just use a relative path in your markdown.
+
+```md title="index.mdx"
+![Alt text here](./assets/demonstration.webp)
+```
+
+### Translations
+
+English is the source of truth: write and update the English pages and strings only. Translators work in [Crowdin](/contributing/translations/), which opens pull requests with their translations.
+
+- **Pages.** Translations of the user-facing trees (`start-here/`, `Users Guide/`, `configuration/`, `troubleshooting/` and the home page) land in `src/content/docs/<locale>/`, mirroring the English paths. Crowdin owns those directories, so don't edit them by hand. A page without a translation shows the English page with a notice. A translation changes only prose: `pnpm test` fails one that adds or changes imports, components, `{…}` expressions, links or frontmatter other than titles and descriptions.
+- **Interface strings.** Text in components and layouts comes from `src/content/i18n/en.json`. Add a key there and read it with `Astro.locals.t('key')`, or with the `Trans` component when the message contains markup such as a link. `pnpm test` fails when the code uses a key `en.json` lacks, or `en.json` has a key nothing uses.
+
+Maintainers: the [docs README](https://github.com/invoke-ai/InvokeAI/blob/main/docs/README.md) covers Crowdin setup, adding a locale and reviewing a translation pull request.
+
+## Running a Build
+
+Modifications to the docs may run fine on your machine, but as we've learned the hard way, GitHub pages flips that expectation completely. So, we've added some ways to ensure things work as expected before deploying.
+
+Just like with the dev environment, you can build the docs one of two ways:
+
+<Tabs syncKey="docsDevMethod">
+  <TabItem label="Make">
+    Invoke's makefile makes it easy to build the documentation in only a single command. You can run it from the root of the repository.
+
+    <Steps>
+      1. First, run the build command.
+
+          ```sh
+          make docs-build
+          ```
+
+      2. Finally, preview the output.
+
+          ```sh
+          make docs-preview
+          ```
+    </Steps>
+
+    And that's it.
+
+    :::tip[Deploy Target]
+      The make command here sets the `DEPLOY_TARGET` environment variable to `custom`, so that the final output matches what you'd expect from the final deployment to https://v7.invoke.ai.
+
+      If you'd rather set a different deploy target, use the manual method.
+    :::
+
+  </TabItem>
+  <TabItem label="Manual">
+    If you prefer good ol' fashioned `cd` and `pnpm` commands, or to have granular control over environment variables, you can run the following:
+
+    <Steps>
+      1. First, cd into the `docs` directory.
+
+          ```sh
+          cd docs
+          ```
+
+      2. Next run the build command.
+
+          ```sh
+          pnpm run build
+          ```
+
+      3. Finally, preview the build.
+
+          ```sh
+          pnpm run preview
+          ```
+
+          The preview url will be available on the same port as the dev server.
+    </Steps>
+
+  </TabItem>
+</Tabs>
+
+## Generated Files
+
+The Invoke API is always evolving, and quite large. Documenting all this by hand would be wildly impractical, so there's a script we've set up to pull all that data and generate relevant json files into `generated` directory.
+
+These files are used for the [YAML Config](/configuration/invokeai-yaml) and [API Development](/development/guides/api-development) pages. If you're adding a feature that changes the yaml config, or the api then make sure to run `pnpm run generate-docs-data` to ensure tests pass, and that the docs are accurate in accordance to your updates.
+
+### App Search Index
+
+The app's command palette searches the docs from a copy of the docs index committed at `invokeai/frontend/webv2/src/workbench/palette/docsSearchIndex.json`. The build serves the index at `/app-search.json` (`src/pages/app-search.json.ts`). It lists the topics outside the Build group, with their labels, descriptions and landing pages, and each of their published pages, with its title, description, topic, and h2 and h3 headings. Developer and contributor pages are left out.
+
+Resync the copy whenever a change reaches the index: adding, removing, moving or renaming a page; changing a page's title, description, `draft` or `pagefind` frontmatter; adding, removing or renaming an h2 or h3 heading; or changing a topic in `src/config/topics.ts`. Rebuild, copy the index into the app, and commit the result:
+
+```sh
+cd docs
+pnpm build
+pnpm run sync-app-search-index
+```
+
+`pnpm run check-app-search-index` fails when the committed copy no longer matches a build.
+
+## Testing
+
+The docs contain tests for the following:
+
+| Test | Description | Runs on... |
+| -- | -- | -- |
+| Link Checker | Checks for invalid, malformed or misdirected internal link URLs | Dev Server, Build, Deploy |
+| Verify Deployment Output | Check to ensure the asset and page paths have the expected base paths dependent on deploy targets | Build, Deploy |
+| Check Docs Data | Checks to ensure the generated files are accurate | Deploy |
+| Check App Search Index | Checks that the app's copy of the docs search index matches the build | Deploy |
+| Translation Checks | Checks that translated pages and interface strings add no code, markup or links and keep their placeholders (`src/lib/translation-checks.mjs`, part of `pnpm test`) | Deploy |
+
+## GitHub Actions
+
+Once you've submitted your updated docs, either via pull request or a main push to your own fork, the `deploy-docs` action will run.
+
+The `deploy-docs` action will install the necessary dependencies, run a build and test it. Pushes to `main` then publish the site to https://v7.invoke.ai, served by GitHub Pages from the `invoke-ai/docs-v7` repository. The v6 documentation at https://invoke.ai is built and deployed from the `v6-bugfixes` branch. Any failing deployments will require fixing before deploying.
+
+## Troubleshooting
+
+#### All the styles are missing and the links are wrong, what happened?
+
+This commonly happens when the base path and the deploy target are mismatched, check those first and then run your build again.
+
+#### Redirects aren't working on the production deployment, but they work locally, why?
+
+Because GitHub Pages' SSR environment is lackluster, and thus doesn't handle backend redirects. We included a redirects configuration just in case GitHub ever grows a conscience, or if the docs ever get deployed someplace else.
